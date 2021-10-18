@@ -8,9 +8,8 @@ class NavigationBarMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      color: Colors.indigo,
       child: Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(

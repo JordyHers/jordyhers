@@ -8,7 +8,6 @@ class NavigationBarTabletDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      color: Colors.indigo,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -23,36 +22,25 @@ class NavigationBarTabletDesktop extends StatelessWidget {
                       onPressed: () {},
                       child: Text("Discover",
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white))),
-                  FlatButton(
-                      onPressed: () {},
-                      child: Text("Our Blog",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white))),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ))),
                   FlatButton(
                       onPressed: () {},
                       child: Text("Services",
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white))),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ))),
                   FlatButton(
                       onPressed: () {},
                       child: Text("About US",
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white))),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ))),
                 ],
               ),
-              // SizedBox(
-              //   width: 60,
-              // ),
-              // NavBarItem('About Us', AboutRoute, false),
             ],
           )
         ],

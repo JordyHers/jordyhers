@@ -20,7 +20,10 @@ class NavBarLogo extends StatelessWidget {
                 ),
                 Text(
                   "Jordy",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Montserrat-Regular'),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 18.0),
@@ -29,7 +32,8 @@ class NavBarLogo extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.bold,
-                        color: Colors.purpleAccent),
+                        color: Colors.purpleAccent,
+                        fontFamily: 'Montserrat-Regular'),
                   ),
                 ),
               ],
