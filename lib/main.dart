@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
-import 'View/home_page.dart';
+import 'package:jordyhers/view/layout_template.dart';
+import 'locator.dart';
 
 void main() {
+  setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -14,10 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Jordy Hers',
       theme: ThemeData(
-
         primarySwatch: Colors.indigo,
       ),
-      home: HomePage(),
+      home: LayoutTemplate(),
     );
   }
 }
