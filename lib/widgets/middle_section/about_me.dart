@@ -14,33 +14,41 @@ class AboutMe extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 60.0, vertical: 20),
+              padding: isMobile
+                  ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 20)
+                  : const EdgeInsets.symmetric(horizontal: 350.0, vertical: 20),
               child: Text(
                 'About Me',
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
               ),
             ),
             Container(
-              height: getHeight(context) * 0.55,
+              height: isMobile
+                  ? getHeight(context) * 0.55
+                  : getHeight(context) * 0.45,
               width: getWidth(context),
               child: Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                    padding: isMobile
+                        ? const EdgeInsets.symmetric(horizontal: 60.0)
+                        : const EdgeInsets.symmetric(horizontal: 350.0),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: CircleAvatar(
-                        radius: 55,
+                        radius: isMobile ? 55 : 65,
                         foregroundImage:
                             AssetImage('assets/images/jordy_purple.jpg'),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                    padding: isMobile
+                        ? const EdgeInsets.symmetric(
+                            horizontal: 60.0, vertical: 50)
+                        : const EdgeInsets.symmetric(horizontal: 350.0),
                     child: Align(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.bottomRight,
                       child: RichText(
                         text: TextSpan(
                             text:
@@ -49,7 +57,7 @@ class AboutMe extends StatelessWidget {
                                 "With my Flutter tutorials and courses, I've helped thousands of students become better developers."
                                 "   I know what it takes to become a good Flutter developer. I can't wait to share this email course with you and help you fast-track your learning.",
                             style: TextStyle(
-                                fontSize: isMobile ? 18 : 35,
+                                fontSize: isMobile ? 18 : 24,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.grey.shade500)),
                       ),

@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
 
 class LogoSection extends StatelessWidget {
-  const LogoSection({Key key}) : super(key: key);
+  final bool isMobile;
+
+  LogoSection({Key key, this.isMobile}) : super(key: key);
+
+  final List<Widget> logos =
+      List.generate(12, (i) => Image.asset('assets/png/pngegg-$i.png'))
+          .toList();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60.0),
-      child: Container(
-        child: Column(
-          children: [
-            for (int i = 2; i <= 12; i++)
-              Image.asset('assets/png/pngegg-$i.png'),
-          ],
-        ),
+      padding: isMobile
+          ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 50)
+          : const EdgeInsets.symmetric(horizontal: 300.0, vertical: 50),
+      child: SizedBox(
+        child: GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 150,
+                childAspectRatio: 3 / 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20),
+            itemCount: logos.length,
+            itemBuilder: (BuildContext ctx, index) {
+              return logos[index];
+            }),
       ),
     );
   }

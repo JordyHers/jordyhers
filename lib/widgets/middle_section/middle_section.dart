@@ -17,7 +17,9 @@ class MiddleSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(60.0),
+          padding: isMobile
+              ? const EdgeInsets.all(60.0)
+              : const EdgeInsets.symmetric(horizontal: 100.0, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -29,24 +31,29 @@ class MiddleSection extends StatelessWidget {
                   )),
               Text('for both back-end and front-end.',
                   style: TextStyle(
-                    fontSize: isMobile ? 23 : 30,
+                    fontSize: isMobile ? 23 : 35,
                     fontWeight: FontWeight.w700,
                     color: Colors.purpleAccent,
                   )),
               SizedBox(height: 40),
-              RichText(
-                text: TextSpan(
-                    text:
-                        "Flutter is amazing. But it can also be intimidating.\n\n"
-                        "With thousands of packages on pub.dev, over 400 widgets in the Flutter SDK, and over 40 state management solutions, where do you even start?\n\n"
-                        "Would you like to get a curated list of resources, guiding you through the most important topics, and helping you choose the right tools and packages?"
-                        " Would you like to become more productive and take your Flutter apps to the next level?"
-                        "I know I would.",
-                    style: TextStyle(
-                      fontSize: isMobile ? 21 : 19,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey.shade500,
-                    )),
+              Padding(
+                padding: isMobile
+                    ? const EdgeInsets.all(0.0)
+                    : const EdgeInsets.symmetric(horizontal: 200.0),
+                child: RichText(
+                  text: TextSpan(
+                      text:
+                          "Flutter is amazing. But it can also be intimidating.\n\n"
+                          "With thousands of packages on pub.dev, over 400 widgets in the Flutter SDK, and over 40 state management solutions, where do you even start?\n\n"
+                          "Would you like to get a curated list of resources, guiding you through the most important topics, and helping you choose the right tools and packages?"
+                          " Would you like to become more productive and take your Flutter apps to the next level?"
+                          "I know I would.",
+                      style: TextStyle(
+                        fontSize: isMobile ? 21 : 25,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey.shade500,
+                      )),
+                ),
               ),
             ],
           ),

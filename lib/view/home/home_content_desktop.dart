@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 import 'package:jordyhers/utils/theme.dart';
+import 'package:jordyhers/widgets/bottom_section/bottom_bar_column.dart';
 import 'package:jordyhers/widgets/head_section/header_section.dart';
-import 'package:jordyhers/widgets/middle_section/lower_section.dart';
+import 'package:jordyhers/widgets/middle_section/email_us_section.dart';
+import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
+import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
 
 class HomeContentDesktop extends StatelessWidget {
@@ -16,21 +19,15 @@ class HomeContentDesktop extends StatelessWidget {
       backgroundColor: Color(0xFFFFFFFF),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             HeaderSection(),
             MiddleSection(isMobile: false),
             AboutMe(isMobile: false),
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Container(
-                child: ClipRRect(
-                  child: Image.asset(
-                    "assets/stickers/404Error.png",
-                    height: 350,
-                  ),
-                ),
-              ),
-            ),
+            SizedBox(height: getHeight(context) * 0.15),
+            LogoSection(isMobile: false),
+            EmailUs(isMobile: false),
+            BottomBar(isMobile: false)
           ],
         ),
       ),

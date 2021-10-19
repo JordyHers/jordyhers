@@ -15,4 +15,9 @@ class Style {
       Colors.blueAccent,
     ],
   ).createShader(Rect.fromLTWH(400.0, 10.0, 300.0, 14.0));
+
+  static final LinearGradient gradient = LinearGradient(colors: [
+    Colors.purpleAccent,
+    Colors.blueAccent,
+  ]);
 }
