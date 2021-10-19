@@ -49,7 +49,7 @@ class AboutMe extends StatelessWidget {
                                 "With my Flutter tutorials and courses, I've helped thousands of students become better developers."
                                 "   I know what it takes to become a good Flutter developer. I can't wait to share this email course with you and help you fast-track your learning.",
                             style: TextStyle(
-                                fontSize: isMobile ? 21 : 35,
+                                fontSize: isMobile ? 18 : 35,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.grey.shade500)),
                       ),

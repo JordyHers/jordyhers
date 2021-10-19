@@ -3,6 +3,7 @@ import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 import 'package:jordyhers/utils/theme.dart';
 import 'package:jordyhers/widgets/head_section/header_section.dart';
+import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
 import 'package:jordyhers/widgets/middle_section/lower_section.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
 
@@ -20,17 +21,7 @@ class HomeContentMobile extends StatelessWidget {
             HeaderSection(),
             MiddleSection(isMobile: true),
             AboutMe(isMobile: true),
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Container(
-                child: ClipRRect(
-                  child: Image.asset(
-                    "assets/stickers/404Error.png",
-                    height: 350,
-                  ),
-                ),
-              ),
-            ),
+            LogoSection(),
             Padding(
               padding: const EdgeInsets.only(top: 60.0),
               child: Container(
