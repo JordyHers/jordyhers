@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jordyhers/utils/theme.dart';
 
 class NavBarLogo extends StatelessWidget {
   final bool isMobile;
@@ -22,7 +23,7 @@ class NavBarLogo extends StatelessWidget {
                   "Jordy",
                   style: TextStyle(
                       fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w800,
                       fontFamily: 'Montserrat-Regular'),
                 ),
                 Padding(
@@ -32,7 +33,7 @@ class NavBarLogo extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.bold,
-                        color: Colors.purpleAccent,
+                        foreground: Paint()..shader = Style.subtitle,
                         fontFamily: 'Montserrat-Regular'),
                   ),
                 ),
