@@ -13,7 +13,7 @@ class LogoSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: isMobile
-          ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 50)
+          ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
           : const EdgeInsets.symmetric(horizontal: 300.0, vertical: 50),
       child: SizedBox(
         child: GridView.builder(

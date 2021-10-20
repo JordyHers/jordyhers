@@ -32,7 +32,7 @@ class EmailUs extends StatelessWidget {
                       color: Colors.grey.shade800),
                 ),
                 SizedBox(height: getHeight(context) / 25),
-                Text(
+                SelectableText(
                   'Let us know about you, send us an email if you need more information or if you have a project.\n\n '
                   'We will be glad to send you feedback. As we know te flutter community '
                   'is still growing up. So you can be a part of it.',

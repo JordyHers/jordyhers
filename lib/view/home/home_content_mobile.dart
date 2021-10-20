@@ -13,7 +13,7 @@ class HomeContentMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO: USE BLOCK TO CONTROL THE DIFFERENT PAGES
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: [

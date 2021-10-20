@@ -12,7 +12,7 @@ class CenteredView extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      color: Colors.black,
+      color: Theme.of(context).backgroundColor,
       alignment: Alignment.topCenter,
       child: ConstrainedBox(
         constraints: BoxConstraints(

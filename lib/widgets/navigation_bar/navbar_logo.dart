@@ -24,7 +24,7 @@ class NavBarLogo extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
-                      color: Colors.white,
+                      color: Theme.of(context).primaryTextTheme.caption!.color,
                       fontFamily: 'Montserrat-Regular'),
                 ),
                 Padding(
@@ -57,7 +57,7 @@ class NavBarLogo extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: Theme.of(context).primaryTextTheme.caption!.color,
                   ),
                 ),
                 SelectableText(

@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.4.1
+  easy_dynamic_theme: ^2.0.0
   url_launcher: ^6.0.10
   provider: ^6.0.1
   get_it: ^4.0.2
@@ -50,6 +51,7 @@ flutter:
     - assets/images/
     - assets/stickers/
     - assets/png/
+    - assets/documents/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

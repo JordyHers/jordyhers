@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:jordyhers/routing/route_names.dart';
+import 'package:jordyhers/view/about/about_view.dart';
 import 'package:jordyhers/view/home/home_view.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
       return _getPageRoute(HomeView(), settings.name!);
-    // case AboutRoute:
-    //   return _getPageRoute(
-    //       AboutView(username: 'Jordy Hershel', age: 23), settings.name!);
+    case AboutRoute:
+      return _getPageRoute(AboutView(), settings.name!);
 
     default:
       return _getPageRoute(HomeView(), settings.name!);

@@ -18,7 +18,7 @@ class MiddleSection extends StatelessWidget {
       children: [
         Padding(
           padding: isMobile
-              ? const EdgeInsets.all(60.0)
+              ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 60)
               : const EdgeInsets.symmetric(horizontal: 100.0, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -16,7 +16,7 @@ class HomeContentDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO: USE BLOCK TO CONTROL THE DIFFERENT PAGES
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -24,7 +24,7 @@ class HomeContentDesktop extends StatelessWidget {
             HeaderSection(),
             MiddleSection(isMobile: false),
             AboutMe(isMobile: false),
-            SizedBox(height: getHeight(context) * 0.15),
+            SizedBox(height: getHeight(context) * 0.05),
             LogoSection(isMobile: false),
             EmailUs(isMobile: false),
             BottomBar(isMobile: false)

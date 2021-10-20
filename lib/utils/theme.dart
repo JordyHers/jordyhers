@@ -2,6 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Style {
+  static final lightTheme = ThemeData(
+    primarySwatch: Colors.indigo,
+    fontFamily: 'Montserrat',
+    backgroundColor: Colors.white,
+    primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
+    iconTheme: IconThemeData(color: Colors.black),
+  );
+  static final darkTheme = ThemeData(
+    primarySwatch: Colors.indigo,
+    fontFamily: 'Montserrat',
+    backgroundColor: Colors.black,
+    primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),
+    iconTheme: IconThemeData(color: Colors.white),
+  );
+
   static final Shader linearGradient = LinearGradient(
     colors: <Color>[
       Colors.purpleAccent,

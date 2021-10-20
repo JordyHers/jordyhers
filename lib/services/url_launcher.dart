@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class Http {
@@ -7,5 +9,11 @@ class Http {
     } else {
       throw "Can't launch ";
     }
+  }
+
+  void downloadFile(String url) {
+    AnchorElement anchorElement = AnchorElement(href: url);
+    anchorElement.download = url;
+    anchorElement.click();
   }
 }

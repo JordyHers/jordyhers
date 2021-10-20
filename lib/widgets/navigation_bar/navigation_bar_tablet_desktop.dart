@@ -1,4 +1,8 @@
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:jordyhers/locator.dart';
+import 'package:jordyhers/routing/route_names.dart';
+import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:provider/provider.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
@@ -12,8 +16,7 @@ class NavigationBarTabletDesktop extends StatefulWidget {
       _NavigationBarTabletDesktopState();
 }
 
-class _NavigationBarTabletDesktopState
-    extends State<NavigationBarTabletDesktop> {
+class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey, Colors.grey];
   List<String> strings = ["Home", "Portfolio", "About", "LinkedIn"];
   Color color = Colors.transparent;
@@ -49,8 +52,16 @@ class _NavigationBarTabletDesktopState
                           onPressed: () {
                             if (strings[i] == 'LinkedIn') {
                               repository.launchUrl(st.linkedIn);
+                            } else if (strings[i] == 'Portfolio') {
+                              repository.downloadFile(st.documentPath);
+                            } else if (strings[i] == 'About') {
+                              locator<NavigationService>()
+                                  .navigateTo(AboutRoute);
+                            } else if (strings[i] == 'Home') {
+                              locator<NavigationService>()
+                                  .navigateTo(HomeRoute);
                             } else {
-                              print('Button Tapped');
+                              print('${strings[i]} was Tapped');
                             }
                           },
                           child: Text(strings[i],
@@ -84,7 +95,15 @@ class _NavigationBarTabletDesktopState
                     ),
                   ),
                 ),
-              )
+              ),
+              IconButton(
+                icon: Icon(Icons.brightness_6),
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onPressed: () {
+                  EasyDynamicTheme.of(context).changeTheme();
+                },
+              ),
             ],
           )
         ],
