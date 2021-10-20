@@ -6,13 +6,13 @@ import 'package:jordyhers/view/home/home_view.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
-      return _getPageRoute(HomeView(), settings.name);
+      return _getPageRoute(HomeView(), settings.name!);
     // case AboutRoute:
     //   return _getPageRoute(
     //       AboutView(username: 'Jordy Hershel', age: 23), settings.name!);
 
     default:
-      return _getPageRoute(HomeView(), settings.name);
+      return _getPageRoute(HomeView(), settings.name!);
   }
 }
 
@@ -24,7 +24,7 @@ class _FadeRoute extends PageRouteBuilder {
   final Widget child;
   final String routeName;
 
-  _FadeRoute({@required this.child, @required this.routeName})
+  _FadeRoute({required this.child, required this.routeName})
       : super(
             pageBuilder: (
               BuildContext context,

@@ -10,7 +10,7 @@ import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
 
 class HomeContentDesktop extends StatelessWidget {
-  const HomeContentDesktop({Key key}) : super(key: key);
+  const HomeContentDesktop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

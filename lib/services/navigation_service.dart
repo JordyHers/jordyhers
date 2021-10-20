@@ -6,16 +6,16 @@ class NavigationService {
   Future<dynamic> navigateTo(
     String routeName,
   ) {
-    return navigatorKey.currentState.pushNamed(routeName);
+    return navigatorKey.currentState!.pushNamed(routeName);
   }
 
   Future<dynamic> navigateAndRemovedTo(
     String routeName,
   ) {
-    return navigatorKey.currentState.pushReplacementNamed(routeName);
+    return navigatorKey.currentState!.pushReplacementNamed(routeName);
   }
 
   void goBack() {
-    return navigatorKey.currentState.pop();
+    return navigatorKey.currentState!.pop();
   }
 }

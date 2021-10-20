@@ -7,7 +7,7 @@ import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
 
 class HomeContentMobile extends StatelessWidget {
-  const HomeContentMobile({Key key}) : super(key: key);
+  const HomeContentMobile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

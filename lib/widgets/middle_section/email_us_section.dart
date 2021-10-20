@@ -5,7 +5,7 @@ import 'package:jordyhers/utils/theme.dart';
 class EmailUs extends StatelessWidget {
   final bool isMobile;
 
-  EmailUs({Key key, this.isMobile}) : super(key: key);
+  EmailUs({Key? key, required this.isMobile}) : super(key: key);
   TextEditingController _controller = TextEditingController();
 
   @override

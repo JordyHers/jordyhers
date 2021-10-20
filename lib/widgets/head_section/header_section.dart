@@ -5,7 +5,7 @@ import 'package:jordyhers/utils/constants.dart' as st;
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

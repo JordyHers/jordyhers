@@ -6,8 +6,8 @@ class MiddleSection extends StatelessWidget {
   final bool isMobile;
 
   const MiddleSection({
-    Key key,
-    this.isMobile,
+    Key? key,
+    required this.isMobile,
   }) : super(key: key);
 
   @override

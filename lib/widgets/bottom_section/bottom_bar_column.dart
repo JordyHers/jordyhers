@@ -5,7 +5,7 @@ import 'bottom_section.dart';
 class BottomBar extends StatelessWidget {
   final bool isMobile;
 
-  const BottomBar({Key key, this.isMobile}) : super(key: key);
+  const BottomBar({Key? key, required this.isMobile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

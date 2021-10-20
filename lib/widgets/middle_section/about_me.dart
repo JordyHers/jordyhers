@@ -4,7 +4,7 @@ import 'package:jordyhers/utils/config.dart';
 class AboutMe extends StatelessWidget {
   final bool isMobile;
 
-  const AboutMe({Key key, this.isMobile}) : super(key: key);
+  const AboutMe({Key? key, required this.isMobile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

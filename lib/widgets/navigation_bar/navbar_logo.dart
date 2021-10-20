@@ -4,7 +4,7 @@ import 'package:jordyhers/utils/theme.dart';
 class NavBarLogo extends StatelessWidget {
   final bool isMobile;
 
-  const NavBarLogo({Key key, this.isMobile}) : super(key: key);
+  const NavBarLogo({Key? key, required this.isMobile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,7 @@ class NavBarLogo extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
+                      color: Colors.white,
                       fontFamily: 'Montserrat-Regular'),
                 ),
                 Padding(
@@ -45,17 +46,21 @@ class NavBarLogo extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 4.0, left: 10),
                   child: ClipOval(
                     child: Image.asset(
-                      "assets/stickers/1625471355257.png",
+                      "assets/png/logo.png",
                       height: 54,
                     ),
                   ),
                 ),
                 SizedBox(width: 20),
-                Text(
+                SelectableText(
                   "Jordy",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
-                Text(
+                SelectableText(
                   "Hers.com",
                   style: TextStyle(
                       fontSize: 19,

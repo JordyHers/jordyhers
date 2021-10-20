@@ -10,7 +10,7 @@ import '../locator.dart';
 
 class LayoutTemplate extends StatelessWidget {
   const LayoutTemplate({
-    Key key,
+    Key? key,
   });
 
   @override

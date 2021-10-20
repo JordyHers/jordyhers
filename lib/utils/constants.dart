@@ -7,3 +7,6 @@ const backgroundImage =
 
 const airpods =
     'https://images.unsplash.com/photo-1610438235354-a6ae5528385c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80';
+
+const github = 'https://github.com/JordyHers';
+const linkedIn = 'https://www.linkedin.com/in/jordy-hershel-ig';

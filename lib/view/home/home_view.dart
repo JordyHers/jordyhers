@@ -4,7 +4,7 @@ import 'home_content_desktop.dart';
 import 'home_content_mobile.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   _HomeViewState createState() => _HomeViewState();

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LogoSection extends StatelessWidget {
   final bool isMobile;
 
-  LogoSection({Key key, this.isMobile}) : super(key: key);
+  LogoSection({Key? key, required this.isMobile}) : super(key: key);
 
   final List<Widget> logos =
       List.generate(12, (i) => Image.asset('assets/png/pngegg-$i.png'))
