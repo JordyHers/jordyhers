@@ -16,7 +16,8 @@ class NavigationBarTabletDesktop extends StatefulWidget {
       _NavigationBarTabletDesktopState();
 }
 
-class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop> {
+class _NavigationBarTabletDesktopState
+    extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey, Colors.grey];
   List<String> strings = ["Home", "Portfolio", "About", "LinkedIn"];
   Color color = Colors.transparent;
