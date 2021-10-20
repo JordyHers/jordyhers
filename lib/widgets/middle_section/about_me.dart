@@ -10,10 +10,9 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 10.0),
+        padding: const EdgeInsets.only(top: 50.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
@@ -30,10 +29,11 @@ class AboutMe extends StatelessWidget {
             ),
             Container(
               height: isMobile
-                  ? getHeight(context) * 0.55
+                  ? getHeight(context) * 0.75
                   : getHeight(context) * 0.55,
               width: getWidth(context),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,7 +51,8 @@ class AboutMe extends StatelessWidget {
                     padding: isMobile
                         ? const EdgeInsets.symmetric(
                             horizontal: 60.0, vertical: 10)
-                        : const EdgeInsets.symmetric(horizontal: 350.0),
+                        : const EdgeInsets.symmetric(
+                            horizontal: 350.0, vertical: 20),
                     child: RichText(
                       text: TextSpan(
                           //TODO: BUG NOT RESPONSIVE
@@ -61,10 +62,22 @@ class AboutMe extends StatelessWidget {
                               "With my Flutter tutorials and courses, I've helped thousands of students become better developers."
                               "   I know what it takes to become a good Flutter developer. I can't wait to share this email course with you and help you fast-track your learning.",
                           style: TextStyle(
-                              fontSize: isMobile ? 17 : 21,
+                              fontSize: isMobile ? 14 : 21,
                               fontWeight: FontWeight.w500,
                               color: Colors.grey.shade500)),
                     ),
+                  ),
+                  Padding(
+                    padding: isMobile
+                        ? const EdgeInsets.symmetric(horizontal: 60.0)
+                        : const EdgeInsets.symmetric(horizontal: 350.0),
+                    child: SizedBox(),
+                  ),
+                  Padding(
+                    padding: isMobile
+                        ? const EdgeInsets.symmetric(horizontal: 60.0)
+                        : const EdgeInsets.symmetric(horizontal: 350.0),
+                    child: SizedBox(),
                   ),
                 ],
               ),

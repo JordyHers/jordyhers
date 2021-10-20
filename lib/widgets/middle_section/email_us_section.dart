@@ -7,13 +7,14 @@ class EmailUs extends StatelessWidget {
 
   EmailUs({Key? key, required this.isMobile}) : super(key: key);
   TextEditingController _controller = TextEditingController();
+  String? text;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: isMobile
           ? const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50)
-          : const EdgeInsets.symmetric(horizontal: 500.0, vertical: 50),
+          : const EdgeInsets.symmetric(horizontal: 250.0, vertical: 50),
       child: Card(
         borderOnForeground: true,
         color: Colors.grey.shade300,
@@ -50,6 +51,9 @@ class EmailUs extends StatelessWidget {
                       width: getWidth(context) * 0.85,
                       child: TextField(
                         controller: _controller,
+                        onChanged: (value) {
+                          text = value;
+                        },
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(), hintText: 'Email'),
                       ),
@@ -59,7 +63,41 @@ class EmailUs extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             primary: Colors.transparent),
-                        onPressed: () {},
+                        onPressed: () {
+                          if (_controller.text.isNotEmpty) {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 10),
+                                    title: Text(
+                                      'Thank You!',
+                                      style: TextStyle(
+                                          color: Colors.purpleAccent,
+                                          fontWeight: FontWeight.w800),
+                                    ),
+                                    content: Text(
+                                      'We are glad to receive your email and\n we will contact you soon\n',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text('Close')),
+                                    ],
+                                  );
+                                });
+                          } else {
+                            _controller.clear();
+                          }
+                          _controller.clear();
+                        },
                         child: SizedBox(child: Text('Contact Us')),
                       ),
                     )

@@ -43,7 +43,7 @@ class NavBarLogo extends StatelessWidget {
           : Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 4.0, left: 10),
+                  padding: const EdgeInsets.only(top: 4.0, left: 20),
                   child: ClipOval(
                     child: Image.asset(
                       "assets/png/logo.png",
@@ -51,7 +51,7 @@ class NavBarLogo extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 10),
                 SelectableText(
                   "Jordy",
                   style: TextStyle(

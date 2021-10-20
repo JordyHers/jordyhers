@@ -10,12 +10,11 @@ class NavigationBarMobile extends StatelessWidget {
       height: 80,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
             icon: Icon(
               Icons.menu,
-              color: Colors.white,
+              color: Theme.of(context).primaryTextTheme.caption!.color,
             ),
             onPressed: () {
               Scaffold.of(context).openDrawer();

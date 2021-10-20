@@ -3,6 +3,7 @@ import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/routing/router.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/widgets/centered_view/centered_view.dart';
+import 'package:jordyhers/widgets/drawer/drawer_section.dart';
 import 'package:jordyhers/widgets/navigation_bar/navigation_bar.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -18,7 +19,7 @@ class LayoutTemplate extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
-            ? Drawer()
+            ? DrawerSection()
             : null,
         backgroundColor: Colors.white,
         body: CenteredView(

@@ -24,7 +24,7 @@ class HomeContentDesktop extends StatelessWidget {
             HeaderSection(),
             MiddleSection(isMobile: false),
             AboutMe(isMobile: false),
-            SizedBox(height: getHeight(context) * 0.05),
+            //SizedBox(height: getHeight(context) * 0.05),
             LogoSection(isMobile: false),
             EmailUs(isMobile: false),
             BottomBar(isMobile: false)

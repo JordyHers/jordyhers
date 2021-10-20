@@ -17,7 +17,7 @@ const airpods =
 ///
 ///
 const github = 'https://github.com/JordyHers';
-const linkedIn = 'https://www.linkedin.com/in/jordy-hershel-ig';
+const linkedIn = 'https://tr.linkedin.com/in/jordy-hershel-ig-89b1bb1b1';
 
 ///________________ document path _______________________
 ///

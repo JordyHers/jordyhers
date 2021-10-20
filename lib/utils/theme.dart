@@ -6,12 +6,14 @@ class Style {
     primarySwatch: Colors.indigo,
     fontFamily: 'Montserrat',
     backgroundColor: Colors.white,
+    dividerColor: Colors.grey.shade400,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
     iconTheme: IconThemeData(color: Colors.black),
   );
   static final darkTheme = ThemeData(
     primarySwatch: Colors.indigo,
     fontFamily: 'Montserrat',
+    dividerColor: Colors.white,
     backgroundColor: Colors.black,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),
     iconTheme: IconThemeData(color: Colors.white),

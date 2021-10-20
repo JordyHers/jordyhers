@@ -15,7 +15,9 @@ class AboutContentMobile extends StatelessWidget {
         child: Text(
           'About Page',
           style: TextStyle(
-              fontSize: 23, fontWeight: FontWeight.w800, color: Colors.white),
+              fontSize: 23,
+              fontWeight: FontWeight.w800,
+              color: Theme.of(context).primaryTextTheme.caption!.color),
         ),
       ),
     );

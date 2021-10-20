@@ -51,8 +51,8 @@ class BottomBar extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 InfoText(
-                  type: 'Address',
-                  text: '128, Trymore Road, Delft, MN - 56124',
+                  type: 'Website',
+                  text: 'This website was created using Flutter web',
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -62,7 +62,7 @@ class BottomBar extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Copyright © 2021 | houstontaxiservices',
+                  'Copyright © 2021 | JordyHers.com',
                   style: TextStyle(
                     color: Colors.blueGrey[300],
                     fontSize: 14,
@@ -108,9 +108,9 @@ class BottomBar extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         InfoText(
-                          type: 'Address',
-                          text: '128, Trymore Road, Delft, MN - 56124',
-                        )
+                          type: 'Website',
+                          text: 'This website was created using Flutter web',
+                        ),
                       ],
                     ),
                   ],
@@ -125,7 +125,7 @@ class BottomBar extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Copyright © 2021 | houstontaxiservices',
+                  'Copyright © 2021 | Jordyhers.com',
                   style: TextStyle(
                     color: Colors.blueGrey[300],
                     fontSize: 14,
