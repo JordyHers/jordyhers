@@ -24,7 +24,7 @@ class _NavigationBarTabletDesktopState
 
   @override
   Widget build(BuildContext context) {
-    final repository = Provider.of<Http>(context, listen: false);
+    final repository = Provider.of<WebService>(context, listen: false);
     return Container(
       height: 80,
       child: Row(

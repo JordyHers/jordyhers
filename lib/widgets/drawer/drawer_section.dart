@@ -45,7 +45,7 @@ class _DrawerSectionState extends State<DrawerSection> {
       ),
     ];
 
-    final repository = Provider.of<Http>(context, listen: false);
+    final repository = Provider.of<WebService>(context, listen: false);
     return Drawer(
       child: Container(
         color: Theme.of(context).backgroundColor,

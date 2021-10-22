@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: th.Style.lightTheme,
       darkTheme: th.Style.darkTheme,
       themeMode: EasyDynamicTheme.of(context).themeMode,
-      home: Provider(create: (_) => Http(), child: LayoutTemplate()),
+      home: Provider(create: (_) => WebService(), child: LayoutTemplate()),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'dart:html';
 
 import 'package:url_launcher/url_launcher.dart';
 
-class Http {
+class WebService {
   Future<void> launchUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
