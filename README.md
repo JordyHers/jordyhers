@@ -1,16 +1,18 @@
-# jordyhers
+> Flutter Developer | Swift UI | React Native | Firebase expert
 
-A new Flutter project.
+# Hi, I'm Jordy Hershel IGONDJO 👋🏾
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## ABOUT ME 💻
 
-A few resources to get you started if this is your first Flutter project:
+My name is Jordy Hershel IG. I am a talented young mobile application developer living in Istanbul turkey. I have been developing Mobile application for several years now and I do have a solid background in Developing tools. I am keen to learn and that would be a pleasure to be a member of your company. I can work remotely and I am also willing to relocate. 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## CONTACT INFO 👨🏾‍💼
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [LinkedIn ](www.linkedin.com/in/jordy-hershel-ig)
+- [Website - JordyHers.com](https://jordyhers.com/#/)
+
+
+
+
+
