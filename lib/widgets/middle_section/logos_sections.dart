@@ -8,7 +8,7 @@ class LogoSection extends StatelessWidget {
   final List<Widget> logos =
       List.generate(12, (i) => Image.asset('assets/png/pngegg-$i.png'))
           .toList();
-
+//Don't forget to push
   @override
   Widget build(BuildContext context) {
     return Padding(

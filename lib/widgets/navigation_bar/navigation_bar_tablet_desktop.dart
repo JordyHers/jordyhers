@@ -28,11 +28,11 @@ class _NavigationBarTabletDesktopState
     return Container(
       height: 80,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           NavBarLogo(isMobile: false),
           Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -138,6 +138,7 @@ class _NavigationBarTabletDesktopState
                 icon: Icon(Icons.brightness_6),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
+                iconSize: 17,
                 onPressed: () {
                   EasyDynamicTheme.of(context).changeTheme();
                 },

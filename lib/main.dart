@@ -1,4 +1,6 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/utils/theme.dart' as th;
 import 'package:flutter/material.dart';
 import 'package:jordyhers/services/url_launcher.dart';
@@ -6,9 +8,10 @@ import 'package:jordyhers/view/layout_template.dart';
 import 'package:provider/provider.dart';
 import 'locator.dart';
 
-void main() {
+void main() async {
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     EasyDynamicThemeWidget(
       child: MyApp(),
@@ -26,7 +29,10 @@ class MyApp extends StatelessWidget {
       theme: th.Style.lightTheme,
       darkTheme: th.Style.darkTheme,
       themeMode: EasyDynamicTheme.of(context).themeMode,
-      home: Provider(create: (_) => WebService(), child: LayoutTemplate()),
+      home: Provider(
+          create: (_) => Http(),
+          child: Provider(
+              create: (_) => FirestoreService(), child: LayoutTemplate())),
     );
   }
 }

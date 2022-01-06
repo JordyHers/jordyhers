@@ -5,6 +5,7 @@ class Style {
   static final lightTheme = ThemeData(
     primarySwatch: Colors.indigo,
     fontFamily: 'Montserrat',
+    canvasColor: Colors.black,
     backgroundColor: Colors.white,
     dividerColor: Colors.grey.shade400,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
@@ -13,6 +14,7 @@ class Style {
   static final darkTheme = ThemeData(
     primarySwatch: Colors.indigo,
     fontFamily: 'Montserrat',
+    canvasColor: Colors.white,
     dividerColor: Colors.white,
     backgroundColor: Colors.black,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jordyhers/utils/theme.dart';
+import 'package:jordyhers/routing/route_names.dart';
+import 'package:jordyhers/services/navigation_service.dart';
+
+import '../../locator.dart';
 
 class NavBarLogo extends StatelessWidget {
   final bool isMobile;
@@ -33,8 +36,8 @@ class NavBarLogo extends StatelessWidget {
                     "Hers.com",
                     style: TextStyle(
                         fontSize: 19,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()..shader = Style.subtitle,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.purpleAccent,
                         fontFamily: 'Montserrat-Regular'),
                   ),
                 ),
@@ -44,10 +47,16 @@ class NavBarLogo extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 4.0, left: 20),
-                  child: ClipOval(
-                    child: Image.asset(
-                      "assets/png/logo.png",
-                      height: 54,
+                  child: InkWell(
+                    onTap: () {
+                      locator<NavigationService>().navigateTo(HomeRoute);
+                      print('Home logo tapped');
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        "assets/png/favicon.png",
+                        height: 54,
+                      ),
                     ),
                   ),
                 ),
@@ -55,7 +64,7 @@ class NavBarLogo extends StatelessWidget {
                 SelectableText(
                   "Jordy",
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 15,
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryTextTheme.caption!.color,
                   ),
@@ -63,7 +72,7 @@ class NavBarLogo extends StatelessWidget {
                 SelectableText(
                   "Hers.com",
                   style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 17,
                       fontWeight: FontWeight.bold,
                       color: Colors.purpleAccent),
                 ),

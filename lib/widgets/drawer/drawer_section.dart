@@ -57,7 +57,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                 child: Container(
                   child: CircleAvatar(
                     radius: 45,
-                    backgroundImage: AssetImage('assets/png/logo.png'),
+                    backgroundImage: AssetImage('assets/png/favicon.png'),
                   ),
                 ),
               ),
