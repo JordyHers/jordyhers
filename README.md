@@ -1,6 +1,9 @@
+><img width="1337" alt="Screen Shot 2022-01-16 at 17 16 14" src="https://user-images.githubusercontent.com/49708438/149663724-b8b71885-ca2e-4412-a312-e9032ca47b6c.png">
+
+
 > Flutter Developer | Swift UI | React Native | Firebase expert
 
-# Hi, I'm Jordy Hershel IGONDJO 👋🏾
+
 
 
 ## ABOUT ME 💻
