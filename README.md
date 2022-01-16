@@ -3,6 +3,7 @@
 
 > Flutter Developer | Swift UI | React Native | Firebase expert
 
+## ![](https://komarev.com/ghpvc/?username=jordyhers&color=green)
 
 
 
