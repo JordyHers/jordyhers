@@ -1,4 +1,4 @@
-# Hi, I'm Jordy Hershel IGONDJO
+# Hi, I'm Jordy Hershel IGONDJO 👋🏾
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jordyhers&show_icons=true&theme=buefy)
 > Flutter Developer | Swift UI | React Native | Firebase expert
