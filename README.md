@@ -17,7 +17,7 @@ My name is Jordy Hershel IG. I am a talented young mobile application developer 
 
 - [LinkedIn ](www.linkedin.com/in/jordy-hershel-ig)
 - [Website - JordyHers.com](https://jordyhers.com/#/)
-><img  width="637" alt="Screen Shot 2022-01-16 at 17 16 14" src="https://user-images.githubusercontent.com/49708438/149663724-b8b71885-ca2e-4412-a312-e9032ca47b6c.png">
+
 
 
 
