@@ -2,7 +2,6 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/utils/config.dart';
-import 'package:jordyhers/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 class EmailUs extends StatefulWidget {

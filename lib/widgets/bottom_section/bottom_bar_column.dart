@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'bottom_info_text.dart';
-import 'bottom_section.dart';
 
 class BottomBar extends StatelessWidget {
   final bool isMobile;
@@ -15,45 +13,6 @@ class BottomBar extends StatelessWidget {
       child: isMobile
           ? Column(
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BottomBarColumn(
-                      heading: 'ABOUT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
-                    ),
-                    BottomBarColumn(
-                      heading: 'HELP',
-                      s1: 'Payment',
-                      s2: 'Cancellation',
-                      s3: 'FAQ',
-                    ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
-                    ),
-                  ],
-                ),
-                Container(
-                  color: Colors.blueGrey,
-                  width: double.maxFinite,
-                  height: 1,
-                ),
-                SizedBox(height: 20),
-                InfoText(
-                  type: 'Email',
-                  text: 'jordy925@gmail.com',
-                ),
-                SizedBox(height: 5),
-                InfoText(
-                  type: 'Website',
-                  text: 'This website was created using Flutter web',
-                ),
                 SizedBox(height: 20),
                 Container(
                   color: Colors.blueGrey,
@@ -75,53 +34,7 @@ class BottomBar extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BottomBarColumn(
-                      heading: 'ABOUT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: 'Careers',
-                    ),
-                    BottomBarColumn(
-                      heading: 'HELP',
-                      s1: 'Payment',
-                      s2: 'Cancellation',
-                      s3: 'FAQ',
-                    ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
-                    ),
-                    Container(
-                      color: Colors.blueGrey,
-                      width: 2,
-                      height: 150,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InfoText(
-                          type: 'Email',
-                          text: 'jordy925@gmail.com',
-                        ),
-                        SizedBox(height: 5),
-                        InfoText(
-                          type: 'Website',
-                          text: 'This website was created using Flutter web',
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.blueGrey,
-                    width: double.maxFinite,
-                    height: 1,
-                  ),
+                  children: [],
                 ),
                 SizedBox(height: 20),
                 Text(
