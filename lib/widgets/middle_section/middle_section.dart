@@ -23,13 +23,41 @@ class MiddleSection extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Find your flutter expert for all your projects and design ',
-                  style: TextStyle(
-                    fontSize: isMobile ? 25 : 40,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.grey.shade700,
-                  )),
-              Text('for both back-end and front-end.',
+              isMobile
+                  ? Text('Flutter | iOS | React Native',
+                      style: TextStyle(
+                        fontSize: isMobile ? 25 : 40,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey.shade700,
+                      ))
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text('Flutter',
+                            style: TextStyle(
+                              fontSize: isMobile ? 25 : 40,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey.shade700,
+                            )),
+                        FlutterLogo(size: 45),
+                        Text('iOS SwiftUI',
+                            style: TextStyle(
+                              fontSize: isMobile ? 25 : 40,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey.shade700,
+                            )),
+                        Image.asset("assets/png/pngegg-13.png", height: 45),
+                        Text('React Native',
+                            style: TextStyle(
+                              fontSize: isMobile ? 25 : 40,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey.shade700,
+                            )),
+                        Image.asset("assets/png/pngegg-10.png", height: 45),
+                      ],
+                    ),
+              SizedBox(height: isMobile ? 20 : 50),
+              Text('for all your mobile application projects.',
                   style: TextStyle(
                     fontSize: isMobile ? 23 : 35,
                     fontWeight: FontWeight.w700,

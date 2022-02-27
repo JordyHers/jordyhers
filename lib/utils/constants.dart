@@ -29,6 +29,7 @@ const linkedIn = 'https://tr.linkedin.com/in/jordy-hershel-ig-89b1bb1b1';
 ///
 ///
 const documentPath = 'assets/documents/Portfolio_Jordy_Hershel.pdf';
+const cvPath = 'assets/documents/JordyHershel_IGONDJO_Resume.PDF';
 
 ///
 ///

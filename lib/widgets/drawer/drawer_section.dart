@@ -15,6 +15,7 @@ class DrawerSection extends StatefulWidget {
   static const List<String> sections = [
     'Home',
     'Portfolio',
+    'Resume',
     'About',
     'LinkedIn'
   ];
@@ -33,6 +34,10 @@ class _DrawerSectionState extends State<DrawerSection> {
       ),
       Icon(
         Icons.wallet_membership,
+        color: Theme.of(context).iconTheme.color,
+      ),
+      Icon(
+        Icons.file_download,
         color: Theme.of(context).iconTheme.color,
       ),
       Icon(
@@ -75,7 +80,7 @@ class _DrawerSectionState extends State<DrawerSection> {
             ),
             ListView.builder(
                 shrinkWrap: true,
-                itemCount: 4,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
@@ -131,9 +136,12 @@ class _DrawerSectionState extends State<DrawerSection> {
                                     });
                               } else if (index == 2) {
                                 Navigator.pop(context);
+                                repository.downloadFile(st.documentPath);
+                              } else if (index == 3) {
+                                Navigator.pop(context);
                                 locator<NavigationService>()
                                     .navigateTo(AboutRoute);
-                              } else if (index == 3) {
+                              } else if (index == 4) {
                                 Navigator.pop(context);
                                 repository.launchUrl(st.linkedIn);
                               }
