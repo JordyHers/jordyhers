@@ -54,9 +54,11 @@ class AboutMe extends StatelessWidget {
                     text: TextSpan(
                         text: st.aboutMe,
                         style: TextStyle(
-                            fontSize: isMobile ? 21 : 25,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey.shade500)),
+                            fontSize: isMobile ? 21 : 19,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey.shade500,
+                            height: 1.8,
+                            fontFamily: 'Montserrat')),
                   ),
                 ),
               ],

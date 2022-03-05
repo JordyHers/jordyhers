@@ -47,19 +47,19 @@ class HeaderSection extends StatelessWidget {
                 isMobile
                     ? Container()
                     : Padding(
-                  padding: isMobile
-                      ? const EdgeInsets.symmetric(horizontal: 8.0)
-                      : const EdgeInsets.symmetric(horizontal: 48.0),
-                  child: Text("Hello, I'm ",
-                      style: TextStyle(
-                        fontSize: 50,
-                        fontWeight: FontWeight.w900,
-                        color: Theme.of(context)
-                            .primaryTextTheme
-                            .caption!
-                            .color,
-                      )),
-                ),
+                        padding: isMobile
+                            ? const EdgeInsets.symmetric(horizontal: 8.0)
+                            : const EdgeInsets.symmetric(horizontal: 48.0),
+                        child: Text("Hello, I'm ",
+                            style: TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.w900,
+                              color: Theme.of(context)
+                                  .primaryTextTheme
+                                  .caption!
+                                  .color,
+                            )),
+                      ),
                 isMobile
                     ? Container()
                     : Padding(
@@ -109,9 +109,18 @@ class HeaderSection extends StatelessWidget {
                                 print(
                                     '  CV Download Requested  and Successfully downloaded !......');
                               },
-                              child: Text('Save Resume'),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('Save Resume'),
+                                  SizedBox(width: 8.0),
+                                  Icon(Icons.download)
+                                ],
+                              ),
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.red,
+                                  primary: Colors.purpleAccent,
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 30, vertical: 30),
                                   textStyle: TextStyle(
@@ -126,12 +135,12 @@ class HeaderSection extends StatelessWidget {
           ),
           isMobile
               ? Align(
-                  alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         vertical: 60, horizontal: 28.0),
                     child: Image.asset("assets/png/business.png",
-                        height: getHeight(context) * 0.50),
+                        height: getHeight(context) * 0.40),
                   ),
                 )
               : Align(
@@ -152,24 +161,24 @@ class HeaderSection extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 50,
                               fontWeight: FontWeight.w900,
-                        color: Theme.of(context)
-                            .primaryTextTheme
-                            .caption!
-                            .color,
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text("Jordy Hershel",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.purpleAccent,
-                        fontWeight: FontWeight.w900,
-                      )),
-                ),
-              ],
-            ),
-          )
+                              color: Theme.of(context)
+                                  .primaryTextTheme
+                                  .caption!
+                                  .color,
+                            )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text("Jordy Hershel",
+                            style: TextStyle(
+                              fontSize: 50,
+                              color: Colors.purpleAccent,
+                              fontWeight: FontWeight.w900,
+                            )),
+                      ),
+                    ],
+                  ),
+                )
               : Container()
         ],
       ),

@@ -31,33 +31,33 @@ class MiddleSection extends StatelessWidget {
                         color: Colors.grey.shade700,
                       ))
                   : Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text('Flutter',
                             style: TextStyle(
-                              fontSize: isMobile ? 25 : 40,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.grey.shade700,
-                            )),
-                        FlutterLogo(size: 45),
+                                fontSize: isMobile ? 25 : 30,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade700,
+                                fontFamily: 'Montserrat')),
+                        FlutterLogo(size: 35),
                         Text('iOS SwiftUI',
                             style: TextStyle(
-                              fontSize: isMobile ? 25 : 40,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.grey.shade700,
-                            )),
-                        Image.asset("assets/png/pngegg-13.png", height: 45),
+                                fontSize: isMobile ? 25 : 30,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade700,
+                                fontFamily: 'Montserrat')),
+                        Image.asset("assets/png/pngegg-13.png", height: 35),
                         Text('React Native',
                             style: TextStyle(
-                              fontSize: isMobile ? 25 : 40,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.grey.shade700,
-                            )),
-                        Image.asset("assets/png/pngegg-10.png", height: 45),
+                                fontSize: isMobile ? 25 : 30,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade700,
+                                fontFamily: 'Montserrat')),
+                        Image.asset("assets/png/pngegg-10.png", height: 35),
                       ],
                     ),
-              SizedBox(height: isMobile ? 20 : 50),
-              Text('for all your mobile application projects.',
+              SizedBox(height: isMobile ? 20 : getHeight(context) * 0.15),
+              Text('For all your mobile application projects.',
                   style: TextStyle(
                     fontSize: isMobile ? 23 : 35,
                     fontWeight: FontWeight.w700,
@@ -71,16 +71,17 @@ class MiddleSection extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(
                       text:
-                          "Flutter is amazing. But it can also be intimidating.\n\n"
+                          "Flutter is amazing. But it can also be intimidating."
                           "With thousands of packages on pub.dev, over 400 widgets in the Flutter SDK, and over 40 state management solutions, where do you even start?\n\n"
                           "Would you like to get a curated list of resources, guiding you through the most important topics, and helping you choose the right tools and packages?"
                           " Would you like to become more productive and take your Flutter apps to the next level?"
                           "I know I would.",
                       style: TextStyle(
-                        fontSize: isMobile ? 21 : 25,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey.shade500,
-                      )),
+                          fontSize: isMobile ? 21 : 17,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey.shade500,
+                          height: 1.5,
+                          fontFamily: 'Montserrat')),
                 ),
               ),
             ],

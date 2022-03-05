@@ -38,7 +38,7 @@ const cvPath = 'assets/documents/JordyHershel_IGONDJO_Resume.PDF';
 /// _______________________Strings________________
 
 const String aboutMe =
-    "I'm Jordy Hershel IGONDJO,\n\n I'm on my way to become a Flutter GDE.I've been writing code professionally for over 6 years. "
+    "I'm Jordy Hershel IGONDJO,\n\n I'm on my way to become a Flutter GDE. I've been writing code professionally for over 6 years. "
     "I've been a mobile app developer since I graduated from University, working for startups, agencies, and big companies."
     "I've helped thousands of students become better developers by teaching development tools and relevant techniques to students."
     "   I know what it takes to become a good Flutter developer. I can't wait to get in touch with you so feel free to contact me through email.\n\n";

@@ -59,7 +59,7 @@ class _EmailUsState extends State<EmailUs> {
           : const EdgeInsets.symmetric(horizontal: 250.0, vertical: 50),
       child: Card(
         borderOnForeground: true,
-        color: Colors.grey.shade300,
+        color: Colors.grey.shade200,
         elevation: 10,
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50),
@@ -68,7 +68,7 @@ class _EmailUsState extends State<EmailUs> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  'Please contact me',
+                  'Contact Us',
                   style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 21,
@@ -76,17 +76,17 @@ class _EmailUsState extends State<EmailUs> {
                 ),
                 SizedBox(height: getHeight(context) / 25),
                 SelectableText(
-                  'Let us know about you, send us an email if you need more information or if you have a project.\n\n '
+                  'Let us know about you, send us an email if you need more information or if you have a project.'
                   'We will be glad to send you feedback. As we know te flutter community '
                   'is still growing up. So you can be a part of it.',
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 17,
+                      height: 1.5,
                       color: Colors.grey.shade900),
                 ),
                 SizedBox(height: getHeight(context) / 20),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
                       height: getHeight(context) * 0.10,
@@ -108,7 +108,12 @@ class _EmailUsState extends State<EmailUs> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.purpleAccent),
+                          primary: Colors.transparent,
+                          minimumSize: Size(150, getHeight(context) * 0.05),
+                          side: BorderSide(
+                            width: 2.0,
+                            color: Colors.black,
+                          )),
                       onPressed: () {
                         if (_controller.text.isNotEmpty && emailValid == true) {
                           setState(() {
@@ -126,7 +131,11 @@ class _EmailUsState extends State<EmailUs> {
                         }
                         _controller.clear();
                       },
-                      child: SizedBox(child: Text('Contact Us')),
+                      child: SizedBox(
+                          child: Text(
+                        'Contact Us',
+                        style: TextStyle(color: Colors.black),
+                      )),
                     ),
                   ],
                 )
