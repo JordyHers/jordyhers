@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jordyhers/utils/config.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 
 class AboutMiddleSection extends StatelessWidget {
@@ -20,8 +20,8 @@ class AboutMiddleSection extends StatelessWidget {
               : const EdgeInsets.symmetric(horizontal: 250.0, vertical: 20),
           child: SelectableText(
             'About Me',
-            style: TextStyle(
-                fontSize: isMobile ? 22 : 50,
+            style: GoogleFonts.merriweather(
+                fontSize: isMobile ? 22 : 30,
                 fontWeight: FontWeight.w800,
                 color: Theme.of(context).primaryTextTheme.caption!.color),
           ),
@@ -49,10 +49,11 @@ class AboutMiddleSection extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(
                       text: st.aboutMe,
-                      style: TextStyle(
+                      style: GoogleFonts.merriweather(
                           letterSpacing: 1,
-                          fontSize: isMobile ? 14 : 30,
-                          fontWeight: FontWeight.w700,
+                          fontSize: isMobile ? 14 : 15,
+                          fontWeight: FontWeight.w300,
+                          height: 1.9,
                           color: Colors.grey.shade500)),
                 ),
               ),
@@ -63,9 +64,9 @@ class AboutMiddleSection extends StatelessWidget {
                         horizontal: 250.0, vertical: 20),
                 child: SelectableText(
                   'Why Flutter ?',
-                  style: TextStyle(
-                      fontSize: isMobile ? 22 : 50,
-                      fontWeight: FontWeight.w800,
+                  style: GoogleFonts.merriweather(
+                      fontSize: isMobile ? 22 : 30,
+                      fontWeight: FontWeight.w600,
                       color: Theme.of(context).primaryTextTheme.caption!.color),
                 ),
               ),
@@ -77,10 +78,10 @@ class AboutMiddleSection extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(
                       text: st.why_flutter,
-                      style: TextStyle(
-                          letterSpacing: 1,
-                          fontSize: isMobile ? 14 : 30,
-                          fontWeight: FontWeight.w700,
+                      style: GoogleFonts.merriweather(
+                          fontSize: isMobile ? 14 : 15,
+                          fontWeight: FontWeight.w300,
+                          height: 1.9,
                           color: Colors.grey.shade500)),
                 ),
               ),

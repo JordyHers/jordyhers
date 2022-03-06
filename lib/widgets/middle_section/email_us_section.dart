@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +57,7 @@ class _EmailUsState extends State<EmailUs> {
     return Padding(
       padding: widget.isMobile
           ? const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50)
-          : const EdgeInsets.symmetric(horizontal: 250.0, vertical: 50),
+          : const EdgeInsets.symmetric(horizontal: 450.0, vertical: 50),
       child: Card(
         borderOnForeground: true,
         color: Colors.grey.shade200,
@@ -69,7 +70,7 @@ class _EmailUsState extends State<EmailUs> {
               children: [
                 Text(
                   'Contact Us',
-                  style: TextStyle(
+                  style: GoogleFonts.merriweather(
                       fontWeight: FontWeight.w800,
                       fontSize: 21,
                       color: Colors.grey.shade800),
@@ -79,7 +80,7 @@ class _EmailUsState extends State<EmailUs> {
                   'Let us know about you, send us an email if you need more information or if you have a project.'
                   'We will be glad to send you feedback. As we know te flutter community '
                   'is still growing up. So you can be a part of it.',
-                  style: TextStyle(
+                  style: GoogleFonts.merriweather(
                       fontWeight: FontWeight.w500,
                       fontSize: 17,
                       height: 1.5,
@@ -133,8 +134,8 @@ class _EmailUsState extends State<EmailUs> {
                       },
                       child: SizedBox(
                           child: Text(
-                        'Contact Us',
-                        style: TextStyle(color: Colors.black),
+                            'Contact Us',
+                        style: GoogleFonts.merriweather(color: Colors.black),
                       )),
                     ),
                   ],

@@ -4,8 +4,9 @@ import 'package:jordyhers/locator.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
-import 'package:provider/provider.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
+import 'package:provider/provider.dart';
+
 import 'navbar_logo.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
@@ -77,6 +78,7 @@ class _NavigationBarTabletDesktopState
                                             },
                                             child: Text('Close',
                                                 style: TextStyle(
+                                                  color: Colors.red,
                                                   fontWeight: FontWeight.w700,
                                                 ))),
                                         TextButton(
@@ -87,6 +89,7 @@ class _NavigationBarTabletDesktopState
                                             },
                                             child: Text('Download',
                                                 style: TextStyle(
+                                                  color: Colors.black,
                                                   fontWeight: FontWeight.w800,
                                                 ))),
                                       ],
@@ -104,9 +107,9 @@ class _NavigationBarTabletDesktopState
                           },
                           child: Text(strings[i],
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 color: colors[i],
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w400,
                               ))),
                     ),
                 ],

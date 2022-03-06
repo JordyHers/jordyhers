@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Style {
   static final lightTheme = ThemeData(
-    primarySwatch: Colors.indigo,
-    fontFamily: 'Montserrat',
+    primarySwatch: Colors.deepPurple,
+    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.light()
+            .textTheme // If this is not set, then ThemeData.light().textTheme is used.
+        ),
     canvasColor: Colors.black,
     backgroundColor: Colors.white,
     dividerColor: Colors.grey.shade400,
@@ -12,8 +15,10 @@ class Style {
     iconTheme: IconThemeData(color: Colors.black),
   );
   static final darkTheme = ThemeData(
-    primarySwatch: Colors.indigo,
-    fontFamily: 'Montserrat',
+    primarySwatch: Colors.deepPurple,
+    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.dark()
+            .textTheme // If this is not set, then ThemeData.light().textTheme is used.
+        ),
     canvasColor: Colors.white,
     dividerColor: Colors.white,
     backgroundColor: Colors.black,

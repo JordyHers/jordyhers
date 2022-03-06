@@ -75,9 +75,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                 EasyDynamicTheme.of(context).changeTheme();
               },
             ),
-            SizedBox(
-              height: getHeight(context) / 25,
-            ),
+            SizedBox(height: getHeight(context) / 35),
             ListView.builder(
                 shrinkWrap: true,
                 itemCount: 5,
@@ -156,7 +154,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                         ),
                       ),
                       SizedBox(
-                        height: getHeight(context) / 20,
+                        height: getHeight(context) / 30,
                       ),
                     ],
                   );

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
@@ -21,17 +22,6 @@ class HeaderSection extends StatelessWidget {
       height: isMobile ? getHeight(context) * 0.85 : getHeight(context) * 0.75,
       decoration: BoxDecoration(
         color: Theme.of(context).backgroundColor,
-        // image: isMobile
-        //     ? DecorationImage(
-        //         image: AssetImage('assets/images/swiftui_macbook.png'),
-        //         alignment: Alignment.center,
-        //         //image: AssetImage('assets/images/head_banner.png'),
-        //         fit: BoxFit.contain)
-        //     : DecorationImage(
-        //         image: NetworkImage(st.flutter_address_image),
-        //         alignment: Alignment.center,
-        //         //image: AssetImage('assets/images/head_banner.png'),
-        //         fit: BoxFit.cover)
       ),
       child: Stack(
         children: [
@@ -51,8 +41,8 @@ class HeaderSection extends StatelessWidget {
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
                             : const EdgeInsets.symmetric(horizontal: 48.0),
                         child: Text("Hello, I'm ",
-                            style: TextStyle(
-                              fontSize: 50,
+                            style: GoogleFonts.pacifico(
+                              fontSize: 60,
                               fontWeight: FontWeight.w900,
                               color: Theme.of(context)
                                   .primaryTextTheme
@@ -67,8 +57,8 @@ class HeaderSection extends StatelessWidget {
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
                             : const EdgeInsets.symmetric(horizontal: 48.0),
                         child: Text("Jordy Hershel",
-                            style: TextStyle(
-                              fontSize: 55,
+                            style: GoogleFonts.pacifico(
+                              fontSize: 65,
                               color: Colors.purpleAccent,
                               fontWeight: FontWeight.w900,
                             )),
@@ -114,7 +104,10 @@ class HeaderSection extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text('Save Resume'),
+                                  Text(
+                                    'Save Resume',
+                                    style: GoogleFonts.merriweather(),
+                                  ),
                                   SizedBox(width: 8.0),
                                   Icon(Icons.download)
                                 ],
@@ -158,7 +151,7 @@ class HeaderSection extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text("Hello, I'm ",
-                            style: TextStyle(
+                            style: GoogleFonts.pacifico(
                               fontSize: 50,
                               fontWeight: FontWeight.w900,
                               color: Theme.of(context)
@@ -170,7 +163,7 @@ class HeaderSection extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text("Jordy Hershel",
-                            style: TextStyle(
+                            style: GoogleFonts.pacifico(
                               fontSize: 50,
                               color: Colors.purpleAccent,
                               fontWeight: FontWeight.w900,

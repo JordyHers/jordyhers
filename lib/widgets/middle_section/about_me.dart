@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 
 class AboutMe extends StatelessWidget {
@@ -53,12 +54,12 @@ class AboutMe extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                         text: st.aboutMe,
-                        style: TextStyle(
-                            fontSize: isMobile ? 21 : 19,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey.shade500,
-                            height: 1.8,
-                            fontFamily: 'Montserrat')),
+                        style: GoogleFonts.merriweather(
+                          fontSize: isMobile ? 14 : 19,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.grey.shade500,
+                          height: 1.8,
+                        )),
                   ),
                 ),
               ],

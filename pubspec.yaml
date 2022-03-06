@@ -23,12 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  platform: ^3.1.0
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.4.1
   easy_dynamic_theme: ^2.0.0
   email_validator: ^2.0.1
   url_launcher: ^6.0.10
   provider: ^6.0.1
+  google_fonts: ^2.3.1
   cloud_firestore: ^2.5.3
   firebase_core: ^1.7.0
   get_it: ^6.1.1
@@ -66,13 +68,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat-Regular.ttf
-        - asset: assets/fonts/Montserrat-ExtraBold.ttf
-        - asset: assets/fonts/Montserrat-SemiBold.ttf
-        - asset: assets/fonts/Montserrat-Bold.ttf
+  #  fonts:
+  #    - family: Montserrat
+  #      fonts:
+  #        - asset: assets/fonts/Montserrat-Regular.ttf
+  #        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+  #        - asset: assets/fonts/Montserrat-SemiBold.ttf
+  #        - asset: assets/fonts/Montserrat-Bold.ttf
 
   #   - family: Trajan Pro
   #     fonts:
