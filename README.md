@@ -21,7 +21,7 @@ My name is Jordy Hershel IG. I am a talented young mobile application developer 
 - [Website - JordyHers.com](https://jordyhers.com/#/)
 
 
-[Jordyhers' GitHub stats](https://github-readme-stats.vercel.app/api?username=jordyhers&show_icons=true&theme=buefy)
+![Jordyhers' GitHub stats](https://github-readme-stats.vercel.app/api?username=jordyhers&show_icons=true&theme=buefy)
 
-[[Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jordyhers&layout=compact)](https://github.com/jordyhers/)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jordyhers&layout=compact)](https://github.com/jordyhers/)
 
