@@ -22,6 +22,10 @@ const airpods =
 ///
 const github = 'https://github.com/JordyHers';
 const linkedIn = 'https://tr.linkedin.com/in/jordy-hershel-ig-89b1bb1b1';
+const githubTimesUp = 'https://github.com/JordyHers/Times-up-flutter';
+const githubOwanto = 'https://github.com/JordyHers/Owanto_e-commerce';
+const githubTerminal = 'https://github.com/JordyHers/terminal';
+const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
 
 ///________________ document path _______________________
 ///
@@ -64,3 +68,24 @@ const String why_flutter = "1. Fast Development\n\n"
     " You can also identify rendering and computational work in timeline view."
     "Source-level Debugger: It lets you step through code, set breakpoints and investigate the call stack."
     "Logging View displays events from the Dart runtime, application frameworks and app-level logging events.";
+
+
+List<Map<String, dynamic>> apps = [
+  {'title':"Time's Up",
+    'url': githubTimesUp,
+    'description':'Times Up help parents monitor\n the time kids spend on screen',
+    'image': 'assets/png/timesup.png'},
+  {'title':'Owanto',
+    'description':
+    ' Owanto is a ecommerce platform made \n '
+        'for a customer',
+    'url': githubOwanto,
+    'image': 'assets/png/collection.png'},
+  {'title':'IosAppTutorial',
+    'url': githubIos,
+    'description':'this project helps \n dev start up with SwiftUI',
+    'image': 'assets/png/ios.png'},
+  {'title':'Terminal',
+    'url': githubTerminal,
+    'description':'Terminal App is \n  an Open Source Project',
+    'image': 'assets/png/cmd.png'}];

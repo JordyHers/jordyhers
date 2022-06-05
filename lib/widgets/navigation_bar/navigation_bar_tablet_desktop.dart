@@ -55,46 +55,48 @@ class _NavigationBarTabletDesktopState
                             if (strings[i] == 'LinkedIn') {
                               repository.launchUrl(st.linkedIn);
                             } else if (strings[i] == 'Portfolio') {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title: Text('Download Portfolio',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w800,
-                                              color: Colors.purpleAccent)),
-                                      content: Text(
-                                        'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
-                                        'Meanwhile you can download my portfolio (PDF version)\n\n',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w300),
-                                      ),
-                                      actions: <Widget>[
-                                        TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                            },
-                                            child: Text('Close',
-                                                style: TextStyle(
-                                                  color: Colors.red,
-                                                  fontWeight: FontWeight.w700,
-                                                ))),
-                                        TextButton(
-                                            onPressed: () {
-                                              repository.downloadFile(
-                                                  st.documentPath);
-                                              Navigator.pop(context);
-                                            },
-                                            child: Text('Download',
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w800,
-                                                ))),
-                                      ],
-                                    );
-                                  });
+                              locator<NavigationService>()
+                                  .navigateTo(PortfolioRoute);
+                              // showDialog(
+                              //     context: context,
+                              //     builder: (context) {
+                              //       return AlertDialog(
+                              //         title: Text('Download Portfolio',
+                              //             style: TextStyle(
+                              //                 fontWeight: FontWeight.w800,
+                              //                 color: Colors.purpleAccent)),
+                              //         content: Text(
+                              //           'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
+                              //           'Meanwhile you can download my portfolio (PDF version)\n\n',
+                              //           style: TextStyle(
+                              //               color: Colors.black,
+                              //               fontSize: 15,
+                              //               fontWeight: FontWeight.w300),
+                              //         ),
+                              //         actions: <Widget>[
+                              //           TextButton(
+                              //               onPressed: () {
+                              //                 Navigator.pop(context);
+                              //               },
+                              //               child: Text('Close',
+                              //                   style: TextStyle(
+                              //                     color: Colors.red,
+                              //                     fontWeight: FontWeight.w700,
+                              //                   ))),
+                              //           TextButton(
+                              //               onPressed: () {
+                              //                 repository.downloadFile(
+                              //                     st.documentPath);
+                              //                 Navigator.pop(context);
+                              //               },
+                              //               child: Text('Download',
+                              //                   style: TextStyle(
+                              //                     color: Colors.black,
+                              //                     fontWeight: FontWeight.w800,
+                              //                   ))),
+                              //         ],
+                              //       );
+                              //     });
                             } else if (strings[i] == 'About') {
                               locator<NavigationService>()
                                   .navigateTo(AboutRoute);

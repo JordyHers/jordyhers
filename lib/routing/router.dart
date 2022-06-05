@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/view/about/about_view.dart';
 import 'package:jordyhers/view/home/home_view.dart';
+import 'package:jordyhers/view/portfolio/portfolio_view.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -10,6 +11,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(HomeView(), settings.name!);
     case AboutRoute:
       return _getPageRoute(AboutView(), settings.name!);
+    case PortfolioRoute:
+      return _getPageRoute(PortfolioView(), settings.name!);
 
     default:
       return _getPageRoute(HomeView(), settings.name!);

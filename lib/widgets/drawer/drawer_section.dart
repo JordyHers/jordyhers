@@ -94,44 +94,46 @@ class _DrawerSectionState extends State<DrawerSection> {
                                     .navigateTo(HomeRoute);
                               } else if (index == 1) {
                                 Navigator.pop(context);
-                                showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return AlertDialog(
-                                        title: Text('Download Portfolio',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                                color: Colors.purpleAccent)),
-                                        content: Text(
-                                          'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
-                                          'Meanwhile you can download my portfolio (PDF version)\n\n',
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                        actions: <Widget>[
-                                          TextButton(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: Text('Close',
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w700,
-                                                  ))),
-                                          TextButton(
-                                              onPressed: () {
-                                                repository.downloadFile(
-                                                    st.documentPath);
-                                                Navigator.pop(context);
-                                              },
-                                              child: Text('Download',
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w800,
-                                                  ))),
-                                        ],
-                                      );
-                                    });
+                                locator<NavigationService>()
+                                    .navigateTo(PortfolioRoute);
+                                // showDialog(
+                                //     context: context,
+                                //     builder: (context) {
+                                //       return AlertDialog(
+                                //         title: Text('Download Portfolio',
+                                //             style: TextStyle(
+                                //                 fontWeight: FontWeight.w800,
+                                //                 color: Colors.purpleAccent)),
+                                //         content: Text(
+                                //           'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
+                                //           'Meanwhile you can download my portfolio (PDF version)\n\n',
+                                //           style: TextStyle(
+                                //               color: Colors.black,
+                                //               fontSize: 15,
+                                //               fontWeight: FontWeight.w300),
+                                //         ),
+                                //         actions: <Widget>[
+                                //           TextButton(
+                                //               onPressed: () {
+                                //                 Navigator.pop(context);
+                                //               },
+                                //               child: Text('Close',
+                                //                   style: TextStyle(
+                                //                     fontWeight: FontWeight.w700,
+                                //                   ))),
+                                //           TextButton(
+                                //               onPressed: () {
+                                //                 repository.downloadFile(
+                                //                     st.documentPath);
+                                //                 Navigator.pop(context);
+                                //               },
+                                //               child: Text('Download',
+                                //                   style: TextStyle(
+                                //                     fontWeight: FontWeight.w800,
+                                //                   ))),
+                                //         ],
+                                //       );
+                                //     });
                               } else if (index == 2) {
                                 Navigator.pop(context);
                                 repository.downloadFile(st.documentPath);
