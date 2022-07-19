@@ -4,7 +4,7 @@
 ![Jordyhers' GitHub stats](https://github-readme-stats.vercel.app/api?username=jordyhers&show_icons=true&theme=buefy)
 
 ```dart
-Flutter Developer | Swift UI | React Native | Firebase expert
+Flutter Developer | Swift UI | React Native | FirebasExpert
 ```
 ## ![](https://komarev.com/ghpvc/?username=jordyhers&color=green)
 
