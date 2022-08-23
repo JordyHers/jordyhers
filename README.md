@@ -8,6 +8,7 @@ Flutter Developer | Swift UI | React Native | FirebasExpert
 ```
 ## ![](https://komarev.com/ghpvc/?username=jordyhers&color=green)
 
+![image](https://user-images.githubusercontent.com/49708438/186181510-24eab82f-6b9e-4034-896d-41ce49df03ed.png)
 
 ## ABOUT ME 💻
 
