@@ -13,7 +13,7 @@ class HeaderSection extends StatelessWidget {
     required this.isMobile,
   }) : super(key: key);
 
- List<String> images = ["assets/png/business.png","assets/png/png_thumb.png"];
+ List<String> images = ["assets/images/jordy_about.jpg","assets/images/jordy_about.jpg"];
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
@@ -121,29 +121,28 @@ class HeaderSection extends StatelessWidget {
             ),
           ),
           isMobile
-              ? Transform.rotate(
-                angle: 0.5,
-                child: Align(
-            alignment: Alignment.bottomRight,
+              ?  Align(
+            alignment: Alignment.center,
                     child: Padding(
                       padding:  EdgeInsets.symmetric(
                           vertical: 40, horizontal: getWidth(context) * 0.05),
-                      child: Image.asset(images[1],
-                          height: getHeight(context) * 0.80),
+                      child:ClipOval(child:Image.asset(images[1],
+                          height: getHeight(context) * 0.40) ,)
                     ),
-                  ),
-              )
-              : Transform.rotate(
-                angle: 0.2,
-                child: Align(
+                  )
+              
+              :
+                Align(
                     alignment: Alignment.topRight,
                     child:Padding(
                       padding:  EdgeInsets.symmetric(
                           vertical: 40, horizontal: getWidth(context) * 0.05),
-                      child: Image.asset(images[1],
-                          height: getHeight(context) * 0.80),
+                      child: ClipOval(
+                        child: Image.asset(images[1],
+                            height: getHeight(context) * 0.70),
+                      ),
                     ),
-                  ),
+
               ),
           isMobile
               ? Align(

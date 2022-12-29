@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
@@ -49,7 +48,7 @@ class AboutMe extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.scaleDown,
-                            image: AssetImage('assets/images/big_yellow.png')
+                            image: AssetImage('assets/images/jordy_profile.jpg')
                         ),
                       ),
                     ),

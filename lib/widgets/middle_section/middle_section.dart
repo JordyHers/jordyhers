@@ -95,22 +95,7 @@ class MiddleSection extends StatelessWidget {
         ),
         Padding(
             padding: const EdgeInsets.only(top: 60.0),
-            child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 40.0),
-                height: isMobile
-                    ? getHeight(context) * 0.35
-                    : getHeight(context) * 0.55,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    image: isMobile
-                        ? DecorationImage(
-                            image: NetworkImage(st.flutter_address_image),
-                          )
-                        : DecorationImage(
-                            image: AssetImage(
-                              'assets/images/swiftui_macbook.png',
-                            ),
-                          )))),
+            child: SizedBox.shrink()),
       ],
     );
   }

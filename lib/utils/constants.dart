@@ -15,6 +15,8 @@ const tower_image_address =
     'https://images.unsplash.com/photo-1621168322085-9318dd9a7517?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80';
 const airpods =
     'https://images.unsplash.com/photo-1610438235354-a6ae5528385c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80';
+  const videoHome = 'assets/videos/IMG_3398.MOV';
+const videoProfile = 'assets/videos/IMG_3400.mov';
 
 ///________________ Social media_________________________
 ///

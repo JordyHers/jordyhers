@@ -5,6 +5,7 @@ import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/email_us_section.dart';
 import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
+import 'package:jordyhers/widgets/video_section/video_section.dart';
 
 class HomeContentMobile extends StatelessWidget {
   const HomeContentMobile({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class HomeContentMobile extends StatelessWidget {
           children: [
             HeaderSection(isMobile: true),
             MiddleSection(isMobile: true),
+            VideoSection(isMobile: true),
             AboutMe(isMobile: true),
             LogoSection(isMobile: true),
             EmailUs(isMobile: true),

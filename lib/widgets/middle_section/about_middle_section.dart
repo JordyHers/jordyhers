@@ -46,7 +46,7 @@ class AboutMiddleSection extends StatelessWidget {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                           fit: BoxFit.scaleDown,
-                          image: AssetImage('assets/images/big_yellow.png')
+                          image: AssetImage('assets/images/jordy_about.jpg')
                       ),
                     ),
                   ),

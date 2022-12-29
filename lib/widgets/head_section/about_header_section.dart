@@ -59,7 +59,7 @@ class AboutHeaderSection extends StatelessWidget {
                         height: isMobile
                             ? getHeight(context) * 0.45
                             : getHeight(context) * 0.55,
-                        child: Image.asset('assets/png/hand.png')),
+                        child: Image.asset('assets/images/jordy_profile.jpg')),
                   )
                 ],
               ),
