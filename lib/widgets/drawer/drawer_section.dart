@@ -93,7 +93,7 @@ class _DrawerSectionState extends State<DrawerSection> {
             SizedBox(height: getHeight(context) / 35),
             ListView.builder(
                 shrinkWrap: true,
-                itemCount: 5,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [

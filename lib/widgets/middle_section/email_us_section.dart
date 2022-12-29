@@ -93,7 +93,7 @@ class _EmailUsState extends State<EmailUs> {
                       height: getHeight(context) * 0.10,
                       width: getWidth(context) * 0.85,
                       child: TextField(
-                        style: GoogleFonts.inter(),
+                        style: GoogleFonts.inter( color: Colors.deepPurple),
                         enabled: enabled,
                         controller: _controller,
                         onChanged: (value) {
