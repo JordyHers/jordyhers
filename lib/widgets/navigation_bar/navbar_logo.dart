@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 
@@ -24,21 +25,21 @@ class NavBarLogo extends StatelessWidget {
                 ),
                 Text(
                   "Jordy",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
                       color: Theme.of(context).primaryTextTheme.caption!.color,
-                      fontFamily: 'Montserrat-Regular'),
+                      ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 18.0),
                   child: Text(
                     "Hers.com",
-                    style: TextStyle(
+                    style: GoogleFonts.inter(
                         fontSize: 19,
                         fontWeight: FontWeight.w900,
                         color: Colors.purpleAccent,
-                        fontFamily: 'Montserrat-Regular'),
+                        ),
                   ),
                 ),
               ],
@@ -63,7 +64,7 @@ class NavBarLogo extends StatelessWidget {
                 SizedBox(width: 10),
                 SelectableText(
                   "Jordy",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryTextTheme.caption!.color,
@@ -71,7 +72,7 @@ class NavBarLogo extends StatelessWidget {
                 ),
                 SelectableText(
                   "Hers.com",
-                  style: TextStyle(
+                  style: GoogleFonts.inter(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
                       color: Colors.purpleAccent),

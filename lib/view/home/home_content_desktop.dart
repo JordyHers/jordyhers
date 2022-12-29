@@ -11,17 +11,16 @@ class HomeContentDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: USE BLOCK TO CONTROL THE DIFFERENT PAGES
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             HeaderSection(isMobile: false),
             MiddleSection(isMobile: false),
             AboutMe(isMobile: false),
-            //SizedBox(height: getHeight(context) * 0.05),
             LogoSection(isMobile: false),
             EmailUs(isMobile: false),
             BottomBar(isMobile: false)

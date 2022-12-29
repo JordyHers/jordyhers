@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jordyhers/widgets/bottom_section/bottom_bar_column.dart';
-import 'package:jordyhers/widgets/head_section/about_header_section.dart';
 import 'package:jordyhers/widgets/middle_section/about_middle_section.dart';
 
 class AboutContentMobile extends StatelessWidget {
@@ -11,10 +10,11 @@ class AboutContentMobile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            AboutHeaderSection(isMobile: true),
+
             AboutMiddleSection(isMobile: true),
             BottomBar(isMobile: true)
           ],

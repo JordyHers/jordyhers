@@ -70,7 +70,7 @@ class _EmailUsState extends State<EmailUs> {
               children: [
                 Text(
                   'Contact Us',
-                  style: GoogleFonts.merriweather(
+                  style: GoogleFonts.inter(
                       fontWeight: FontWeight.w800,
                       fontSize: 21,
                       color: Colors.grey.shade800),
@@ -78,9 +78,9 @@ class _EmailUsState extends State<EmailUs> {
                 SizedBox(height: getHeight(context) / 25),
                 SelectableText(
                   'Let us know about you, send us an email if you need more information or if you have a project.'
-                  'We will be glad to send you feedback. As we know te flutter community '
+                  'We will be glad to send you feedback. As we know the flutter community '
                   'is still growing up. So you can be a part of it.',
-                  style: GoogleFonts.merriweather(
+                  style: GoogleFonts.inter(
                       fontWeight: FontWeight.w500,
                       fontSize: 17,
                       height: 1.5,
@@ -93,6 +93,7 @@ class _EmailUsState extends State<EmailUs> {
                       height: getHeight(context) * 0.10,
                       width: getWidth(context) * 0.85,
                       child: TextField(
+                        style: GoogleFonts.inter(),
                         enabled: enabled,
                         controller: _controller,
                         onChanged: (value) {
@@ -102,14 +103,14 @@ class _EmailUsState extends State<EmailUs> {
                         decoration: InputDecoration(
                             errorText:
                                 emailValid ? null : 'Enter a valid email',
-                            errorStyle: TextStyle(color: Colors.red),
+                            errorStyle: GoogleFonts.inter(color: Colors.red),
                             border: OutlineInputBorder(),
                             hintText: 'Email'),
                       ),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.transparent,
+                          backgroundColor: Colors.transparent,
                           minimumSize: Size(150, getHeight(context) * 0.05),
                           side: BorderSide(
                             width: 2.0,
@@ -135,7 +136,7 @@ class _EmailUsState extends State<EmailUs> {
                       child: SizedBox(
                           child: Text(
                             'Contact Us',
-                        style: GoogleFonts.merriweather(color: Colors.black),
+                        style: GoogleFonts.inter(color: Colors.black),
                       )),
                     ),
                   ],

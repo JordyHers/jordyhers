@@ -1,12 +1,12 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/locator.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 import 'package:provider/provider.dart';
-
 import 'navbar_logo.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
@@ -20,135 +20,123 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 class _NavigationBarTabletDesktopState
     extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey, Colors.grey];
-  List<String> strings = ["Home", "Portfolio", "About", "LinkedIn"];
+  List<String> strings = ["Home", "Portfolio", "About",];
   Color color = Colors.transparent;
+  Color color2 = Colors.transparent;
 
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
     return Container(
+
       height: 80,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           NavBarLogo(isMobile: false),
           Row(
             mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  for (int i = 0; i <= 3; i++)
-                    MouseRegion(
-                      onEnter: (_) {
-                        setState(() {
-                          colors[i] = Colors.white;
-                        });
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              for (int i = 0; i <= 2; i++)
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      colors[i] = Colors.white;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      colors[i] = Colors.grey;
+                    });
+                  },
+                  child: TextButton(
+                      onPressed: () {
+                        if (strings[i] == 'Portfolio') {
+                          locator<NavigationService>()
+                              .navigateTo(PortfolioRoute);
+                        }else if (strings[i] == 'About') {
+                          locator<NavigationService>()
+                              .navigateTo(AboutRoute);
+                        } else if (strings[i] == 'Home') {
+                          locator<NavigationService>()
+                              .navigateTo(HomeRoute);
+                        } else {
+                          print('${strings[i]} was Tapped');
+                        }
                       },
-                      onExit: (_) {
-                        setState(() {
-                          colors[i] = Colors.grey;
-                        });
-                      },
-                      child: FlatButton(
-                          onPressed: () {
-                            if (strings[i] == 'LinkedIn') {
-                              repository.launchUrl(st.linkedIn);
-                            } else if (strings[i] == 'Portfolio') {
-                              locator<NavigationService>()
-                                  .navigateTo(PortfolioRoute);
-                              // showDialog(
-                              //     context: context,
-                              //     builder: (context) {
-                              //       return AlertDialog(
-                              //         title: Text('Download Portfolio',
-                              //             style: TextStyle(
-                              //                 fontWeight: FontWeight.w800,
-                              //                 color: Colors.purpleAccent)),
-                              //         content: Text(
-                              //           'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
-                              //           'Meanwhile you can download my portfolio (PDF version)\n\n',
-                              //           style: TextStyle(
-                              //               color: Colors.black,
-                              //               fontSize: 15,
-                              //               fontWeight: FontWeight.w300),
-                              //         ),
-                              //         actions: <Widget>[
-                              //           TextButton(
-                              //               onPressed: () {
-                              //                 Navigator.pop(context);
-                              //               },
-                              //               child: Text('Close',
-                              //                   style: TextStyle(
-                              //                     color: Colors.red,
-                              //                     fontWeight: FontWeight.w700,
-                              //                   ))),
-                              //           TextButton(
-                              //               onPressed: () {
-                              //                 repository.downloadFile(
-                              //                     st.documentPath);
-                              //                 Navigator.pop(context);
-                              //               },
-                              //               child: Text('Download',
-                              //                   style: TextStyle(
-                              //                     color: Colors.black,
-                              //                     fontWeight: FontWeight.w800,
-                              //                   ))),
-                              //         ],
-                              //       );
-                              //     });
-                            } else if (strings[i] == 'About') {
-                              locator<NavigationService>()
-                                  .navigateTo(AboutRoute);
-                            } else if (strings[i] == 'Home') {
-                              locator<NavigationService>()
-                                  .navigateTo(HomeRoute);
-                            } else {
-                              print('${strings[i]} was Tapped');
-                            }
-                          },
-                          child: Text(strings[i],
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: colors[i],
-                                fontWeight: FontWeight.w400,
-                              ))),
-                    ),
-                ],
-              ),
-              MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    color = Colors.grey.withOpacity(0.3);
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    color = Colors.transparent;
-                  });
-                },
-                child: InkWell(
-                  onTap: () => repository.launchUrl(st.github),
-                  child: Container(
-                    decoration:
-                        BoxDecoration(color: color, shape: BoxShape.circle),
-                    child: Image.asset(
-                      'assets/png/pngegg-9.png',
-                      height: 54,
-                    ),
+                      child: FittedBox(
+                        child: Text(strings[i],
+                            style: GoogleFonts.inter(
+                              fontSize: 17,
+                              color: colors[i],
+                              fontWeight: FontWeight.w600,
+                            )),
+                      )),
+                ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: MouseRegion(
+              onEnter: (_) {
+                setState(() {
+                  color = Colors.grey.withOpacity(0.3);
+                });
+              },
+              onExit: (_) {
+                setState(() {
+                  color = Colors.transparent;
+                });
+              },
+              child: InkWell(
+                onTap: () => repository.launchUrl(st.linkedIn),
+                child: Container(
+                  decoration:
+                  BoxDecoration(color: color, shape: BoxShape.circle),
+                  child: Image.asset(
+                    'assets/png/linkedin.png',
+                    height: 30,
                   ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.brightness_6),
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                iconSize: 17,
-                onPressed: () {
-                  EasyDynamicTheme.of(context).changeTheme();
-                },
+            ),
+          ),
+        const SizedBox(width: 4),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            child: MouseRegion(
+              onEnter: (_) {
+                setState(() {
+                  color2 = Colors.grey.withOpacity(0.3);
+                });
+              },
+              onExit: (_) {
+                setState(() {
+                  color2 = Colors.transparent;
+                });
+              },
+              child: InkWell(
+                onTap: () => repository.launchUrl(st.github),
+                child: Container(
+                  decoration:
+                      BoxDecoration(color: color2, shape: BoxShape.circle),
+                  child: Image.asset(
+                    'assets/png/pngegg-9.png',
+                    height: 40,
+                  ),
+                ),
               ),
-            ],
+            ),
+          ),
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            iconSize: 17,
+            onPressed: () {
+              EasyDynamicTheme.of(context).changeTheme();
+            },
           )
         ],
       ),

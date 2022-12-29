@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,7 @@ class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
                         maxCrossAxisExtent: getHeight(context) * 0.55,
                         childAspectRatio: 2 / 3,
                         crossAxisSpacing: 100,
-                        mainAxisSpacing: getHeight(context) * 0.35),
+                        mainAxisSpacing: getHeight(context) * 0.30),
                     itemCount: 4,
                     itemBuilder: (BuildContext ctx, index) {
                       return portfolioHeaderSection(ctx,apps[index]);
@@ -62,12 +63,16 @@ class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      app['title'],style: TextStyle(fontSize: getWidth(context) * 0.025,fontWeight: FontWeight.bold),),
-                    Text(
-                      app['description'],style: TextStyle(fontSize: getWidth(context) * 0.010,fontWeight: FontWeight.w700),),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(vertical: getHeight(context) * 0.02),
+                             child: Text(
+                        app['title'],style: GoogleFonts.inter(fontSize: getWidth(context) * 0.025,fontWeight: FontWeight.bold),),
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(vertical: getHeight(context) * 0.02,horizontal: getWidth(context) * 0.02),                      child: Text(
+                        app['description'],style: GoogleFonts.inter(fontSize: getWidth(context) * 0.010,fontWeight: FontWeight.w500,color: Colors.blueGrey[400]),),
+                    ),
                     InkWell(
                       onTap: () => repository.launchUrl(app['url']),
                       child: Container(

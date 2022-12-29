@@ -1,5 +1,6 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
@@ -27,30 +28,54 @@ class DrawerSection extends StatefulWidget {
 class _DrawerSectionState extends State<DrawerSection> {
   @override
   Widget build(BuildContext context) {
-    List<Icon> icons = [
-      Icon(
-        Icons.home,
+    final repository = Provider.of<WebService>(context, listen: false);
+    List<IconButton> icons = [
+      IconButton(
+        icon: Icon(Icons.home),
+        color: Theme.of(context).iconTheme.color,
+        onPressed: (){
+          Navigator.pop(context);
+          locator<NavigationService>()
+              .navigateTo(HomeRoute);
+        },
+      ),
+      IconButton(
+        icon: Icon(Icons.wallet_membership),
+        onPressed: (){
+          Navigator.pop(context);
+          locator<NavigationService>()
+              .navigateTo(PortfolioRoute);
+        },
         color: Theme.of(context).iconTheme.color,
       ),
-      Icon(
-        Icons.wallet_membership,
+      IconButton(
+        icon: Icon(Icons.file_download),
+        onPressed: (){
+          Navigator.pop(context);
+          repository.downloadFile(st.cvPath);
+        },
         color: Theme.of(context).iconTheme.color,
       ),
-      Icon(
-        Icons.file_download,
+      IconButton(
+        icon: Icon(Icons.info_outline),
+        onPressed: (){
+          Navigator.pop(context);
+          locator<NavigationService>()
+              .navigateTo(AboutRoute);
+        },
         color: Theme.of(context).iconTheme.color,
       ),
-      Icon(
-        Icons.info_outline,
-        color: Theme.of(context).iconTheme.color,
-      ),
-      Icon(
-        Icons.work_outline,
+      IconButton(
+        icon: Icon(Icons.work_outline),
+        onPressed: (){
+          Navigator.pop(context);
+          repository.launchUrl(st.linkedIn);
+        },
         color: Theme.of(context).iconTheme.color,
       ),
     ];
 
-    final repository = Provider.of<WebService>(context, listen: false);
+
     return Drawer(
       child: Container(
         color: Theme.of(context).backgroundColor,
@@ -96,47 +121,10 @@ class _DrawerSectionState extends State<DrawerSection> {
                                 Navigator.pop(context);
                                 locator<NavigationService>()
                                     .navigateTo(PortfolioRoute);
-                                // showDialog(
-                                //     context: context,
-                                //     builder: (context) {
-                                //       return AlertDialog(
-                                //         title: Text('Download Portfolio',
-                                //             style: TextStyle(
-                                //                 fontWeight: FontWeight.w800,
-                                //                 color: Colors.purpleAccent)),
-                                //         content: Text(
-                                //           'Thank you for your interest, the portfolio page is not completed yet, we plan to finish up soon.\n '
-                                //           'Meanwhile you can download my portfolio (PDF version)\n\n',
-                                //           style: TextStyle(
-                                //               color: Colors.black,
-                                //               fontSize: 15,
-                                //               fontWeight: FontWeight.w300),
-                                //         ),
-                                //         actions: <Widget>[
-                                //           TextButton(
-                                //               onPressed: () {
-                                //                 Navigator.pop(context);
-                                //               },
-                                //               child: Text('Close',
-                                //                   style: TextStyle(
-                                //                     fontWeight: FontWeight.w700,
-                                //                   ))),
-                                //           TextButton(
-                                //               onPressed: () {
-                                //                 repository.downloadFile(
-                                //                     st.documentPath);
-                                //                 Navigator.pop(context);
-                                //               },
-                                //               child: Text('Download',
-                                //                   style: TextStyle(
-                                //                     fontWeight: FontWeight.w800,
-                                //                   ))),
-                                //         ],
-                                //       );
-                                //     });
+
                               } else if (index == 2) {
                                 Navigator.pop(context);
-                                repository.downloadFile(st.documentPath);
+                                repository.downloadFile(st.cvPath);
                               } else if (index == 3) {
                                 Navigator.pop(context);
                                 locator<NavigationService>()
@@ -147,7 +135,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                               }
                             },
                             child: Text(DrawerSection.sections[index],
-                                style: TextStyle(
+                                style: GoogleFonts.inter(
                                     color: Theme.of(context)
                                         .primaryTextTheme
                                         .caption!

@@ -33,7 +33,7 @@ const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
 ///
 ///
 const documentPath = 'assets/documents/Portfolio_Jordy_Hershel.pdf';
-const cvPath = 'assets/documents/JordyHershel_IGONDJO_Resume.PDF';
+const cvPath = 'assets/documents/jordy_hershel.pdf';
 
 ///
 ///
@@ -73,19 +73,19 @@ const String why_flutter = "1. Fast Development\n\n"
 List<Map<String, dynamic>> apps = [
   {'title':"Time's Up",
     'url': githubTimesUp,
-    'description':'Times Up help parents monitor\n the time kids spend on screen',
+    'description':'Times Up help parents monitor the time kids spend on screen',
     'image': 'assets/png/timesup.png'},
   {'title':'Owanto',
     'description':
-    ' Owanto is a ecommerce platform made \n '
+    ' Owanto is a ecommerce platform made  '
         'for a customer',
     'url': githubOwanto,
     'image': 'assets/png/collection.png'},
   {'title':'IosAppTutorial',
     'url': githubIos,
-    'description':'this project helps \n dev start up with SwiftUI',
+    'description':'this project helps  dev start up with SwiftUI',
     'image': 'assets/png/ios.png'},
   {'title':'Terminal',
     'url': githubTerminal,
-    'description':'Terminal App is \n  an Open Source Project',
+    'description':'Terminal App is   an Open Source Project',
     'image': 'assets/png/cmd.png'}];

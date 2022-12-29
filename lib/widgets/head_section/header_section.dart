@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/url_launcher.dart';
@@ -9,17 +8,17 @@ import 'package:provider/provider.dart';
 
 class HeaderSection extends StatelessWidget {
   final bool isMobile;
-
-  const HeaderSection({
+   HeaderSection({
     Key? key,
     required this.isMobile,
   }) : super(key: key);
 
+ List<String> images = ["assets/png/business.png","assets/png/png_thumb.png"];
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
     return Container(
-      height: isMobile ? getHeight(context) * 0.85 : getHeight(context) * 0.75,
+      height: isMobile ? getHeight(context) * 0.85 : getHeight(context) * 0.95,
       decoration: BoxDecoration(
         color: Theme.of(context).backgroundColor,
       ),
@@ -39,10 +38,10 @@ class HeaderSection extends StatelessWidget {
                     : Padding(
                         padding: isMobile
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
-                            : const EdgeInsets.symmetric(horizontal: 48.0),
+                            :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10),
                         child: Text("Hello, I'm ",
                             style: GoogleFonts.pacifico(
-                              fontSize: 60,
+                              fontSize: getHeight(context) * 0.08,
                               fontWeight: FontWeight.w900,
                               color: Theme.of(context)
                                   .primaryTextTheme
@@ -51,43 +50,37 @@ class HeaderSection extends StatelessWidget {
                             )),
                       ),
                 isMobile
-                    ? Container()
+                    ? SizedBox.shrink()
                     : Padding(
                         padding: isMobile
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
-                            : const EdgeInsets.symmetric(horizontal: 48.0),
+                            :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10),
                         child: Text("Jordy Hershel",
                             style: GoogleFonts.pacifico(
-                              fontSize: 65,
+                              fontSize: getHeight(context) * 0.08,
                               color: Colors.purpleAccent,
                               fontWeight: FontWeight.w900,
                             )),
                       ),
                 SizedBox(height: 40),
                 isMobile
-                    ? Container()
+                    ? SizedBox.shrink()
                     : Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 38.0, vertical: 20),
+                        padding:  EdgeInsets.symmetric(
+                            horizontal: getWidth(context) * 0.10, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                                'Find your developer expert for all your projects ',
-                                style: TextStyle(
-                                  fontSize: isMobile ? 25 : 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.grey.shade700,
-                                )),
+
                             Container(
                               width: getWidth(context) / 3,
-                              child: Text(
-                                  ' and design for both back-end and front-end.Handle simple and complex projects using the latest tools and '
+                              child: SelectableText(
+                                  'Find your developer expert for all your projects and design for both back-end and front-end.Handle simple and complex projects using the latest tools and '
                                   'the fastest growing platforms such as React Native and Flutter. '
                                   'Your expert can also provide counseling to your dev teams. You can find me on Upwork for Freelance projects.',
-                                  style: TextStyle(
-                                      fontSize: isMobile ? 23 : 14,
+                                  style: GoogleFonts.inter(
+                                      fontSize:  17,
                                       fontWeight: FontWeight.w600,
                                       color: Colors.grey.shade700,
                                       height: 1.5)),
@@ -96,28 +89,29 @@ class HeaderSection extends StatelessWidget {
                             ElevatedButton(
                               onPressed: () {
                                 repository.downloadFile(st.cvPath);
-                                print(
-                                    '  CV Download Requested  and Successfully downloaded !......');
+
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
+                                  FlutterLogo(size: 25),
+                                  const SizedBox(width: 8.0),
                                   Text(
-                                    'Save Resume',
-                                    style: GoogleFonts.merriweather(),
+                                    'Download CV',
+                                    style: GoogleFonts.inter(),
                                   ),
-                                  SizedBox(width: 8.0),
+                                  const SizedBox(width: 12.0),
                                   Icon(Icons.download)
                                 ],
                               ),
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.purpleAccent,
+                                  backgroundColor: Colors.purple,
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 30, vertical: 30),
+                                      horizontal: 15, vertical: 20),
                                   textStyle: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 15,
                                       fontWeight: FontWeight.bold)),
                             )
                           ],
@@ -127,22 +121,30 @@ class HeaderSection extends StatelessWidget {
             ),
           ),
           isMobile
-              ? Align(
-            alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 60, horizontal: 28.0),
-                    child: Image.asset("assets/png/business.png",
-                        height: getHeight(context) * 0.40),
+              ? Transform.rotate(
+                angle: 0.5,
+                child: Align(
+            alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding:  EdgeInsets.symmetric(
+                          vertical: 40, horizontal: getWidth(context) * 0.05),
+                      child: Image.asset(images[1],
+                          height: getHeight(context) * 0.80),
+                    ),
                   ),
-                )
-              : Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                    child: Image.asset("assets/png/business.png"),
+              )
+              : Transform.rotate(
+                angle: 0.2,
+                child: Align(
+                    alignment: Alignment.topRight,
+                    child:Padding(
+                      padding:  EdgeInsets.symmetric(
+                          vertical: 40, horizontal: getWidth(context) * 0.05),
+                      child: Image.asset(images[1],
+                          height: getHeight(context) * 0.80),
+                    ),
                   ),
-                ),
+              ),
           isMobile
               ? Align(
                   alignment: Alignment.topLeft,
@@ -152,7 +154,7 @@ class HeaderSection extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text("Hello, I'm ",
                             style: GoogleFonts.pacifico(
-                              fontSize: 50,
+                              fontSize: getHeight(context) * 0.06,
                               fontWeight: FontWeight.w900,
                               color: Theme.of(context)
                                   .primaryTextTheme
@@ -164,7 +166,7 @@ class HeaderSection extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text("Jordy Hershel",
                             style: GoogleFonts.pacifico(
-                              fontSize: 50,
+                              fontSize: getHeight(context) * 0.06,
                               color: Colors.purpleAccent,
                               fontWeight: FontWeight.w900,
                             )),

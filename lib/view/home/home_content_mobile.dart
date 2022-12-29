@@ -14,6 +14,7 @@ class HomeContentMobile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

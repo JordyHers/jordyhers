@@ -20,7 +20,7 @@ class PortfolioContentMobile extends StatelessWidget {
           children: [
             SizedBox(
               child: GridView.builder(
-                scrollDirection: Axis.vertical,
+                  scrollDirection: Axis.vertical,
                   padding: EdgeInsets.symmetric( vertical: 20),
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
