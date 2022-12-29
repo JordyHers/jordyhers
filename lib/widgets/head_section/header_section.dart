@@ -55,7 +55,7 @@ class HeaderSection extends StatelessWidget {
                         padding: isMobile
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
                             :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10),
-                        child: Text("Jordy Hershel",
+                        child: Text("Jordy Hershel. 🚀 ",
                             style: GoogleFonts.pacifico(
                               fontSize: getHeight(context) * 0.08,
                               color: Colors.purpleAccent,
