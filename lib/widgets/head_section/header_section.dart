@@ -91,23 +91,30 @@ class HeaderSection extends StatelessWidget {
                                 repository.downloadFile(st.cvPath);
 
                               },
+
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  FlutterLogo(size: 25),
+
                                   const SizedBox(width: 8.0),
                                   Text(
                                     'Download CV',
-                                    style: GoogleFonts.inter(),
+                                    style: GoogleFonts.inter(
+                                      color: Colors.white
+                                    ),
                                   ),
                                   const SizedBox(width: 12.0),
                                   Icon(Icons.download)
                                 ],
                               ),
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purple,
+                                  backgroundColor: Colors.black,
+                                  side: BorderSide(
+                                  width: 2.0,
+                                  color: Colors.white,
+                                  ),
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 20),
                                   textStyle: TextStyle(

@@ -15,7 +15,6 @@ class DrawerSection extends StatefulWidget {
 
   static const List<String> sections = [
     'Home',
-    'Portfolio',
     'Resume',
     'About',
     'LinkedIn'
@@ -38,15 +37,6 @@ class _DrawerSectionState extends State<DrawerSection> {
           locator<NavigationService>()
               .navigateTo(HomeRoute);
         },
-      ),
-      IconButton(
-        icon: Icon(Icons.wallet_membership),
-        onPressed: (){
-          Navigator.pop(context);
-          locator<NavigationService>()
-              .navigateTo(PortfolioRoute);
-        },
-        color: Theme.of(context).iconTheme.color,
       ),
       IconButton(
         icon: Icon(Icons.file_download),
@@ -119,17 +109,12 @@ class _DrawerSectionState extends State<DrawerSection> {
                                     .navigateTo(HomeRoute);
                               } else if (index == 1) {
                                 Navigator.pop(context);
-                                locator<NavigationService>()
-                                    .navigateTo(PortfolioRoute);
-
-                              } else if (index == 2) {
-                                Navigator.pop(context);
                                 repository.downloadFile(st.cvPath);
-                              } else if (index == 3) {
+                              } else if (index == 2) {
                                 Navigator.pop(context);
                                 locator<NavigationService>()
                                     .navigateTo(AboutRoute);
-                              } else if (index == 4) {
+                              } else if (index == 3) {
                                 Navigator.pop(context);
                                 repository.launchUrl(st.linkedIn);
                               }

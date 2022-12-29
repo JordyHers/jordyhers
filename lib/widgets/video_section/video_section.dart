@@ -54,20 +54,21 @@ class _VideoSectionState extends State<VideoSection> {
 
             ),
           ),
-          Visibility(
-            visible: !_controller.value.isPlaying,
-            child: Positioned.fill(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: getWidth(context) * 0.50),
-                  color: Colors.indigoAccent.withOpacity(0.3),
-                  child: Center(child: IconButton(
-                    icon: Icon(Icons.play_circle_outline,size: getHeight(context) * 0.05,),
-                    onPressed: () {
+            Positioned.fill(
+                child: GestureDetector(
+                  onTap: (){
                     setState(() {
-                     _controller.play();
+                      _controller.value.isPlaying
+                          ? _controller.pause()
+                          : _controller.play();
                     });
-                  },)),)),
-          ),
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: getWidth(context) * 0.50),
+                    color: _controller.value.isPlaying ? Colors.transparent: Colors.indigoAccent.withOpacity(0.3),
+                    child: _controller.value.isPlaying ?  SizedBox.shrink() :  Center(child: Icon(Icons.play_circle_outline,size: getHeight(context) * 0.05,),
+                   ) ,),
+                )),
 
         ],)
       ),

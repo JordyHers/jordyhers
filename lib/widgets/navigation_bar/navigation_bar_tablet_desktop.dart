@@ -19,8 +19,8 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 
 class _NavigationBarTabletDesktopState
     extends State<NavigationBarTabletDesktop> {
-  List<Color> colors = [Colors.grey, Colors.grey, Colors.grey, Colors.grey];
-  List<String> strings = ["Home", "Portfolio", "About",];
+  List<Color> colors = [Colors.grey, Colors.grey, Colors.grey];
+  List<String> strings = ["Home", "About",];
   Color color = Colors.transparent;
   Color color2 = Colors.transparent;
 
@@ -38,7 +38,7 @@ class _NavigationBarTabletDesktopState
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              for (int i = 0; i <= 2; i++)
+              for (int i = 0; i <= 1; i++)
                 MouseRegion(
                   onEnter: (_) {
                     setState(() {
@@ -52,10 +52,7 @@ class _NavigationBarTabletDesktopState
                   },
                   child: TextButton(
                       onPressed: () {
-                        if (strings[i] == 'Portfolio') {
-                          locator<NavigationService>()
-                              .navigateTo(PortfolioRoute);
-                        }else if (strings[i] == 'About') {
+                      if (strings[i] == 'About') {
                           locator<NavigationService>()
                               .navigateTo(AboutRoute);
                         } else if (strings[i] == 'Home') {

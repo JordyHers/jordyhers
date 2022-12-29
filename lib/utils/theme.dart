@@ -10,6 +10,7 @@ class Style {
         ),
     canvasColor: Colors.black,
     backgroundColor: Colors.white,
+    buttonColor: Colors.deepPurple,
     dividerColor: Colors.grey.shade400,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
     iconTheme: IconThemeData(color: Colors.black),
@@ -22,6 +23,7 @@ class Style {
     canvasColor: Colors.white,
     dividerColor: Colors.white,
     backgroundColor: Colors.black,
+    buttonColor: Colors.deepPurple,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),
     iconTheme: IconThemeData(color: Colors.white),
   );

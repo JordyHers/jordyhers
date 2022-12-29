@@ -73,7 +73,7 @@ class _EmailUsState extends State<EmailUs> {
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w800,
                       fontSize: 21,
-                      color: Colors.grey.shade800),
+                      color: Colors.grey.shade500),
                 ),
                 SizedBox(height: getHeight(context) / 25),
                 SelectableText(
@@ -84,7 +84,7 @@ class _EmailUsState extends State<EmailUs> {
                       fontWeight: FontWeight.w500,
                       fontSize: 17,
                       height: 1.5,
-                      color: Colors.grey.shade900),
+                      color: Colors.grey.shade500),
                 ),
                 SizedBox(height: getHeight(context) / 20),
                 Column(
@@ -110,13 +110,17 @@ class _EmailUsState extends State<EmailUs> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
+                          backgroundColor: Colors.black.withOpacity(0.9),
+
                           minimumSize: Size(150, getHeight(context) * 0.05),
                           side: BorderSide(
                             width: 2.0,
-                            color: Colors.black,
+                            color: Colors.white,
                           )),
                       onPressed: () {
+                        if(_controller.text.isEmpty){
+                          return null;
+                        }
                         if (_controller.text.isNotEmpty && emailValid == true) {
                           setState(() {
                             enabled = false;
@@ -136,7 +140,7 @@ class _EmailUsState extends State<EmailUs> {
                       child: SizedBox(
                           child: Text(
                             'Contact Us',
-                        style: GoogleFonts.inter(color: Colors.black),
+                        style: GoogleFonts.inter(color: Colors.white),
                       )),
                     ),
                   ],
