@@ -5,6 +5,7 @@ import 'package:jordyhers/locator.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
+import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
 import 'package:provider/provider.dart';
 import 'navbar_logo.dart';
@@ -20,7 +21,10 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 class _NavigationBarTabletDesktopState
     extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey];
-  List<String> strings = ["Home", "About",];
+  List<String> strings = [
+    "Home",
+    "About",
+  ];
   Color color = Colors.transparent;
   Color color2 = Colors.transparent;
 
@@ -28,7 +32,6 @@ class _NavigationBarTabletDesktopState
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
     return Container(
-
       height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -52,12 +55,10 @@ class _NavigationBarTabletDesktopState
                   },
                   child: TextButton(
                       onPressed: () {
-                      if (strings[i] == 'About') {
-                          locator<NavigationService>()
-                              .navigateTo(AboutRoute);
+                        if (strings[i] == 'About') {
+                          locator<NavigationService>().navigateTo(AboutRoute);
                         } else if (strings[i] == 'Home') {
-                          locator<NavigationService>()
-                              .navigateTo(HomeRoute);
+                          locator<NavigationService>().navigateTo(HomeRoute);
                         } else {
                           print('${strings[i]} was Tapped');
                         }
@@ -90,16 +91,16 @@ class _NavigationBarTabletDesktopState
                 onTap: () => repository.launchUrl(st.linkedIn),
                 child: Container(
                   decoration:
-                  BoxDecoration(color: color, shape: BoxShape.circle),
+                      BoxDecoration(color: color, shape: BoxShape.circle),
                   child: Image.asset(
                     'assets/png/linkedin.png',
-                    height: 30,
+                    height: getHeight(context) * 0.020,
                   ),
                 ),
               ),
             ),
           ),
-        const SizedBox(width: 4),
+          const SizedBox(width: 4),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: MouseRegion(
@@ -120,7 +121,7 @@ class _NavigationBarTabletDesktopState
                       BoxDecoration(color: color2, shape: BoxShape.circle),
                   child: Image.asset(
                     'assets/png/pngegg-9.png',
-                    height: 40,
+                    height: getHeight(context) * 0.025,
                   ),
                 ),
               ),

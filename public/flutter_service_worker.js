@@ -4,9 +4,10 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "195df9082e4685b9036e9679f6ccaaea",
-"index.html": "06c4c98ade9ace182e7d9e47249e0545",
-"/": "06c4c98ade9ace182e7d9e47249e0545",
-"main.dart.js": "52b5267f6a080515ff5706da7ce7dbb8",
+"index.html": "4b19d990866763d22cfb39c06d8608c6",
+"/": "4b19d990866763d22cfb39c06d8608c6",
+"main.dart.js": "602438eb98d8c4530eb42b5c9bc3cdc1",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "04b72ed92047c64295d05d107114f46a",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/favicon.png": "04b72ed92047c64295d05d107114f46a",
@@ -18,7 +19,7 @@ const RESOURCES = {
 "assets/images/big_yellow.png": "02a82809afe8b7ed59f611766c1f2a8b",
 "assets/images/jordy_purple.jpg": "ece1dab684e67e527ccba3e611342654",
 "assets/images/swiftui_macbook.png": "a151730046f7ac186031a760fe890b92",
-"assets/AssetManifest.json": "1b03c0594eb79341079657095c57e28e",
+"assets/AssetManifest.json": "6679aaa8cba8812b525d2626527b5331",
 "assets/png/pngegg-3.png": "a2292b8c9422d5be494e950cd0bb10c7",
 "assets/png/png_thumb.png": "4584a7bf420e612ffd3fdfd65dc457ab",
 "assets/png/pngegg-2.png": "a00831a712bb4f59eba35cb2c4c7a737",
@@ -41,20 +42,17 @@ const RESOURCES = {
 "assets/png/collection.png": "024a987b69f816f2ed02ccf2affad45b",
 "assets/png/pngegg-10.png": "37fe8322b169ddbdeabf75930e886ac6",
 "assets/png/pngegg-13.png": "1d45b6cee96ec31748de8c1c63987108",
-"assets/NOTICES": "6d9bc32a744ed17c6f56b0f81aab4e16",
+"assets/NOTICES": "7ce08c6f6aaa7cdc8808983f9350ca76",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/shaders/ink_sparkle.frag": "4b74b063b8decc21093673ed223d0fd7",
 "assets/documents/jordy_hershel.pdf": "defb372a50defa14b0f560037ba377c9",
 "assets/documents/Portfolio_Jordy_Hershel.pdf": "1a0f5f054e464480edf3e143a2ddf5b7",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
-"assets/assets/stickers/1625471355257.png": "d252374b37e5a5f889e6dccf3d182248",
-"assets/assets/stickers/404Error.png": "373ac592c58a8dd9829dd4a67b1f00e8",
-"assets/assets/images/medium_yellow_jordy.png": "7c14ce62cb85cc9ad7bd830631a400d8",
-"assets/assets/images/big_yellow.png": "02a82809afe8b7ed59f611766c1f2a8b",
-"assets/assets/images/jordy_purple.jpg": "ece1dab684e67e527ccba3e611342654",
+"assets/assets/images/jordy_profile.jpg": "914955e165abd77a4fc762a174ca869e",
+"assets/assets/images/jordy_about.jpg": "5a49cbb6930b5315360ef83c939e0e8c",
 "assets/assets/images/swiftui_macbook.png": "a151730046f7ac186031a760fe890b92",
 "assets/assets/png/pngegg-3.png": "a2292b8c9422d5be494e950cd0bb10c7",
-"assets/assets/png/png_thumb.png": "4584a7bf420e612ffd3fdfd65dc457ab",
 "assets/assets/png/pngegg-2.png": "a00831a712bb4f59eba35cb2c4c7a737",
 "assets/assets/png/pngegg-0.png": "b4dd4c5e18b3c0a0c35018f37c2b2f94",
 "assets/assets/png/pngegg-1.png": "28554d154d62417398fdc9b062464263",
@@ -68,15 +66,20 @@ const RESOURCES = {
 "assets/assets/png/pngegg-9.png": "91bfbca5fd405e07db97ec9e7aa66f6b",
 "assets/assets/png/pngegg-8.png": "8f14a5693b410eb950f43128fcaf752d",
 "assets/assets/png/linkedin.png": "5066c0fee37c4432f8c9ddcc2b54d7e2",
-"assets/assets/png/business.png": "95b1694654cd115d598daa1f5d90c3cf",
 "assets/assets/png/cmd.png": "4a00bf539828b8ff15a82d44d5359153",
 "assets/assets/png/ios.png": "0ee748963738ae4f7cc4b75ea974f260",
 "assets/assets/png/pngegg-11.png": "6f3ff569994ba4bfcb8bda346771210c",
 "assets/assets/png/collection.png": "024a987b69f816f2ed02ccf2affad45b",
 "assets/assets/png/pngegg-10.png": "37fe8322b169ddbdeabf75930e886ac6",
 "assets/assets/png/pngegg-13.png": "1d45b6cee96ec31748de8c1c63987108",
+"assets/assets/videos/IMG_3400.mov": "01d705dfb0765a2d166f78acf6a931d5",
+"assets/assets/videos/IMG_3398.MOV": "f4f2db1ef8366b2950a374a168adc480",
 "assets/assets/documents/jordy_hershel.pdf": "defb372a50defa14b0f560037ba377c9",
-"assets/assets/documents/Portfolio_Jordy_Hershel.pdf": "1a0f5f054e464480edf3e143a2ddf5b7"
+"assets/assets/documents/Portfolio_Jordy_Hershel.pdf": "1a0f5f054e464480edf3e143a2ddf5b7",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -84,7 +87,6 @@ const RESOURCES = {
 const CORE = [
   "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -183,9 +185,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })

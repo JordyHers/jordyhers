@@ -8,17 +8,20 @@ import 'package:provider/provider.dart';
 
 class HeaderSection extends StatelessWidget {
   final bool isMobile;
-   HeaderSection({
+  HeaderSection({
     Key? key,
     required this.isMobile,
   }) : super(key: key);
 
- List<String> images = ["assets/images/jordy_about.jpg","assets/images/jordy_about.jpg"];
+  List<String> images = [
+    "assets/images/jordy_about.jpg",
+    "assets/images/jordy_about.jpg"
+  ];
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
     return Container(
-      height: isMobile ? getHeight(context) * 0.85 : getHeight(context) * 0.95,
+      height: getHeight(context) * 0.85,
       decoration: BoxDecoration(
         color: Theme.of(context).backgroundColor,
       ),
@@ -38,7 +41,8 @@ class HeaderSection extends StatelessWidget {
                     : Padding(
                         padding: isMobile
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
-                            :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10),
+                            : EdgeInsets.symmetric(
+                                horizontal: getWidth(context) * 0.10),
                         child: Text("Hello, I'm ",
                             style: GoogleFonts.pacifico(
                               fontSize: getHeight(context) * 0.08,
@@ -54,7 +58,8 @@ class HeaderSection extends StatelessWidget {
                     : Padding(
                         padding: isMobile
                             ? const EdgeInsets.symmetric(horizontal: 8.0)
-                            :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10),
+                            : EdgeInsets.symmetric(
+                                horizontal: getWidth(context) * 0.10),
                         child: Text("Jordy Hershel. 🚀 ",
                             style: GoogleFonts.pacifico(
                               fontSize: getHeight(context) * 0.08,
@@ -66,13 +71,12 @@ class HeaderSection extends StatelessWidget {
                 isMobile
                     ? SizedBox.shrink()
                     : Padding(
-                        padding:  EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             horizontal: getWidth(context) * 0.10, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-
                             Container(
                               width: getWidth(context) / 3,
                               child: SelectableText(
@@ -80,7 +84,7 @@ class HeaderSection extends StatelessWidget {
                                   'the fastest growing platforms such as React Native and Flutter. '
                                   'Your expert can also provide counseling to your dev teams. You can find me on Upwork for Freelance projects.',
                                   style: GoogleFonts.inter(
-                                      fontSize:  17,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w600,
                                       color: Colors.grey.shade700,
                                       height: 1.5)),
@@ -89,21 +93,17 @@ class HeaderSection extends StatelessWidget {
                             ElevatedButton(
                               onPressed: () {
                                 repository.downloadFile(st.cvPath);
-
                               },
-
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-
                                   const SizedBox(width: 8.0),
                                   Text(
                                     'Download CV',
-                                    style: GoogleFonts.inter(
-                                      color: Colors.white
-                                    ),
+                                    style:
+                                        GoogleFonts.inter(color: Colors.white),
                                   ),
                                   const SizedBox(width: 12.0),
                                   Icon(Icons.download)
@@ -112,8 +112,8 @@ class HeaderSection extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.black,
                                   side: BorderSide(
-                                  width: 2.0,
-                                  color: Colors.white,
+                                    width: 2.0,
+                                    color: Colors.white,
                                   ),
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 20),
@@ -128,29 +128,27 @@ class HeaderSection extends StatelessWidget {
             ),
           ),
           isMobile
-              ?  Align(
-            alignment: Alignment.center,
-                    child: Padding(
-                      padding:  EdgeInsets.symmetric(
-                          vertical: 40, horizontal: getWidth(context) * 0.05),
-                      child:ClipOval(child:Image.asset(images[1],
-                          height: getHeight(context) * 0.40) ,)
-                    ),
-                  )
-              
-              :
-                Align(
-                    alignment: Alignment.topRight,
-                    child:Padding(
-                      padding:  EdgeInsets.symmetric(
+              ? Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                      padding: EdgeInsets.symmetric(
                           vertical: 40, horizontal: getWidth(context) * 0.05),
                       child: ClipOval(
                         child: Image.asset(images[1],
-                            height: getHeight(context) * 0.70),
-                      ),
+                            height: getHeight(context) * 0.40),
+                      )),
+                )
+              : Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 40, horizontal: getWidth(context) * 0.05),
+                    child: ClipOval(
+                      child: Image.asset(images[1],
+                          height: getHeight(context) * 0.70),
                     ),
-
-              ),
+                  ),
+                ),
           isMobile
               ? Align(
                   alignment: Alignment.topLeft,

@@ -1,3 +1,5 @@
+import 'package:jordyhers/models.dart';
+
 ///
 ///
 ///_______________________ Constants_____________________
@@ -15,7 +17,7 @@ const tower_image_address =
     'https://images.unsplash.com/photo-1621168322085-9318dd9a7517?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80';
 const airpods =
     'https://images.unsplash.com/photo-1610438235354-a6ae5528385c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80';
-  const videoHome = 'assets/videos/IMG_3398.MOV';
+const videoHome = 'assets/videos/IMG_3398.MOV';
 const videoProfile = 'assets/videos/IMG_3400.mov';
 
 ///________________ Social media_________________________
@@ -71,23 +73,73 @@ const String why_flutter = "1. Fast Development\n\n"
     "Source-level Debugger: It lets you step through code, set breakpoints and investigate the call stack."
     "Logging View displays events from the Dart runtime, application frameworks and app-level logging events.";
 
+List<EducationModel> education = [
+  EducationModel("1. Master Degree - Germany", "IU Applied Science University ",
+      "2022-Present"),
+  EducationModel("2.University Bachelor Degree - Turkey",
+      " -- Istanbul Gelisim University -- ", "2014-2021"),
+  EducationModel("3. High-school - Gabon", " -- Lycée Privé René Descartes -- ",
+      "2011-2014"),
+];
+
+List<ExperienceModel> experienceList = [
+  ExperienceModel(
+      "Senior Flutter Developer",
+      "Mindable Health · Full-time / Germany",
+      "Jul 2022 - Present · 6 mos",
+      "https://media.licdn.com/dms/image/C4E0BAQF8lBnVJ6NDyQ/company-logo_100_100/0/1656946168759?e=1680739200&v=beta&t=A5i7uQnt1fKiGr2cWX_-d_SFQbNISWe25y38i0sfuLs"),
+  ExperienceModel(
+      "Flutter Developer",
+      "Full time / Istanbul, Turkey",
+      "Aug 2020 - Jul 2022 · 2 yrs 1 mos",
+      "https://media.licdn.com/dms/image/C560BAQGO3vsmV1R8Rw/company-logo_100_100/0/1538446725619?e=1680739200&v=beta&t=baiH7ha0lyqP5d2xmi8_H3R1uHjuBZACKKTxOxlv2RY"),
+  ExperienceModel(
+      "Freelance Flutter developer",
+      "Upwork · Freelance / Remote",
+      "Jun 2018 - Jul 2022 · 4 yrs 2 mos",
+      "https://media.licdn.com/dms/image/C4E0BAQFAvA55uI9RQQ/company-logo_100_100/0/1620158724382?e=1680739200&v=beta&t=MEhmlJ-ZlRjBORLTJgxm17w7rVDXi6Q1v3qDD2DIDaM"),
+  ExperienceModel(
+      "Junior React Native Developer",
+      "Yeni Eğitim Sistemi · Internship / Istanbul, Turkey",
+      "Jul 2021 - Sep 2021 · 3 mos",
+      "https://media.licdn.com/dms/image/C560BAQGO3vsmV1R8Rw/company-logo_100_100/0/1538446725619?e=1680739200&v=beta&t=baiH7ha0lyqP5d2xmi8_H3R1uHjuBZACKKTxOxlv2RY"),
+  ExperienceModel(
+      "Language Consultant",
+      "Turkish-American As. Language School · Freelance / Turkey",
+      "Jul 2018 - Jul 2019 · 1 yr 1 mo",
+      "https://media.licdn.com/dms/image/C510BAQEqU-iJ4nWOBQ/company-logo_100_100/0/1519914449872?e=1680739200&v=beta&t=_i69pjNqgRXKZF94JgNPO4NX1FWIjuPMQzEuhwNuyCw"),
+  ExperienceModel(
+      "English Second Language Teacher",
+      " English Time · Part-time / Istanbul, Turkey",
+      "Oct 2017 - Jan 2018 4 mos",
+      "https://media.licdn.com/dms/image/C4E0BAQHDHdvgMTL8JQ/company-logo_100_100/0/1519865079469?e=1680739200&v=beta&t=tKHce3ro3GpwNw2FlsqJiAo6Chk4z7qaglRLBl08P9g"),
+];
 
 List<Map<String, dynamic>> apps = [
-  {'title':"Time's Up",
+  {
+    'title': "Time's Up",
     'url': githubTimesUp,
-    'description':'Times Up help parents monitor the time kids spend on screen',
-    'image': 'assets/png/timesup.png'},
-  {'title':'Owanto',
     'description':
-    ' Owanto is a ecommerce platform made  '
+        'Times Up help parents monitor the time kids spend on screen',
+    'image': 'assets/png/timesup.png'
+  },
+  {
+    'title': 'Owanto',
+    'description': ' Owanto is a ecommerce platform made  '
         'for a customer',
     'url': githubOwanto,
-    'image': 'assets/png/collection.png'},
-  {'title':'IosAppTutorial',
+    'image': 'assets/png/collection.png'
+  },
+  {
+    'title': 'IosAppTutorial',
     'url': githubIos,
-    'description':'this project helps  dev start up with SwiftUI',
-    'image': 'assets/png/ios.png'},
-  {'title':'Terminal',
+    'description': 'this project helps  dev start up with SwiftUI',
+    'image': 'assets/png/ios.png'
+  },
+  {
+    'title': 'Terminal',
     'url': githubTerminal,
-    'description':'Terminal App is   an Open Source Project',
-    'image': 'assets/png/cmd.png'}];
+    'description': 'Terminal App is   an Open Source Project',
+    'image': 'assets/png/cmd.png'
+  }
+];

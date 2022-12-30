@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/navigation_service.dart';
+import 'package:jordyhers/utils/config.dart';
 
 import '../../locator.dart';
 
@@ -23,25 +24,21 @@ class NavBarLogo extends StatelessWidget {
                     opacity: 0,
                   ),
                 ),
-                Text(
-                  "Jordy",
-                  style: GoogleFonts.inter(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w800,
-                      color: Theme.of(context).primaryTextTheme.caption!.color,
-                      ),
-                ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 18.0),
-                  child: Text(
-                    "Hers.com",
-                    style: GoogleFonts.inter(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.purpleAccent,
-                        ),
+                  padding: EdgeInsets.only(
+                      top: 4.0, right: getWidth(context) * 0.015),
+                  child: InkWell(
+                    onTap: () {
+                      locator<NavigationService>().navigateTo(HomeRoute);
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        "assets/png/favicon.png",
+                        height: getHeight(context) * 0.05,
+                      ),
+                    ),
                   ),
-                ),
+                )
               ],
             )
           : Row(

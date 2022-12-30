@@ -93,7 +93,7 @@ class _EmailUsState extends State<EmailUs> {
                       height: getHeight(context) * 0.10,
                       width: getWidth(context) * 0.85,
                       child: TextField(
-                        style: GoogleFonts.inter( color: Colors.deepPurple),
+                        style: GoogleFonts.inter(color: Colors.deepPurple),
                         enabled: enabled,
                         controller: _controller,
                         onChanged: (value) {
@@ -111,14 +111,14 @@ class _EmailUsState extends State<EmailUs> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black.withOpacity(0.9),
-
-                          minimumSize: Size(150, getHeight(context) * 0.05),
+                          minimumSize: Size(
+                              getWidth(context), getHeight(context) * 0.06),
                           side: BorderSide(
                             width: 2.0,
                             color: Colors.white,
                           )),
                       onPressed: () {
-                        if(_controller.text.isEmpty){
+                        if (_controller.text.isEmpty) {
                           return null;
                         }
                         if (_controller.text.isNotEmpty && emailValid == true) {
@@ -139,8 +139,10 @@ class _EmailUsState extends State<EmailUs> {
                       },
                       child: SizedBox(
                           child: Text(
-                            'Contact Us',
-                        style: GoogleFonts.inter(color: Colors.white),
+                        'Contact Us',
+                        style: GoogleFonts.inter(
+                            color: Colors.white,
+                            fontSize: getHeight(context) * 0.013),
                       )),
                     ),
                   ],
