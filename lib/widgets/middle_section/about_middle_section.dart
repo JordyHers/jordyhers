@@ -23,7 +23,7 @@ class AboutMiddleSection extends StatelessWidget {
             'About Me',
             style: GoogleFonts.inter(
                 fontSize: isMobile ? 22 : 30,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w700,
                 color: Theme.of(context).primaryTextTheme.caption!.color),
           ),
         ),
@@ -73,7 +73,7 @@ class AboutMiddleSection extends StatelessWidget {
                   'Education',
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w700,
                       color: Theme.of(context).primaryTextTheme.caption!.color),
                 ),
               ),
@@ -107,7 +107,7 @@ class AboutMiddleSection extends StatelessWidget {
                   'Experience',
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w700,
                       color: Theme.of(context).primaryTextTheme.caption!.color),
                 ),
               ),
@@ -142,7 +142,7 @@ class AboutMiddleSection extends StatelessWidget {
                   'Why Flutter ?',
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w700,
                       color: Theme.of(context).primaryTextTheme.caption!.color),
                 ),
               ),
