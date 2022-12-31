@@ -14,7 +14,6 @@ class AboutContentMobile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-
             AboutMiddleSection(isMobile: true),
             BottomBar(isMobile: true)
           ],

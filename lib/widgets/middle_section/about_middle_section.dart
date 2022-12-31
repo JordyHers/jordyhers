@@ -58,7 +58,7 @@ class AboutMiddleSection extends StatelessWidget {
                         horizontal: getWidth(context) * 0.20, vertical: 20),
                 child: SelectableText(st.aboutMe,
                     style: GoogleFonts.inter(
-                        letterSpacing: 1,
+                        letterSpacing: 0.5,
                         fontSize: isMobile ? 14 : 15,
                         fontWeight: FontWeight.w300,
                         height: 1.8,
@@ -193,6 +193,11 @@ class ComponentView extends StatelessWidget {
           children: [
             if (url != null && url!.isNotEmpty)
               Container(
+                margin: isMobile
+                    ? EdgeInsets.symmetric(
+                        horizontal: getWidth(context) * 0.025)
+                    : EdgeInsets.symmetric(
+                        horizontal: getWidth(context) * 0.020),
                 height: getHeight(context) * 0.12,
                 width: getWidth(context) * 0.06,
                 decoration: BoxDecoration(

@@ -94,7 +94,7 @@ class _NavigationBarTabletDesktopState
                       BoxDecoration(color: color, shape: BoxShape.circle),
                   child: Image.asset(
                     'assets/png/linkedin.png',
-                    height: getHeight(context) * 0.020,
+                    height: getHeight(context) * 0.028,
                   ),
                 ),
               ),
@@ -121,7 +121,7 @@ class _NavigationBarTabletDesktopState
                       BoxDecoration(color: color2, shape: BoxShape.circle),
                   child: Image.asset(
                     'assets/png/pngegg-9.png',
-                    height: getHeight(context) * 0.025,
+                    height: getHeight(context) * 0.035,
                   ),
                 ),
               ),

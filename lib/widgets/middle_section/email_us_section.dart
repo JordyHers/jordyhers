@@ -30,22 +30,25 @@ class _EmailUsState extends State<EmailUs> {
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             title: Text(
               'Thank You!',
-              style: TextStyle(
-                  color: Colors.purpleAccent, fontWeight: FontWeight.w800),
+              style: GoogleFonts.inter(
+                  color: Colors.purpleAccent, fontWeight: FontWeight.w700),
             ),
             content: Text(
               'We are glad to receive your email and\n we will contact you soon.\n',
-              style: TextStyle(
+              style: GoogleFonts.inter(
                   color: Colors.black,
                   fontSize: 13,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w500),
             ),
             actions: <Widget>[
               TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('Close')),
+                  child: Text(
+                    'Close',
+                    style: GoogleFonts.inter(color: Colors.black),
+                  )),
             ],
           );
         });
@@ -71,9 +74,9 @@ class _EmailUsState extends State<EmailUs> {
                 Text(
                   'Contact Us',
                   style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                       fontSize: 21,
-                      color: Colors.grey.shade500),
+                      color: Colors.grey.shade600),
                 ),
                 SizedBox(height: getHeight(context) / 25),
                 SelectableText(
@@ -139,10 +142,9 @@ class _EmailUsState extends State<EmailUs> {
                       },
                       child: SizedBox(
                           child: Text(
-                        'Contact Us',
+                        'Send',
                         style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontSize: getHeight(context) * 0.013),
+                            color: Colors.white, fontSize: 17),
                       )),
                     ),
                   ],

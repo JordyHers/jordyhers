@@ -84,17 +84,17 @@ List<EducationModel> education = [
 
 List<ExperienceModel> experienceList = [
   ExperienceModel(
-      "Senior Flutter Developer",
+      "Senior Flutter Mobile Application Developer",
       "Mindable Health · Full-time / Germany",
       "Jul 2022 - Present · 6 mos",
       "https://media.licdn.com/dms/image/C4E0BAQF8lBnVJ6NDyQ/company-logo_100_100/0/1656946168759?e=1680739200&v=beta&t=A5i7uQnt1fKiGr2cWX_-d_SFQbNISWe25y38i0sfuLs"),
   ExperienceModel(
-      "Flutter Developer",
+      "Flutter Mobile Application Developer",
       "Full time / Istanbul, Turkey",
       "Aug 2020 - Jul 2022 · 2 yrs 1 mos",
       "https://media.licdn.com/dms/image/C560BAQGO3vsmV1R8Rw/company-logo_100_100/0/1538446725619?e=1680739200&v=beta&t=baiH7ha0lyqP5d2xmi8_H3R1uHjuBZACKKTxOxlv2RY"),
   ExperienceModel(
-      "Freelance Flutter developer",
+      "Freelance Flutter Mobile Application developer",
       "Upwork · Freelance / Remote",
       "Jun 2018 - Jul 2022 · 4 yrs 2 mos",
       "https://media.licdn.com/dms/image/C4E0BAQFAvA55uI9RQQ/company-logo_100_100/0/1620158724382?e=1680739200&v=beta&t=MEhmlJ-ZlRjBORLTJgxm17w7rVDXi6Q1v3qDD2DIDaM"),
