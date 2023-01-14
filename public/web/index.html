@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    Fore more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="Jordy Hershel IG, is a young and talented flutter developer.He has worked for several companies , startups and agencies. With more than
+3 years of both teaching and supervising experience , Jordy is definitely your programmer. Visit his website to learn more."
+          name="description">
+
+    <!-- iOS meta tags & icons -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="JordyHers |• Flutter developer |· iOS developer" name="apple-mobile-web-app-title">
+    <meta content="https://firebasestorage.googleapis.com/v0/b/jordyhers.appspot.com/o/logo2.png?alt=media&token=0e461d6c-c4f0-4fe7-9406-ee304bc1d79d"
+          property="og:image">
+    <link href="icons/favicon.png" rel="apple-touch-icon">
+
+    <!-- Favicon -->
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <title>Jordyhers</title>
+    <link href="manifest.json" rel="manifest">
+
+</head>
+<body>
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('flutter-first-frame', function () {
+      navigator.serviceWorker.register('flutter_service_worker.js?v=3359892704');
+    });
+  }
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCeJTYoBvqSckIJ5_STug01Fb9q1SbHkyA",
+    authDomain: "jordyhers.firebaseapp.com",
+    projectId: "jordyhers",
+    storageBucket: "jordyhers.appspot.com",
+    messagingSenderId: "1052761158185",
+    appId: "1:1052761158185:web:cb8a154814784381202238",
+    measurementId: "G-KV8Y8RY7J1"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>

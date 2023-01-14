@@ -55,7 +55,7 @@ class _NavigationBarTabletDesktopState
                   },
                   child: TextButton(
                       onPressed: () {
-                        if (strings[i] == 'About') {
+                        if (strings[i] == 'Page') {
                           locator<NavigationService>().navigateTo(AboutRoute);
                         } else if (strings[i] == 'Home') {
                           locator<NavigationService>().navigateTo(HomeRoute);
