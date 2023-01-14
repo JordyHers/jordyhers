@@ -22,7 +22,7 @@ class _NavigationBarTabletDesktopState
     extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey];
   List<String> strings = [
-    "Page",
+    "Home",
     "About",
   ];
   Color color = Colors.transparent;
@@ -55,7 +55,7 @@ class _NavigationBarTabletDesktopState
                   },
                   child: TextButton(
                       onPressed: () {
-                        if (strings[i] == 'Page') {
+                        if (strings[i] == 'About') {
                           locator<NavigationService>().navigateTo(AboutRoute);
                         } else if (strings[i] == 'Home') {
                           locator<NavigationService>().navigateTo(HomeRoute);

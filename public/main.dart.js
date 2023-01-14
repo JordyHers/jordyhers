@@ -72012,7 +72012,7 @@ q=q.d.gP()
 if(q!=null)q.CY(0)},
 $S:0}
 A.xU.prototype={
-ak(){return new A.Pv(A.a([B.dr,B.dr,B.dr],t.t_),A.a(["Page","About"],t.s),B.v,B.v,B.k)}}
+ak(){return new A.Pv(A.a([B.dr,B.dr,B.dr],t.t_),A.a(["Home","About"],t.s),B.v,B.v,B.k)}}
 A.Pv.prototype={
 J(a){var s,r,q,p,o=this,n=null,m=A.yw(a,!1,t.RI),l=t.p,k=A.a([],l)
 for(s=o.e,r=o.d,q=0;q<=1;++q)k.push(new A.xL(new A.aft(o,q),n,new A.afu(o,q),B.bh,A.ame(new A.ws(A.cZ(s[q],n,n,n,A.bO(r[q],17,B.c4,n,n),n,n),n),new A.afv(o,q),n),n))
@@ -72038,7 +72038,7 @@ $0(){this.a.d[this.b]=B.dr},
 $S:0}
 A.afv.prototype={
 $0(){var s=this.a.e[this.b]
-if(s==="Page")$.jF().$1$0(t.c).a.gP().js("about",t.X)
+if(s==="About")$.jF().$1$0(t.c).a.gP().js("about",t.X)
 else if(s==="Home")$.jF().$1$0(t.c).a.gP().js("home",t.X)
 else A.fp(s+" was Tapped")},
 $S:0}
