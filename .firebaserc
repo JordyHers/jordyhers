@@ -1,7 +1,5 @@
 {
   "projects": {
-    "default": "jordyhers",
-    "add": "jordyhers"
-  },
-  "targets": {}
+    "default": "jordyhers"
+  }
 }

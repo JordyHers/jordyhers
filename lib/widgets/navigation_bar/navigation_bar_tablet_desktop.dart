@@ -22,7 +22,7 @@ class _NavigationBarTabletDesktopState
     extends State<NavigationBarTabletDesktop> {
   List<Color> colors = [Colors.grey, Colors.grey, Colors.grey];
   List<String> strings = [
-    "Home",
+    "Page",
     "About",
   ];
   Color color = Colors.transparent;
