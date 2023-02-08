@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
+import 'package:provider/provider.dart';
 
 class AboutMe extends StatelessWidget {
   final bool isMobile;
@@ -19,8 +20,11 @@ class AboutMe extends StatelessWidget {
         children: [
           Padding(
             padding: isMobile
-                ?  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10, vertical: getHeight(context) * 0.02)
-                :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.20, vertical: 20),
+                ? EdgeInsets.symmetric(
+                    horizontal: getWidth(context) * 0.10,
+                    vertical: getHeight(context) * 0.02)
+                : EdgeInsets.symmetric(
+                    horizontal: getWidth(context) * 0.20, vertical: 20),
             child: SelectableText(
               'About Me',
               style: GoogleFonts.inter(
@@ -37,19 +41,22 @@ class AboutMe extends StatelessWidget {
               children: [
                 Padding(
                   padding: isMobile
-                      ?  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.10,vertical: getHeight(context) * 0.02)
-                      :  EdgeInsets.symmetric(horizontal: getWidth(context) * 0.20),
+                      ? EdgeInsets.symmetric(
+                          horizontal: getWidth(context) * 0.10,
+                          vertical: getHeight(context) * 0.02)
+                      : EdgeInsets.symmetric(
+                          horizontal: getWidth(context) * 0.20),
                   child: FittedBox(
                     child: Container(
                       height: 150,
                       width: 150,
                       decoration: BoxDecoration(
-                        color: Colors.yellow,
+                        color: Theme.of(context).colorScheme.background,
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          fit: BoxFit.scaleDown,
-                            image: AssetImage('assets/images/jordy_profile.jpg')
-                        ),
+                            fit: BoxFit.scaleDown,
+                            image:
+                                AssetImage('assets/images/jordy_profile.jpg')),
                       ),
                     ),
                   ),
@@ -58,17 +65,15 @@ class AboutMe extends StatelessWidget {
                   padding: isMobile
                       ? const EdgeInsets.symmetric(
                           horizontal: 60.0, vertical: 10)
-                      :  EdgeInsets.symmetric(
+                      : EdgeInsets.symmetric(
                           horizontal: getWidth(context) * 0.20, vertical: 20),
-                  child:  SelectableText(
-                        st.aboutMe,
-                        style: GoogleFonts.inter(
-                          fontSize: isMobile ? 14 : 19,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.grey.shade500,
-                          height: 1.8,
-                        )),
-
+                  child: SelectableText(st.aboutMe,
+                      style: GoogleFonts.inter(
+                        fontSize: isMobile ? 14 : 19,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey.shade500,
+                        height: 1.8,
+                      )),
                 ),
               ],
             ),

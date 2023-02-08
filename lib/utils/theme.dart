@@ -9,7 +9,7 @@ class Style {
             .textTheme // If this is not set, then ThemeData.light().textTheme is used.
         ),
     canvasColor: Colors.black,
-    backgroundColor: Colors.white,
+    backgroundColor: Color(0xFFE4E4E4),
     buttonColor: Colors.deepPurple,
     dividerColor: Colors.grey.shade400,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),

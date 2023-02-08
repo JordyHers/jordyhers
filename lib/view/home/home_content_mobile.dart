@@ -5,7 +5,6 @@ import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/email_us_section.dart';
 import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
-import 'package:jordyhers/widgets/portfolio_section/portofolio_section.dart';
 import 'package:jordyhers/widgets/video_section/video_section.dart';
 
 class HomeContentMobile extends StatelessWidget {
