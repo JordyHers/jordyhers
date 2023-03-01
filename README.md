@@ -1,6 +1,4 @@
-# Mindable Health 👋🏾
-
-<img width="515" alt="Onboarding Screen" src="https://user-images.githubusercontent.com/49708438/186181510-24eab82f-6b9e-4034-896d-41ce49df03ed.png"> 
+# Hi 👋🏾
 
 ![Jordyhers' GitHub stats](https://github-readme-stats.vercel.app/api?username=jordyhers&show_icons=true&theme=buefy)
 
