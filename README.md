@@ -5,7 +5,7 @@ I am a talented young mobile application developer . I have been developing Mobi
 
 ## Get to me via:
 
-- [LinkedIn ](www.linkedin.com/in/jordy-hershel-ig)
+- [LinkedIn](www.linkedin.com/in/jordy-hershel-ig)
 - [jordyhers.com](https://jordyhers.com/#/)
 
 
