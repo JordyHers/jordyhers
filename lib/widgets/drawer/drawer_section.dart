@@ -13,12 +13,7 @@ import '../../locator.dart';
 class DrawerSection extends StatefulWidget {
   DrawerSection({Key? key}) : super(key: key);
 
-  static const List<String> sections = [
-    'Home',
-    'Resume',
-    'About',
-    'LinkedIn'
-  ];
+  static const List<String> sections = ['Home', 'Resume', 'About', 'LinkedIn'];
 
   @override
   _DrawerSectionState createState() => _DrawerSectionState();
@@ -32,15 +27,14 @@ class _DrawerSectionState extends State<DrawerSection> {
       IconButton(
         icon: Icon(Icons.home),
         color: Theme.of(context).iconTheme.color,
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
-          locator<NavigationService>()
-              .navigateTo(HomeRoute);
+          locator<NavigationService>().navigateTo(HomeRoute);
         },
       ),
       IconButton(
         icon: Icon(Icons.file_download),
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
           repository.downloadFile(st.cvPath);
         },
@@ -48,23 +42,21 @@ class _DrawerSectionState extends State<DrawerSection> {
       ),
       IconButton(
         icon: Icon(Icons.info_outline),
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
-          locator<NavigationService>()
-              .navigateTo(AboutRoute);
+          locator<NavigationService>().navigateTo(AboutRoute);
         },
         color: Theme.of(context).iconTheme.color,
       ),
       IconButton(
         icon: Icon(Icons.work_outline),
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
           repository.launchUrl(st.linkedIn);
         },
         color: Theme.of(context).iconTheme.color,
       ),
     ];
-
 
     return Drawer(
       child: Container(
@@ -77,6 +69,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                 child: Container(
                   child: CircleAvatar(
                     radius: 45,
+                    backgroundColor: Colors.transparent,
                     backgroundImage: AssetImage('assets/png/favicon.png'),
                   ),
                 ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
-import 'package:provider/provider.dart';
 
 class AboutMe extends StatelessWidget {
   final bool isMobile;
@@ -48,15 +47,17 @@ class AboutMe extends StatelessWidget {
                           horizontal: getWidth(context) * 0.20),
                   child: FittedBox(
                     child: Container(
-                      height: 150,
+                      height: 140,
                       width: 150,
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.background,
+                        color: Color.fromRGBO(252, 242, 221, 1),
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            fit: BoxFit.scaleDown,
-                            image:
-                                AssetImage('assets/images/jordy_profile.jpg')),
+                          fit: BoxFit.scaleDown,
+                          image: AssetImage(
+                            'assets/images/jordy_profile_2.png',
+                          ),
+                        ),
                       ),
                     ),
                   ),
