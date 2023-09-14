@@ -6,9 +6,10 @@ I am keen to learn and that would be a pleasure to be a member of your company.
 I am currently working at **This awesome company**
 
 
+
 ## Get to me via:
 
-- [LinkedIn ](www.linkedin.com/in/jordy-hershel-ig)
+- [LinkedIn](https://www.linkedin.com/in/jordy-hershel-ig)
 - [jordyhers.com](https://jordyhers.com/#/)
 
 
