@@ -74,7 +74,7 @@ class _EmailUsState extends State<EmailUs> {
                 Text(
                   'Contact Us',
                   style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       fontSize: 21,
                       color: Colors.grey.shade600),
                 ),
@@ -114,8 +114,8 @@ class _EmailUsState extends State<EmailUs> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black.withOpacity(0.9),
-                          minimumSize: Size(
-                              getWidth(context), getHeight(context) * 0.06),
+                          minimumSize: Size(getWidth(context) * 0.26,
+                              getHeight(context) * 0.06),
                           side: BorderSide(
                             width: 2.0,
                             color: Colors.white,

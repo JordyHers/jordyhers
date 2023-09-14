@@ -7,21 +7,26 @@ import 'package:jordyhers/utils/theme.dart' as th;
 import 'package:jordyhers/view/layout_template.dart';
 import 'package:provider/provider.dart';
 
+import 'firebase_options.dart';
 import 'locator.dart';
 
 void main() async {
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     EasyDynamicThemeWidget(
-      child: MyApp(),
+      child: MultiProvider(providers: [
+        Provider(create: (_) => WebService()),
+        Provider(create: (_) => FirestoreService()),
+      ], child: MyApp()),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,10 +35,7 @@ class MyApp extends StatelessWidget {
       theme: th.Style.lightTheme,
       darkTheme: th.Style.darkTheme,
       themeMode: EasyDynamicTheme.of(context).themeMode,
-      home: Provider(
-          create: (_) => WebService(),
-          child: Provider(
-              create: (_) => FirestoreService(), child: LayoutTemplate())),
+      home: LayoutTemplate(),
     );
   }
 }

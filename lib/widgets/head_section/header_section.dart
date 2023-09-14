@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/url_launcher.dart';
@@ -130,53 +129,63 @@ class HeaderSection extends StatelessWidget {
           isMobile
               ? Align(
                   alignment: Alignment.center,
-                  child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 40, horizontal: getWidth(context) * 0.05),
-                      child: ClipOval(
-                        child: Image.asset(images[1],
-                            height: getHeight(context) * 0.40),
-                      )),
+                  child: Transform.scale(
+                    scale: getWidth(context) * 20 / 10000,
+                    child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: getWidth(context) * 0.05),
+                        child: ClipOval(
+                          child: Image.asset(
+                            images[1],
+                            height: getHeight(context) * 0.40,
+                          ),
+                        )),
+                  ),
                 )
               : Align(
                   alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 40, horizontal: getWidth(context) * 0.05),
-                    child: ClipOval(
-                      child: Image.asset(images[1],
-                          height: getHeight(context) * 0.70),
+                  child: Transform.scale(
+                    scale: getWidth(context) * 7 / 10000,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: getHeight(context) * 0.10,
+                          horizontal: getWidth(context) * 0.05),
+                      child: ClipOval(
+                        child: Image.asset(
+                          images[1],
+                          height: getHeight(context) * 0.60,
+                        ),
+                      ),
                     ),
                   ),
                 ),
           isMobile
-              ? Align(
-                  alignment: Alignment.topLeft,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text("Hello, I'm ",
-                            style: GoogleFonts.pacifico(
-                              fontSize: getHeight(context) * 0.06,
-                              fontWeight: FontWeight.w900,
-                              color: Theme.of(context)
-                                  .primaryTextTheme
-                                  .caption!
-                                  .color,
-                            )),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text("Jordy Hershel",
-                            style: GoogleFonts.pacifico(
-                              fontSize: getHeight(context) * 0.06,
-                              color: Colors.purpleAccent,
-                              fontWeight: FontWeight.w900,
-                            )),
-                      ),
-                    ],
-                  ),
+              ? Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text("Hello, I'm ",
+                          textScaleFactor: 0.8,
+                          style: GoogleFonts.pacifico(
+                            fontSize: getHeight(context) * 0.06,
+                            fontWeight: FontWeight.w900,
+                            color: Theme.of(context)
+                                .primaryTextTheme
+                                .caption!
+                                .color,
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text("Jordy Hershel. 🚀 ",
+                          textScaleFactor: 0.8,
+                          style: GoogleFonts.pacifico(
+                            fontSize: getHeight(context) * 0.06,
+                            color: Colors.purpleAccent,
+                            fontWeight: FontWeight.w900,
+                          )),
+                    ),
+                  ],
                 )
               : Container()
         ],

@@ -42,11 +42,12 @@ class AboutMiddleSection extends StatelessWidget {
                     height: 180,
                     width: 180,
                     decoration: BoxDecoration(
-                      color: Colors.yellow,
+                      color: Color.fromRGBO(252, 242, 221, 1),
                       shape: BoxShape.circle,
                       image: DecorationImage(
                           fit: BoxFit.scaleDown,
-                          image: AssetImage('assets/images/jordy_about.jpg')),
+                          image:
+                              AssetImage('assets/images/jordy_profile_2.png')),
                     ),
                   ),
                 ),
@@ -128,7 +129,6 @@ class AboutMiddleSection extends StatelessWidget {
                             title: st.experienceList[index].title,
                             description: st.experienceList[index].description,
                             period: st.experienceList[index].period,
-                            url: st.experienceList[index].imageUrl,
                           )),
                 ),
               ),

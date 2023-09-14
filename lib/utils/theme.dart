@@ -1,19 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Style {
   static final lightTheme = ThemeData(
-    primarySwatch: Colors.deepPurple,
     textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.light()
             .textTheme // If this is not set, then ThemeData.light().textTheme is used.
         ),
     canvasColor: Colors.black,
     backgroundColor: Color(0xFFE4E4E4),
-    buttonColor: Colors.deepPurple,
     dividerColor: Colors.grey.shade400,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
     iconTheme: IconThemeData(color: Colors.black),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
+        .copyWith(background: Color(0xFFE4E4E4)),
   );
   static final darkTheme = ThemeData(
     primarySwatch: Colors.deepPurple,
@@ -23,7 +22,6 @@ class Style {
     canvasColor: Colors.white,
     dividerColor: Colors.white,
     backgroundColor: Colors.black,
-    buttonColor: Colors.deepPurple,
     primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),
     iconTheme: IconThemeData(color: Colors.white),
   );

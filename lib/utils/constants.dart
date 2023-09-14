@@ -37,7 +37,7 @@ const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
 ///
 ///
 const documentPath = 'assets/documents/Portfolio_Jordy_Hershel.pdf';
-const cvPath = 'assets/documents/jordy_hershel.pdf';
+const cvPath = 'assets/documents/Resume-Jordy-Hershel-IG.pdf';
 
 ///
 ///
@@ -75,7 +75,7 @@ const String why_flutter = "1. Fast Development\n\n"
 
 List<EducationModel> education = [
   EducationModel("1. Master Degree - Germany", "IU Applied Science University ",
-      "2022-Present"),
+      "2022- Postpone"),
   EducationModel("2.University Bachelor Degree - Turkey",
       " -- Istanbul Gelisim University -- ", "2014-2021"),
   EducationModel("3. High-school - Gabon", " -- Lycée Privé René Descartes -- ",
@@ -85,8 +85,13 @@ List<EducationModel> education = [
 List<ExperienceModel> experienceList = [
   ExperienceModel(
       "Senior Flutter Mobile Application Developer",
+      "Wurth Cloud Service · Full-time / Germany",
+      "Jul 2022 - Present",
+      "https://media.licdn.com/dms/image/C4E0BAQF8lBnVJ6NDyQ/company-logo_100_100/0/1656946168759?e=1680739200&v=beta&t=A5i7uQnt1fKiGr2cWX_-d_SFQbNISWe25y38i0sfuLs"),
+  ExperienceModel(
+      "Senior Flutter Mobile Application Developer",
       "Mindable Health · Full-time / Germany",
-      "Jul 2022 - Present · 6 mos",
+      "Jul 2022 - Mar 2023 · 9 mos",
       "https://media.licdn.com/dms/image/C4E0BAQF8lBnVJ6NDyQ/company-logo_100_100/0/1656946168759?e=1680739200&v=beta&t=A5i7uQnt1fKiGr2cWX_-d_SFQbNISWe25y38i0sfuLs"),
   ExperienceModel(
       "Flutter Mobile Application Developer",
@@ -121,25 +126,25 @@ List<Map<String, dynamic>> apps = [
     'url': githubTimesUp,
     'description':
         'Times Up help parents monitor the time kids spend on screen',
-    'image': 'assets/png/timesup.png'
+    'image': 'assets/png/pngegg-0.png'
   },
   {
     'title': 'Owanto',
     'description': ' Owanto is a ecommerce platform made  '
         'for a customer',
     'url': githubOwanto,
-    'image': 'assets/png/collection.png'
+    'image': 'assets/png/pngegg-0.png'
   },
   {
     'title': 'IosAppTutorial',
     'url': githubIos,
     'description': 'this project helps  dev start up with SwiftUI',
-    'image': 'assets/png/ios.png'
+    'image': 'assets/png/pngegg-0.png'
   },
   {
     'title': 'Terminal',
     'url': githubTerminal,
     'description': 'Terminal App is   an Open Source Project',
-    'image': 'assets/png/cmd.png'
+    'image': 'assets/png/pngegg-0.png'
   }
 ];
