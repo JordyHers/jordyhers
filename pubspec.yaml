@@ -25,17 +25,18 @@ dependencies:
     sdk: flutter
   platform: ^3.1.0
   cupertino_icons: ^1.0.2
-  responsive_builder: ^0.4.1
+  responsive_builder: ^0.7.0
   easy_dynamic_theme: ^2.0.0
   email_validator: ^2.0.1
   url_launcher: ^6.0.10
   provider: ^6.0.1
-  google_fonts: ^2.3.1
+  google_fonts: ^4.0.3
   video_player: ^2.4.10
-  flutter_carousel_widget: ^1.1.0
-  cloud_firestore: ^2.5.3
-  firebase_core: ^1.7.0
-  get_it: ^6.1.1
+  flutter_carousel_widget: ^2.0.2
+  cloud_firestore: ^4.4.5
+  firebase_core_platform_interface: ^4.5.3
+  firebase_core: ^2.8.0
+  get_it: ^7.2.0
   http: ^0.13.4
 
 dev_dependencies:

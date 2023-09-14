@@ -30,7 +30,7 @@
 .pub-cache/
 .pub/
 /build/
-
+firebase_options.dart
 # Web related
 
 # Symbolication related
