@@ -1,9 +1,9 @@
 
 # Jordy Hershel
-I am a talented young mobile application developer .
+Senior Software developer.
 I have been developing Mobile application for several years now and I do have a solid background in Developing tools. 
-I am keen to learn and that would be a pleasure to be a member of your company. 
-I am currently working at **This awesome company**
+Find me on linked in or visit my website 
+I am currently working at - [Wuerth](https://www.wuerth.de/)
 
 
 
