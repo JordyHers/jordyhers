@@ -1,6 +1,7 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/theme.dart' as th;
@@ -11,6 +12,8 @@ import 'firebase_options.dart';
 import 'locator.dart';
 
 void main() async {
+  usePathUrlStrategy();
+
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
