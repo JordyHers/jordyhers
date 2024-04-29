@@ -1,5 +1,5 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/jordyigondjo/fvm/versions/3.10.3
+FLUTTER_ROOT=/Users/jordyigondjo/fvm/versions/3.16.5
 FLUTTER_APPLICATION_PATH=/Users/jordyigondjo/StudioProjects/jordyhers
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
