@@ -7,12 +7,12 @@ class Style {
             .textTheme // If this is not set, then ThemeData.light().textTheme is used.
         ),
     canvasColor: Colors.black,
-    backgroundColor: Color(0xFFE4E4E4),
+    scaffoldBackgroundColor: Color(0xFFE4E4E4),
     dividerColor: Colors.grey.shade400,
-    primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.black)),
+    primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.black)),
     iconTheme: IconThemeData(color: Colors.black),
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
-        .copyWith(background: Color(0xFFE4E4E4)),
+        .copyWith(surface: Color(0xFFE4E4E4)),
   );
   static final darkTheme = ThemeData(
     primarySwatch: Colors.deepPurple,
@@ -21,8 +21,8 @@ class Style {
         ),
     canvasColor: Colors.white,
     dividerColor: Colors.white,
-    backgroundColor: Colors.black,
-    primaryTextTheme: TextTheme(caption: TextStyle(color: Colors.white)),
+    scaffoldBackgroundColor: Colors.black,
+    primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.white)),
     iconTheme: IconThemeData(color: Colors.white),
   );
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jordyhers/utils/enums.dart';
 import 'package:jordyhers/widgets/bottom_section/bottom_bar_column.dart';
 import 'package:jordyhers/widgets/head_section/header_section.dart';
 import 'package:jordyhers/widgets/middle_section/about_me.dart';
 import 'package:jordyhers/widgets/middle_section/email_us_section.dart';
 import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
-import 'package:jordyhers/widgets/portfolio_section/portofolio_section.dart';
 import 'package:jordyhers/widgets/video_section/video_section.dart';
 
 class HomeContentDesktop extends StatelessWidget {
@@ -14,16 +14,16 @@ class HomeContentDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            HeaderSection(isMobile: false),
-            MiddleSection(isMobile: false),
-            VideoSection(isMobile: false),
-            AboutMe(isMobile: false),
+            HeaderSection(PlatformView.web),
+            MiddleSection(PlatformView.web),
+            VideoSection(PlatformView.web),
+            AboutMe(PlatformView.web),
             LogoSection(isMobile: false),
             EmailUs(isMobile: false),
             BottomBar(isMobile: false)

@@ -1,10 +1,11 @@
 import 'dart:html';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class WebService {
   Future<void> launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.https(url))) {
+      await launchUrl(url);
     } else {
       throw "Can't launch ";
     }

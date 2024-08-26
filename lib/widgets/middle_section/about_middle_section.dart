@@ -24,7 +24,7 @@ class AboutMiddleSection extends StatelessWidget {
             style: GoogleFonts.inter(
                 fontSize: isMobile ? 22 : 30,
                 fontWeight: FontWeight.w700,
-                color: Theme.of(context).primaryTextTheme.caption!.color),
+                color: Theme.of(context).primaryTextTheme.bodySmall!.color),
           ),
         ),
         Flexible(
@@ -75,7 +75,8 @@ class AboutMiddleSection extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
                       fontWeight: FontWeight.w700,
-                      color: Theme.of(context).primaryTextTheme.caption!.color),
+                      color:
+                          Theme.of(context).primaryTextTheme.bodySmall!.color),
                 ),
               ),
               Padding(
@@ -109,7 +110,8 @@ class AboutMiddleSection extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
                       fontWeight: FontWeight.w700,
-                      color: Theme.of(context).primaryTextTheme.caption!.color),
+                      color:
+                          Theme.of(context).primaryTextTheme.bodySmall!.color),
                 ),
               ),
               Padding(
@@ -143,7 +145,8 @@ class AboutMiddleSection extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontSize: isMobile ? 22 : 30,
                       fontWeight: FontWeight.w700,
-                      color: Theme.of(context).primaryTextTheme.caption!.color),
+                      color:
+                          Theme.of(context).primaryTextTheme.bodySmall!.color),
                 ),
               ),
               Padding(

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jordyhers/utils/constants.dart' as st;
-import 'package:jordyhers/utils/theme.dart';
 
 class CenteredView extends StatelessWidget {
   final Widget child;
@@ -12,7 +10,7 @@ class CenteredView extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      color: Theme.of(context).backgroundColor,
+      color: Theme.of(context).scaffoldBackgroundColor,
       alignment: Alignment.topCenter,
       child: ConstrainedBox(
         constraints: BoxConstraints(

@@ -6,42 +6,38 @@ import 'package:provider/provider.dart';
 
 import '../../services/url_launcher.dart';
 
-
 class PortfolioContentDesktop extends StatefulWidget {
   const PortfolioContentDesktop({Key? key}) : super(key: key);
 
   @override
-  State<PortfolioContentDesktop> createState() => _PortfolioContentDesktopState();
+  State<PortfolioContentDesktop> createState() =>
+      _PortfolioContentDesktopState();
 }
 
 class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
           children: [
             SizedBox(
-                child: GridView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: getHeight(context) * 0.45, vertical: 50),
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: getHeight(context) * 0.55,
-                        childAspectRatio: 2 / 3,
-                        crossAxisSpacing: 100,
-                        mainAxisSpacing: getHeight(context) * 0.30),
-                    itemCount: 4,
-                    itemBuilder: (BuildContext ctx, index) {
-                      return portfolioHeaderSection(ctx,apps[index]);
-                    }),
-
-
+              child: GridView.builder(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: getHeight(context) * 0.45, vertical: 50),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: getHeight(context) * 0.55,
+                      childAspectRatio: 2 / 3,
+                      crossAxisSpacing: 100,
+                      mainAxisSpacing: getHeight(context) * 0.30),
+                  itemCount: 4,
+                  itemBuilder: (BuildContext ctx, index) {
+                    return portfolioHeaderSection(ctx, apps[index]);
+                  }),
             ),
           ],
         ),
@@ -49,9 +45,10 @@ class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
     );
   }
 
-  Widget portfolioHeaderSection (BuildContext context, Map<String,dynamic> app){
+  Widget portfolioHeaderSection(
+      BuildContext context, Map<String, dynamic> app) {
     final repository = Provider.of<WebService>(context, listen: false);
-    return  Container(
+    return Container(
         height: getHeight(context) * 0.60,
         width: getWidth(context) * 0.50,
         decoration: BoxDecoration(
@@ -65,13 +62,26 @@ class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:  EdgeInsets.symmetric(vertical: getHeight(context) * 0.02),
-                             child: Text(
-                        app['title'],style: GoogleFonts.inter(fontSize: getWidth(context) * 0.025,fontWeight: FontWeight.bold),),
+                      padding: EdgeInsets.symmetric(
+                          vertical: getHeight(context) * 0.02),
+                      child: Text(
+                        app['title'],
+                        style: GoogleFonts.inter(
+                            fontSize: getWidth(context) * 0.025,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Padding(
-                      padding:  EdgeInsets.symmetric(vertical: getHeight(context) * 0.02,horizontal: getWidth(context) * 0.02),                      child: Text(
-                        app['description'],style: GoogleFonts.inter(fontSize: getWidth(context) * 0.010,fontWeight: FontWeight.w500,color: Colors.blueGrey[400]),),
+                      padding: EdgeInsets.symmetric(
+                          vertical: getHeight(context) * 0.02,
+                          horizontal: getWidth(context) * 0.02),
+                      child: Text(
+                        app['description'],
+                        style: GoogleFonts.inter(
+                            fontSize: getWidth(context) * 0.010,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.blueGrey[400]),
+                      ),
                     ),
                     InkWell(
                       onTap: () => repository.launchUrl(app['url']),
@@ -80,23 +90,19 @@ class _PortfolioContentDesktopState extends State<PortfolioContentDesktop> {
                         height: getHeight(context) * 0.31,
                         width: getWidth(context) * 0.22,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          color: Colors.white,
-                          image: DecorationImage(image: AssetImage(app['image'],),fit: BoxFit.cover)
-
-                        ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  app['image'],
+                                ),
+                                fit: BoxFit.cover)),
                         //child: Image.asset(app['image'],fit: BoxFit.fitWidth,),
                       ),
                     ),
-
-
                   ],
-                )
-            ),
-
-
+                )),
           ],
-        )
-    );
+        ));
   }
 }

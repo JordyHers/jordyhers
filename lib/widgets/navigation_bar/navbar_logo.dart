@@ -64,7 +64,7 @@ class NavBarLogo extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
-                    color: Theme.of(context).primaryTextTheme.caption!.color,
+                    color: Theme.of(context).primaryTextTheme.bodySmall!.color,
                   ),
                 ),
                 SelectableText(

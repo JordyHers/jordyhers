@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'navbar_logo.dart';
 
 class NavigationBarMobile extends StatelessWidget {
@@ -14,7 +15,7 @@ class NavigationBarMobile extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.menu,
-              color: Theme.of(context).primaryTextTheme.caption!.color,
+              color: Theme.of(context).primaryTextTheme.bodySmall!.color,
             ),
             onPressed: () {
               Scaffold.of(context).openDrawer();

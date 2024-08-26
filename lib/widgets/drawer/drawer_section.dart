@@ -60,7 +60,7 @@ class _DrawerSectionState extends State<DrawerSection> {
 
     return Drawer(
       child: Container(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         height: getHeight(context),
         child: Column(
           children: [
@@ -116,7 +116,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                                 style: GoogleFonts.inter(
                                     color: Theme.of(context)
                                         .primaryTextTheme
-                                        .caption!
+                                        .bodySmall!
                                         .color)),
                           ),
                         ),

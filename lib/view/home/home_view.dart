@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
 import 'home_content_desktop.dart';
 import 'home_content_mobile.dart';
 
@@ -13,9 +14,9 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: HomeContentMobile(),
-      desktop: HomeContentDesktop(),
+    return ScreenTypeLayout.builder(
+      mobile: (final _) => HomeContentMobile(),
+      desktop: (final _) => HomeContentDesktop(),
     );
   }
 }

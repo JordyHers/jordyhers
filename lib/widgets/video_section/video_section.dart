@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart';
+import 'package:jordyhers/utils/enums.dart';
 import 'package:video_player/video_player.dart';
 
-/// Stateful widget to fetch and then display video content.
 class VideoSection extends StatefulWidget {
-  bool isMobile;
-  VideoSection({Key? key, required this.isMobile}) : super(key: key);
+  final PlatformView platformView;
+
+  VideoSection(
+    this.platformView, {
+    Key? key,
+  }) : super(key: key);
 
   @override
-  _VideoSectionState createState() => _VideoSectionState();
+  State<VideoSection> createState() => _VideoSectionState();
 }
 
 class _VideoSectionState extends State<VideoSection> {
   late VideoPlayerController _controller;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
 
   @override
   void initState() {
@@ -33,6 +31,12 @@ class _VideoSectionState extends State<VideoSection> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -43,15 +47,17 @@ class _VideoSectionState extends State<VideoSection> {
         });
       },
       child: Container(
-          width: getWidth(context) / 1.5,
+          width: ScreenConfig.getWidthPercentage(context, 66.7),
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: ScreenConfig.getPadding(context, 2, 2),
                 child: Center(
                     child: AspectRatio(
-                  aspectRatio:
-                      widget.isMobile ? _controller.value.aspectRatio : 3 / 2,
+                  aspectRatio: switch (widget.platformView) {
+                    PlatformView.mobile => _controller.value.aspectRatio,
+                    PlatformView.web => 3 / 2,
+                  },
                   child: VideoPlayer(_controller),
                 )),
               ),
@@ -65,8 +71,7 @@ class _VideoSectionState extends State<VideoSection> {
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: getWidth(context) * 0.25),
+                  padding: ScreenConfig.getHorizontalPadding(context, 25),
                   color: _controller.value.isPlaying
                       ? Colors.transparent
                       : Colors.indigoAccent.withOpacity(0.3),
@@ -75,7 +80,7 @@ class _VideoSectionState extends State<VideoSection> {
                       : Center(
                           child: Icon(
                             Icons.play_circle_outline,
-                            size: getHeight(context) * 0.05,
+                            size: ScreenConfig.getHeightPercentage(context, 5),
                           ),
                         ),
                 ),

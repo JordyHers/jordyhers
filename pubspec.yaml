@@ -18,7 +18,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.3 <3.0.0"
+  sdk: ">=3.0.3 <4.0.0"
 
 dependencies:
   flutter:
@@ -26,7 +26,7 @@ dependencies:
   platform: ^3.1.0
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.7.0
-  easy_dynamic_theme: ^2.0.0
+  easy_dynamic_theme: ^2.3.1
   email_validator: ^2.0.1
   url_launcher: ^6.0.10
   provider: ^6.0.1

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jordyhers/utils/enums.dart';
 import 'package:jordyhers/widgets/bottom_section/bottom_bar_column.dart';
 import 'package:jordyhers/widgets/head_section/header_section.dart';
 import 'package:jordyhers/widgets/middle_section/about_me.dart';
@@ -13,16 +14,16 @@ class HomeContentMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            HeaderSection(isMobile: true),
-            MiddleSection(isMobile: true),
-            VideoSection(isMobile: true),
-            AboutMe(isMobile: true),
+            HeaderSection(PlatformView.mobile),
+            MiddleSection(PlatformView.mobile),
+            VideoSection(PlatformView.mobile),
+            AboutMe(PlatformView.web),
             LogoSection(isMobile: true),
             EmailUs(isMobile: true),
             BottomBar(isMobile: true)

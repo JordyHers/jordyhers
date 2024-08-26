@@ -1,0 +1,1 @@
+enum PlatformView { mobile, web }
