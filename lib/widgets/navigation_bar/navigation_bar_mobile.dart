@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-
-import 'navbar_logo.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarMobile extends StatelessWidget {
-  const NavigationBarMobile({Key? key}) : super(key: key);
+  final ItemScrollController scrollController;
+
+  const NavigationBarMobile(this.scrollController, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           IconButton(
@@ -21,7 +24,7 @@ class NavigationBarMobile extends StatelessWidget {
               Scaffold.of(context).openDrawer();
             },
           ),
-          NavBarLogo(isMobile: true),
+          Spacer()
         ],
       ),
     );

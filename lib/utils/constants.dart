@@ -25,7 +25,7 @@ const videoProfile = 'assets/videos/IMG_3400.mov';
 ///
 ///
 const github = 'https://github.com/JordyHers';
-const linkedIn = 'https://tr.linkedin.com/in/jordy-hershel-ig-89b1bb1b1';
+const linkedIn = 'https://de.linkedin.com/company/jordyhers-org';
 const githubTimesUp = 'https://github.com/JordyHers/Times-up-flutter';
 const githubOwanto = 'https://github.com/JordyHers/Owanto_e-commerce';
 const githubTerminal = 'https://github.com/JordyHers/terminal';

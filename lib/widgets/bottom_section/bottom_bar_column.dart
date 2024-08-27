@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:jordyhers/utils/enums.dart';
 
 class BottomBar extends StatelessWidget {
-  final bool isMobile;
+  final PlatformView platformView;
 
-  const BottomBar({Key? key, required this.isMobile}) : super(key: key);
+  const BottomBar(this.platformView, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
-      color: Colors.black,
-      child: isMobile
-          ? Column(
+        padding: EdgeInsets.all(30),
+        color: Colors.black,
+        child: switch (platformView) {
+          PlatformView.mobile => Column(
               children: [
                 SizedBox(height: 20),
                 Container(
@@ -28,8 +29,8 @@ class BottomBar extends StatelessWidget {
                   ),
                 ),
               ],
-            )
-          : Column(
+            ),
+          PlatformView.web => Column(
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -46,6 +47,6 @@ class BottomBar extends StatelessWidget {
                 ),
               ],
             ),
-    );
+        });
   }
 }
