@@ -240,8 +240,6 @@ class ComponentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double periodFontSize = ScreenConfig.getHeight(context) * 0.017;
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
@@ -286,12 +284,15 @@ class ComponentView extends StatelessWidget {
               ),
             ],
           ),
-          Row(
+          Wrap(
             children: [
               Text(period,
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.lora(
-                      fontSize: periodFontSize,
+                      fontSize: switch (platformView) {
+                        PlatformView.mobile => 14,
+                        PlatformView.web => 17,
+                      },
                       fontWeight: FontWeight.w300,
                       height: 1.8,
                       color: Colors.grey.shade500)),

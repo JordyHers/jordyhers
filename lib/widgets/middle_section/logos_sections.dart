@@ -17,16 +17,7 @@ class CommunitySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context);
-    final List<Widget> logos = List.generate(
-        6,
-        (i) => Image.asset(
-              'assets/png/pngegg-$i.png',
-              scale: 0.8,
-              height: switch (platformView) {
-                PlatformView.mobile => 30,
-                PlatformView.web => 60,
-              },
-            )).toList();
+
     final EdgeInsets padding = switch (platformView) {
       PlatformView.mobile => const EdgeInsets.symmetric(
           horizontal: 60.0,
@@ -40,7 +31,7 @@ class CommunitySection extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Container(
-        height: ScreenConfig.getHeightPercentage(context, 75),
+        height: ScreenConfig.getHeightPercentage(context, 35),
         width: ScreenConfig.getWidthPercentage(context, 20),
         child: Column(
           children: [
@@ -91,15 +82,6 @@ class CommunitySection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
-            ),
-            SizedBox(height: 30),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: logos.length,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              itemBuilder: (BuildContext ctx, index) {
-                return logos[index];
-              },
             ),
           ],
         ),

@@ -15,7 +15,8 @@ class CustomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       mobile: (final _) => NavigationBarMobile(scrollController),
-      tablet: (final _) => NavigationBarTabletDesktop(scrollController),
+      tablet: (final _) => NavigationBarMobile(scrollController),
+      desktop: (final _) => NavigationBarTabletDesktop(scrollController),
     );
   }
 }

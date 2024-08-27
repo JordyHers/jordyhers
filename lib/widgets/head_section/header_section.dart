@@ -153,7 +153,7 @@ class _HeaderSectionState extends State<HeaderSection>
         );
       case PlatformView.mobile:
         return Container(
-          height: ScreenConfig.getHeightPercentage(context, 95),
+          height: ScreenConfig.getHeight(context),
           decoration: BoxDecoration(
             color: Theme.of(context).scaffoldBackgroundColor,
           ),

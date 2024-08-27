@@ -16,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       mobile: (final _) => HomeContentMobile(),
+      tablet: (final _) => HomeContentMobile(),
       desktop: (final _) => HomeContentDesktop(),
     );
   }

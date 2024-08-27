@@ -30,11 +30,12 @@ class _EmailUsState extends State<EmailUs> {
       context: context,
       builder: (context) {
         return AlertDialog(
+          backgroundColor: Colors.grey.shade700,
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           title: Text(
             'Thank You!',
             style: GoogleFonts.lora(
-              color: Colors.purpleAccent,
+              color: Colors.white,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -93,7 +94,11 @@ class _EmailUsState extends State<EmailUs> {
           ),
           SizedBox(height: ScreenConfig.getHeight(context) / 25),
           SizedBox(
-            width: ScreenConfig.getWidthPercentage(context, 30),
+            width: switch (widget.platformView) {
+              PlatformView.mobile =>
+                ScreenConfig.getWidthPercentage(context, 50),
+              PlatformView.web => ScreenConfig.getWidthPercentage(context, 40),
+            },
             child: SelectableText(
               'Let us know about you, send us an email if you need more information or if you have a project. '
               'We will be glad to send you feedback. As we know the flutter community '
@@ -111,7 +116,7 @@ class _EmailUsState extends State<EmailUs> {
             children: [
               SizedBox(
                 height: ScreenConfig.getHeight(context) * 0.10,
-                width: ScreenConfig.getWidthPercentage(context, 30),
+                width: ScreenConfig.getWidthPercentage(context, 40),
                 child: TextField(
                   style: GoogleFonts.lora(color: Colors.deepPurple),
                   enabled: enabled,

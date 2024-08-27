@@ -25,9 +25,9 @@ class _VideoSectionState extends State<VideoSection> {
     _controller = VideoPlayerController.asset(
       videoProfile,
       videoPlayerOptions: VideoPlayerOptions(allowBackgroundPlayback: true),
-    )
-      ..initialize()
-      ..play();
+    )..initialize().then((_) {
+        setState(() {});
+      });
   }
 
   @override
