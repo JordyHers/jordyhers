@@ -3,9 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Style {
   static final lightTheme = ThemeData(
-    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.light()
-            .textTheme // If this is not set, then ThemeData.light().textTheme is used.
-        ),
+    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.light().textTheme),
     canvasColor: Colors.black,
     scaffoldBackgroundColor: Color(0xFFE4E4E4),
     dividerColor: Colors.grey.shade400,
@@ -16,9 +14,7 @@ class Style {
   );
   static final darkTheme = ThemeData(
     primarySwatch: Colors.deepPurple,
-    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.dark()
-            .textTheme // If this is not set, then ThemeData.light().textTheme is used.
-        ),
+    textTheme: GoogleFonts.loraTextTheme(ThemeData.dark().textTheme),
     canvasColor: Colors.white,
     dividerColor: Colors.white,
     scaffoldBackgroundColor: Colors.black,

@@ -2,41 +2,62 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart' as st;
+import 'package:jordyhers/utils/enums.dart';
 
 class AboutMiddleSection extends StatelessWidget {
-  final bool isMobile;
+  final PlatformView platformView;
 
-  const AboutMiddleSection({Key? key, required this.isMobile})
-      : super(key: key);
+  const AboutMiddleSection(
+    this.platformView, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double horizontalPadding = switch (platformView) {
+      PlatformView.mobile => 10.0,
+      PlatformView.web => ScreenConfig.getWidth(context) * 0.15,
+    };
+    final double verticalPadding = 16.0;
+    final double LargePadding = 150.0;
+    final double headerBottomPadding = 10.0;
+    final double titleFontSize = switch (platformView) {
+      PlatformView.mobile => 22.0,
+      PlatformView.web => 35,
+    };
+
+    final double listHeight = switch (platformView) {
+      PlatformView.mobile => ScreenConfig.getHeight(context) * 0.35,
+      PlatformView.web => ScreenConfig.getHeight(context) * 0.65,
+    };
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: isMobile
-              ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
-              : const EdgeInsets.symmetric(horizontal: 250.0, vertical: 20),
+          padding: EdgeInsets.only(
+            top: LargePadding,
+            left: horizontalPadding,
+            right: horizontalPadding,
+          ),
           child: SelectableText(
             'About Me',
-            style: GoogleFonts.inter(
-                fontSize: isMobile ? 22 : 30,
-                fontWeight: FontWeight.w700,
-                color: Theme.of(context).primaryTextTheme.bodySmall!.color),
+            style: GoogleFonts.lora(
+              fontSize: titleFontSize,
+              fontWeight: FontWeight.w700,
+              color: Colors.grey.shade700,
+            ),
           ),
         ),
         Flexible(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 50)
-                    : const EdgeInsets.symmetric(horizontal: 250.0),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding, vertical: verticalPadding),
                 child: FittedBox(
                   child: Container(
                     height: 180,
@@ -45,121 +66,149 @@ class AboutMiddleSection extends StatelessWidget {
                       color: Color.fromRGBO(252, 242, 221, 1),
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          fit: BoxFit.scaleDown,
-                          image:
-                              AssetImage('assets/images/jordy_profile_2.png')),
+                        fit: BoxFit.scaleDown,
+                        image: AssetImage('assets/images/jordy_profile_2.png'),
+                      ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20, vertical: 20),
-                child: SelectableText(st.aboutMe,
-                    style: GoogleFonts.inter(
-                        letterSpacing: 0.5,
-                        fontSize: isMobile ? 14 : 15,
-                        fontWeight: FontWeight.w300,
-                        height: 1.8,
-                        color: Colors.grey.shade500)),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding, vertical: verticalPadding),
+                child: SizedBox(
+                  width: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getWidthPercentage(context, 60),
+                    PlatformView.web =>
+                      ScreenConfig.getWidthPercentage(context, 40),
+                  },
+                  child: SelectableText(
+                    st.aboutMe,
+                    style: GoogleFonts.lora(
+                      fontSize: switch (platformView) {
+                        PlatformView.mobile => 14,
+                        PlatformView.web => 17,
+                      },
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey.shade700,
+                      height: 1.8,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20, vertical: 20),
+                padding: EdgeInsets.only(
+                    left: horizontalPadding,
+                    right: horizontalPadding,
+                    bottom: headerBottomPadding),
                 child: SelectableText(
                   'Education',
-                  style: GoogleFonts.inter(
-                      fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w700,
-                      color:
-                          Theme.of(context).primaryTextTheme.bodySmall!.color),
+                  style: GoogleFonts.lora(
+                    fontSize: titleFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey.shade700,
+                  ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 10.0, vertical: 30)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20,
-                        vertical: getHeight(context) * 0.05),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding, vertical: verticalPadding),
                 child: Container(
-                  height: isMobile
-                      ? getHeight(context) * 0.35
-                      : getHeight(context) * 0.55,
+                  height: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getHeight(context) * 0.35,
+                    PlatformView.web => ScreenConfig.getHeight(context) * 0.35,
+                  },
+                  width: ScreenConfig.getWidthPercentage(context, 30),
                   child: ListView.builder(
-                      itemCount: st.education.length,
-                      itemBuilder: (builder, index) => ComponentView(
-                            isMobile: isMobile,
-                            title: st.education[index].title,
-                            description: st.education[index].description,
-                            period: st.education[index].period,
-                          )),
+                    itemCount: st.education.length,
+                    itemBuilder: (builder, index) => ComponentView(
+                      platformView: platformView,
+                      title: st.education[index].title,
+                      description: st.education[index].description,
+                      period: st.education[index].period,
+                    ),
+                  ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20,
-                        vertical: getHeight(context) * 0.005),
+                padding: EdgeInsets.only(
+                    left: horizontalPadding,
+                    right: horizontalPadding,
+                    bottom: headerBottomPadding),
                 child: SelectableText(
                   'Experience',
-                  style: GoogleFonts.inter(
-                      fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w700,
-                      color:
-                          Theme.of(context).primaryTextTheme.bodySmall!.color),
+                  style: GoogleFonts.lora(
+                    fontSize: titleFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey.shade700,
+                  ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 30)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20,
-                      ),
+                padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding, vertical: verticalPadding),
                 child: Container(
-                  height: isMobile
-                      ? getHeight(context) * 1.15
-                      : getHeight(context) * 1.30,
+                  height: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getHeight(context) * 0.35,
+                    PlatformView.web => ScreenConfig.getHeight(context) * 0.55,
+                  },
+                  width: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getWidthPercentage(context, 50),
+                    PlatformView.web =>
+                      ScreenConfig.getWidthPercentage(context, 30),
+                  },
                   child: ListView.builder(
-                      itemCount: st.experienceList.length,
-                      itemBuilder: (builder, index) => ComponentView(
-                            isMobile: isMobile,
-                            title: st.experienceList[index].title,
-                            description: st.experienceList[index].description,
-                            period: st.experienceList[index].period,
-                          )),
+                    itemCount: st.experienceList.length,
+                    itemBuilder: (builder, index) => ComponentView(
+                      platformView: platformView,
+                      title: st.experienceList[index].title,
+                      description: st.experienceList[index].description,
+                      period: st.experienceList[index].period,
+                    ),
+                  ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20,
-                        vertical: getHeight(context) * 0.05),
+                padding: EdgeInsets.only(
+                    top: 50,
+                    left: horizontalPadding,
+                    right: horizontalPadding,
+                    bottom: headerBottomPadding),
                 child: SelectableText(
-                  'Why Flutter ?',
-                  style: GoogleFonts.inter(
-                      fontSize: isMobile ? 22 : 30,
-                      fontWeight: FontWeight.w700,
-                      color:
-                          Theme.of(context).primaryTextTheme.bodySmall!.color),
+                  'Why Flutter?',
+                  style: GoogleFonts.lora(
+                    fontSize: titleFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey.shade700,
+                  ),
                 ),
               ),
               Padding(
-                padding: isMobile
-                    ? const EdgeInsets.symmetric(horizontal: 60.0, vertical: 30)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.20, vertical: 70),
-                child: SelectableText(st.why_flutter,
-                    style: GoogleFonts.inter(
-                        fontSize: isMobile ? 14 : 15,
-                        fontWeight: FontWeight.w300,
-                        height: 1.8,
-                        color: Colors.grey.shade500)),
+                padding: EdgeInsets.only(
+                  right: horizontalPadding,
+                  left: horizontalPadding,
+                  bottom: 50,
+                ),
+                child: SizedBox(
+                  width: ScreenConfig.getWidthPercentage(context, 40),
+                  child: SelectableText(
+                    st.why_flutter,
+                    style: GoogleFonts.lora(
+                      fontSize: switch (platformView) {
+                        PlatformView.mobile => 14,
+                        PlatformView.web => 17,
+                      },
+                      fontWeight: FontWeight.w400,
+                      height: 1.8,
+                      color: Colors.grey.shade700,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -174,11 +223,11 @@ class ComponentView extends StatelessWidget {
   final String period;
   final String? url;
   final String description;
-  final bool isMobile;
+  final PlatformView platformView;
 
   const ComponentView({
     Key? key,
-    required this.isMobile,
+    required this.platformView,
     required this.title,
     required this.period,
     required this.description,
@@ -187,80 +236,65 @@ class ComponentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (url != null && url!.isNotEmpty)
-              Container(
-                margin: isMobile
-                    ? EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.025)
-                    : EdgeInsets.symmetric(
-                        horizontal: getWidth(context) * 0.020),
-                height: getHeight(context) * 0.12,
-                width: getWidth(context) * 0.06,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  //borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                  image: DecorationImage(
-                    fit: BoxFit.fitWidth,
-                    image: NetworkImage(url!),
+    final double periodFontSize = ScreenConfig.getHeight(context) * 0.017;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Row(
+            children: [
+              Flexible(
+                child: SelectableText(
+                  title,
+                  style: GoogleFonts.lora(
+                    fontSize: switch (platformView) {
+                      PlatformView.mobile => 14,
+                      PlatformView.web => 17,
+                    },
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey.shade700,
+                    height: 1.8,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-              )
-            else ...[
-              SizedBox.shrink(),
-              SizedBox.shrink(),
+              ),
             ],
-            Flexible(
-              child: Text(title,
+          ),
+          Row(
+            children: [
+              Flexible(
+                child: SelectableText(
+                  description,
+                  style: GoogleFonts.lora(
+                    fontSize: switch (platformView) {
+                      PlatformView.mobile => 14,
+                      PlatformView.web => 17,
+                    },
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey.shade800,
+                    height: 1.8,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text(period,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
-                      fontSize: getHeight(context) * 0.020,
-                      fontWeight: FontWeight.w700,
-                      height: 1.8,
-                      color: Colors.deepPurple.shade300)),
-            ),
-            SizedBox.shrink(),
-            SizedBox.shrink(),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox.shrink(),
-            Flexible(
-              child: Text(description,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
-                      fontSize: getHeight(context) * 0.018,
-                      fontWeight: FontWeight.w500,
+                  style: GoogleFonts.lora(
+                      fontSize: periodFontSize,
+                      fontWeight: FontWeight.w300,
                       height: 1.8,
                       color: Colors.grey.shade500)),
-            ),
-            SizedBox.shrink(),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox.shrink(),
-            Text(period,
-                overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
-                    fontSize: getHeight(context) * 0.017,
-                    fontWeight: FontWeight.w300,
-                    height: 1.8,
-                    color: Colors.grey.shade500)),
-            SizedBox.shrink(),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

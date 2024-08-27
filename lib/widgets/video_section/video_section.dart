@@ -26,7 +26,9 @@ class _VideoSectionState extends State<VideoSection> {
       videoProfile,
       videoPlayerOptions: VideoPlayerOptions(allowBackgroundPlayback: true),
     )..initialize().then((_) {
-        setState(() {});
+        setState(() {
+          _controller.play();
+        });
       });
   }
 
@@ -56,7 +58,7 @@ class _VideoSectionState extends State<VideoSection> {
                     child: AspectRatio(
                   aspectRatio: switch (widget.platformView) {
                     PlatformView.mobile => _controller.value.aspectRatio,
-                    PlatformView.web => 3 / 2,
+                    PlatformView.web => 4 / 2,
                   },
                   child: VideoPlayer(_controller),
                 )),
@@ -72,9 +74,7 @@ class _VideoSectionState extends State<VideoSection> {
                 },
                 child: Container(
                   padding: ScreenConfig.getHorizontalPadding(context, 25),
-                  color: _controller.value.isPlaying
-                      ? Colors.transparent
-                      : Colors.indigoAccent.withOpacity(0.3),
+                  color: Colors.transparent,
                   child: _controller.value.isPlaying
                       ? SizedBox.shrink()
                       : Center(

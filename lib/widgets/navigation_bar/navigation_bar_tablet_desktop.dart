@@ -1,142 +1,125 @@
-import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jordyhers/locator.dart';
 import 'package:jordyhers/routing/route_names.dart';
-import 'package:jordyhers/services/navigation_service.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/config.dart';
-import 'package:jordyhers/utils/constants.dart' as st;
 import 'package:provider/provider.dart';
-import 'navbar_logo.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
-  NavigationBarTabletDesktop({Key? key}) : super(key: key);
+  final ItemScrollController scrollController;
+
+  NavigationBarTabletDesktop(this.scrollController, {Key? key})
+      : super(key: key);
 
   @override
   _NavigationBarTabletDesktopState createState() =>
       _NavigationBarTabletDesktopState();
 }
 
-class _NavigationBarTabletDesktopState
-    extends State<NavigationBarTabletDesktop> {
-  List<Color> colors = [Colors.grey, Colors.grey, Colors.grey];
-  List<String> strings = [
-    "Home",
-    "About",
-  ];
-  Color color = Colors.transparent;
-  Color color2 = Colors.transparent;
+class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
+    with SingleTickerProviderStateMixin {
+  double _opacity = 1.0;
+
+  final Map<String, dynamic> navigationItems = {
+    "Home": 0,
+    "Apps & Packages": 2,
+    "Book Session": 3,
+    "About": 4,
+    "Community": 5,
+    "LinkedIn": LinkedInRoute,
+    "Github": GithubRoute,
+  };
+  final Map<String, Color> colors = {
+    "Home": Colors.grey,
+    "About": Colors.grey,
+    "Book Session": Colors.grey,
+    "Community": Colors.grey,
+    "Apps & Packages": Colors.grey,
+    "LinkedIn": Colors.grey,
+    "Github": Colors.grey,
+  };
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final repository = Provider.of<WebService>(context, listen: false);
-    return Container(
-      height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          NavBarLogo(isMobile: false),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              for (int i = 0; i <= 1; i++)
-                MouseRegion(
+    return Opacity(
+      opacity: _opacity,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(_opacity),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 10,
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        height: 80,
+        width: ScreenConfig.getWidthPercentage(context, 60),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Spacer(),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: navigationItems.keys.map((label) {
+                return MouseRegion(
                   onEnter: (_) {
                     setState(() {
-                      colors[i] = Colors.white;
+                      colors[label] = Theme.of(context).primaryColor;
                     });
                   },
                   onExit: (_) {
                     setState(() {
-                      colors[i] = Colors.grey;
+                      colors[label] = Colors.grey;
                     });
                   },
-                  child: TextButton(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: TextButton(
                       onPressed: () {
-                        if (strings[i] == 'About') {
-                          locator<NavigationService>().navigateTo(AboutRoute);
-                        } else if (strings[i] == 'Home') {
-                          locator<NavigationService>().navigateTo(HomeRoute);
+                        if (label == 'LinkedIn' || label == 'Github') {
+                          repository.launchURL(navigationItems[label]!);
                         } else {
-                          print('${strings[i]} was Tapped');
+                          widget.scrollController.scrollTo(
+                              index: navigationItems[label]! as int,
+                              duration: Duration(seconds: 2),
+                              curve: Curves.easeOut);
                         }
                       },
-                      child: FittedBox(
-                        child: Text(strings[i],
-                            style: GoogleFonts.inter(
-                              fontSize: 17,
-                              color: colors[i],
-                              fontWeight: FontWeight.w600,
-                            )),
-                      )),
-                ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: MouseRegion(
-              onEnter: (_) {
-                setState(() {
-                  color = Colors.grey.withOpacity(0.3);
-                });
-              },
-              onExit: (_) {
-                setState(() {
-                  color = Colors.transparent;
-                });
-              },
-              child: InkWell(
-                onTap: () => repository.launchUrl(st.linkedIn),
-                child: Container(
-                  decoration:
-                      BoxDecoration(color: color, shape: BoxShape.circle),
-                  child: Image.asset(
-                    'assets/png/linkedin.png',
-                    height: getHeight(context) * 0.028,
+                      child: Text(
+                        label,
+                        style: GoogleFonts.lora(
+                          fontSize: 14,
+                          color: colors[label],
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                );
+              }).toList(),
             ),
-          ),
-          const SizedBox(width: 4),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-            child: MouseRegion(
-              onEnter: (_) {
-                setState(() {
-                  color2 = Colors.grey.withOpacity(0.3);
-                });
-              },
-              onExit: (_) {
-                setState(() {
-                  color2 = Colors.transparent;
-                });
-              },
-              child: InkWell(
-                onTap: () => repository.launchUrl(st.github),
-                child: Container(
-                  decoration:
-                      BoxDecoration(color: color2, shape: BoxShape.circle),
-                  child: Image.asset(
-                    'assets/png/pngegg-9.png',
-                    height: getHeight(context) * 0.035,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          IconButton(
-            icon: Icon(Icons.brightness_6),
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            iconSize: 17,
-            onPressed: () {
-              EasyDynamicTheme.of(context).changeTheme();
-            },
-          )
-        ],
+            Spacer(),
+            Icon(Icons.brightness_6),
+          ],
+        ),
       ),
     );
   }

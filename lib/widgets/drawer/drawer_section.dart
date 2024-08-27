@@ -1,4 +1,3 @@
-import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/routing/route_names.dart';
@@ -52,7 +51,7 @@ class _DrawerSectionState extends State<DrawerSection> {
         icon: Icon(Icons.work_outline),
         onPressed: () {
           Navigator.pop(context);
-          repository.launchUrl(st.linkedIn);
+          repository.launchURL(st.linkedIn);
         },
         color: Theme.of(context).iconTheme.color,
       ),
@@ -61,7 +60,7 @@ class _DrawerSectionState extends State<DrawerSection> {
     return Drawer(
       child: Container(
         color: Theme.of(context).scaffoldBackgroundColor,
-        height: getHeight(context),
+        height: ScreenConfig.getHeight(context),
         child: Column(
           children: [
             DrawerHeader(
@@ -75,15 +74,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.brightness_6),
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onPressed: () {
-                EasyDynamicTheme.of(context).changeTheme();
-              },
-            ),
-            SizedBox(height: getHeight(context) / 35),
+            SizedBox(height: ScreenConfig.getHeight(context) / 35),
             ListView.builder(
                 shrinkWrap: true,
                 itemCount: 4,
@@ -109,7 +100,7 @@ class _DrawerSectionState extends State<DrawerSection> {
                                     .navigateTo(AboutRoute);
                               } else if (index == 3) {
                                 Navigator.pop(context);
-                                repository.launchUrl(st.linkedIn);
+                                repository.launchURL(st.linkedIn);
                               }
                             },
                             child: Text(DrawerSection.sections[index],
@@ -122,19 +113,19 @@ class _DrawerSectionState extends State<DrawerSection> {
                         ),
                       ),
                       SizedBox(
-                        height: getHeight(context) / 30,
+                        height: ScreenConfig.getHeight(context) / 30,
                       ),
                     ],
                   );
                 }),
             InkWell(
-              onTap: () => repository.launchUrl(st.github),
+              onTap: () => repository.launchURL(st.github),
               child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).iconTheme.color,
                     shape: BoxShape.circle),
                 child: Image.asset(
-                  'assets/png/pngegg-9.png',
+                  'assets/png/pngegg-4.png',
                   height: 54,
                 ),
               ),
