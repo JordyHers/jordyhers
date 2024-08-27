@@ -67,13 +67,6 @@ class _EmailUsState extends State<EmailUs> {
   Widget build(BuildContext context) {
     final firestore = Provider.of<FirestoreService>(context, listen: false);
 
-    final EdgeInsets padding = switch (widget.platformView) {
-      PlatformView.mobile =>
-        const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20),
-      PlatformView.web =>
-        const EdgeInsets.symmetric(horizontal: 450.0, vertical: 50),
-    };
-
     return Container(
       width: ScreenConfig.getWidthPercentage(context, 10),
       margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50),

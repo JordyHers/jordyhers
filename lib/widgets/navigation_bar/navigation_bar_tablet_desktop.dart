@@ -18,8 +18,6 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 
 class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
     with SingleTickerProviderStateMixin {
-  double _opacity = 1;
-
   final Map<String, dynamic> navigationItems = {
     "Home": 0,
     "Apps & Packages": 2,
