@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/config.dart';
+import 'package:jordyhers/utils/constants.dart';
 import 'package:jordyhers/utils/enums.dart';
+import 'package:provider/provider.dart';
 
 class CommunitySection extends StatelessWidget {
   final PlatformView platformView;
@@ -13,6 +16,7 @@ class CommunitySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final repository = Provider.of<WebService>(context);
     final List<Widget> logos = List.generate(
         6,
         (i) => Image.asset(
@@ -36,7 +40,7 @@ class CommunitySection extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Container(
-        height: ScreenConfig.getHeightPercentage(context, 65),
+        height: ScreenConfig.getHeightPercentage(context, 75),
         width: ScreenConfig.getWidthPercentage(context, 20),
         child: Column(
           children: [
@@ -53,7 +57,7 @@ class CommunitySection extends StatelessWidget {
             SizedBox(height: 20),
             SelectableText(
               'Discover our large community of developers on Discord. Join Hackatons,\n'
-              'HactoberFest under JordyHers. Develop Apps for both Android and iOS.',
+              'HacktoberFest under JordyHers. Develop Apps for both Android and iOS.',
               style: GoogleFonts.lora(
                 fontSize: switch (platformView) {
                   PlatformView.mobile => 14,
@@ -62,6 +66,30 @@ class CommunitySection extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 color: Colors.grey.shade700,
                 height: 1.8,
+              ),
+            ),
+            SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () => repository.launchURL(discordLink),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 30,
+                ),
+                child: Text(
+                  'Join Our Discord',
+                  style: GoogleFonts.lora(
+                    fontSize: ScreenConfig.getHeightPercentage(context, 1.8),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.black.withOpacity(0.6),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
               ),
             ),
             SizedBox(height: 30),

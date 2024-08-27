@@ -30,6 +30,7 @@ const githubTimesUp = 'https://github.com/JordyHers/Times-up-flutter';
 const githubOwanto = 'https://github.com/JordyHers/Owanto_e-commerce';
 const githubTerminal = 'https://github.com/JordyHers/terminal';
 const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
+const discordLink = 'https://discord.gg/NBFyRmJd35';
 
 ///________________ document path _______________________
 ///
