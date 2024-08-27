@@ -14,21 +14,18 @@ class AboutMiddleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double verticalPadding = 16.0;
+    final double LargePadding = 150.0;
+    final double headerBottomPadding = 10.0;
+
     final double horizontalPadding = switch (platformView) {
       PlatformView.mobile => 10.0,
       PlatformView.web => ScreenConfig.getWidth(context) * 0.15,
     };
-    final double verticalPadding = 16.0;
-    final double LargePadding = 150.0;
-    final double headerBottomPadding = 10.0;
+
     final double titleFontSize = switch (platformView) {
       PlatformView.mobile => 22.0,
       PlatformView.web => 35,
-    };
-
-    final double listHeight = switch (platformView) {
-      PlatformView.mobile => ScreenConfig.getHeight(context) * 0.35,
-      PlatformView.web => ScreenConfig.getHeight(context) * 0.65,
     };
 
     return Column(
@@ -114,14 +111,21 @@ class AboutMiddleSection extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding, vertical: verticalPadding),
+                  horizontal: horizontalPadding,
+                  vertical: verticalPadding,
+                ),
                 child: Container(
                   height: switch (platformView) {
                     PlatformView.mobile =>
                       ScreenConfig.getHeight(context) * 0.35,
                     PlatformView.web => ScreenConfig.getHeight(context) * 0.35,
                   },
-                  width: ScreenConfig.getWidthPercentage(context, 30),
+                  width: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getWidthPercentage(context, 50),
+                    PlatformView.web =>
+                      ScreenConfig.getWidthPercentage(context, 30),
+                  },
                   child: ListView.builder(
                     itemCount: st.education.length,
                     itemBuilder: (builder, index) => ComponentView(

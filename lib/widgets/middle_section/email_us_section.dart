@@ -87,7 +87,7 @@ class _EmailUsState extends State<EmailUs> {
               style: GoogleFonts.lora(
                 fontWeight: FontWeight.w700,
                 fontSize: switch (widget.platformView) {
-                  PlatformView.mobile => 14,
+                  PlatformView.mobile => 23,
                   PlatformView.web => 35,
                 },
                 color: Colors.grey.shade700,

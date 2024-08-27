@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/config.dart';
+import 'package:jordyhers/utils/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -117,7 +118,12 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
               }).toList(),
             ),
             Spacer(),
-            Icon(Icons.brightness_6),
+            GestureDetector(
+              onTap: () => repository.launchURL(discordLink),
+              child: Icon(
+                Icons.discord,
+              ),
+            ),
           ],
         ),
       ),
