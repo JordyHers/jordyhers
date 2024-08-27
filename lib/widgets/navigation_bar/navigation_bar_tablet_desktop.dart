@@ -18,7 +18,7 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 
 class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
     with SingleTickerProviderStateMixin {
-  double _opacity = 1.0;
+  double _opacity = 1;
 
   final Map<String, dynamic> navigationItems = {
     "Home": 0,
@@ -55,75 +55,72 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Opacity(
-          opacity: _opacity,
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(_opacity),
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 10,
-                  spreadRadius: 1,
-                ),
-              ],
-            ),
-            height: 80,
-            width: constraints.maxWidth,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: navigationItems.keys.map((label) {
-                    return MouseRegion(
-                      onEnter: (_) {
-                        setState(() {
-                          colors[label] = Theme.of(context).primaryColor;
-                        });
-                      },
-                      onExit: (_) {
-                        setState(() {
-                          colors[label] = Colors.grey;
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: TextButton(
-                          onPressed: () {
-                            if (label == 'LinkedIn' || label == 'Github') {
-                              repository.launchURL(navigationItems[label]!);
-                            } else {
-                              widget.scrollController.scrollTo(
-                                index: navigationItems[label]! as int,
-                                duration: const Duration(seconds: 1),
-                                curve: Curves.easeOut,
-                              );
-                            }
-                          },
-                          child: Text(
-                            label,
-                            style: GoogleFonts.lora(
-                              fontSize: 14,
-                              color: colors[label],
-                              fontWeight: FontWeight.w600,
-                            ),
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+          height: 80,
+          width: constraints.maxWidth,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                children: navigationItems.keys.map((label) {
+                  return MouseRegion(
+                    onEnter: (_) {
+                      setState(() {
+                        colors[label] = Theme.of(context).primaryColor;
+                      });
+                    },
+                    onExit: (_) {
+                      setState(() {
+                        colors[label] = Colors.grey;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextButton(
+                        onPressed: () {
+                          if (label == 'LinkedIn' || label == 'Github') {
+                            repository.launchURL(navigationItems[label]!);
+                          } else {
+                            widget.scrollController.scrollTo(
+                              index: navigationItems[label]! as int,
+                              duration: const Duration(seconds: 1),
+                              curve: Curves.easeOut,
+                            );
+                          }
+                        },
+                        child: Text(
+                          label,
+                          style: GoogleFonts.lora(
+                            fontSize: 14,
+                            color: colors[label],
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
-                    );
-                  }).toList(),
+                    ),
+                  );
+                }).toList(),
+              ),
+              GestureDetector(
+                onTap: () => repository.launchURL(discordLink),
+                child: Icon(
+                  Icons.discord,
                 ),
-                GestureDetector(
-                  onTap: () => repository.launchURL(discordLink),
-                  child: Icon(
-                    Icons.discord,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },
