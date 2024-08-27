@@ -8,7 +8,6 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
   final ItemScrollController scrollController;
-
   NavigationBarTabletDesktop(this.scrollController, {Key? key})
       : super(key: key);
 
@@ -59,7 +58,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
         return Opacity(
           opacity: _opacity,
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(_opacity),
@@ -73,7 +72,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
               ],
             ),
             height: 80,
-            width: constraints.maxWidth, // Use the full available width
+            width: constraints.maxWidth,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

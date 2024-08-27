@@ -11,13 +11,18 @@ import 'package:jordyhers/widgets/navigation_bar/navigation_bar.dart';
 import 'package:jordyhers/widgets/video_section/video_section.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class HomeContentDesktop extends StatelessWidget {
+class HomeContentDesktop extends StatefulWidget {
   const HomeContentDesktop({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final ItemScrollController itemScrollController = ItemScrollController();
+  State<HomeContentDesktop> createState() => _HomeContentDesktopState();
+}
 
+class _HomeContentDesktopState extends State<HomeContentDesktop> {
+  final ItemScrollController itemScrollController = ItemScrollController();
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(children: [
