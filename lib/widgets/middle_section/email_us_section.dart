@@ -73,28 +73,28 @@ class _EmailUsState extends State<EmailUs> {
         const EdgeInsets.symmetric(horizontal: 450.0, vertical: 50),
     };
 
-    return Padding(
-      padding: padding,
-      child: Container(
-        width: ScreenConfig.getWidthPercentage(context, 10),
-        margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              'Contact Us',
-              style: GoogleFonts.lora(
-                fontWeight: FontWeight.w700,
-                fontSize: switch (widget.platformView) {
-                  PlatformView.mobile => 23,
-                  PlatformView.web => 35,
-                },
-                color: Colors.grey.shade700,
-              ),
+    return Container(
+      width: ScreenConfig.getWidthPercentage(context, 10),
+      margin: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            'Contact Us',
+            style: GoogleFonts.lora(
+              fontWeight: FontWeight.w700,
+              fontSize: switch (widget.platformView) {
+                PlatformView.mobile => 23,
+                PlatformView.web => 35,
+              },
+              color: Colors.grey.shade700,
             ),
-            SizedBox(height: ScreenConfig.getHeight(context) / 25),
-            SelectableText(
+          ),
+          SizedBox(height: ScreenConfig.getHeight(context) / 25),
+          SizedBox(
+            width: ScreenConfig.getWidthPercentage(context, 30),
+            child: SelectableText(
               'Let us know about you, send us an email if you need more information or if you have a project. '
               'We will be glad to send you feedback. As we know the flutter community '
               'is still growing up. So you can be a part of it.',
@@ -105,75 +105,74 @@ class _EmailUsState extends State<EmailUs> {
                 color: Colors.grey.shade500,
               ),
             ),
-            SizedBox(height: ScreenConfig.getHeight(context) / 20),
-            Column(
-              children: [
-                SizedBox(
-                  height: ScreenConfig.getHeight(context) * 0.10,
-                  width: ScreenConfig.getWidth(context) * 0.85,
-                  child: TextField(
-                    style: GoogleFonts.lora(color: Colors.deepPurple),
-                    enabled: enabled,
-                    controller: _controller,
-                    onChanged: (value) {
-                      setState(() {
-                        text = value;
-                        emailValid = EmailValidator.validate(value);
-                      });
-                    },
-                    decoration: InputDecoration(
-                      errorText: emailValid ? null : 'Enter a valid email',
-                      errorStyle: GoogleFonts.lora(color: Colors.red),
-                      border: OutlineInputBorder(),
-                      hintText: 'Email',
-                    ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_controller.text.isEmpty) {
-                      return;
-                    }
-                    if (emailValid) {
-                      setState(() {
-                        enabled = false;
-                      });
-                      firestore
-                          .saveEmail(_controller.text)
-                          .then((value) => _submitDialog(context));
-                    } else {
-                      setState(() {
-                        emailValid = false;
-                      });
-                      _controller.clear();
-                    }
+          ),
+          SizedBox(height: ScreenConfig.getHeight(context) / 20),
+          Column(
+            children: [
+              SizedBox(
+                height: ScreenConfig.getHeight(context) * 0.10,
+                width: ScreenConfig.getWidthPercentage(context, 30),
+                child: TextField(
+                  style: GoogleFonts.lora(color: Colors.deepPurple),
+                  enabled: enabled,
+                  controller: _controller,
+                  onChanged: (value) {
+                    setState(() {
+                      text = value;
+                      emailValid = EmailValidator.validate(value);
+                    });
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 30,
-                    ),
-                    child: Text(
-                      'Send',
-                      style: GoogleFonts.lora(
-                        fontSize:
-                            ScreenConfig.getHeightPercentage(context, 1.8),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  decoration: InputDecoration(
+                    errorText: emailValid ? null : 'Enter a valid email',
+                    errorStyle: GoogleFonts.lora(color: Colors.red),
+                    border: OutlineInputBorder(),
+                    hintText: 'Email',
                   ),
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.black.withOpacity(0.6),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (_controller.text.isEmpty) {
+                    return;
+                  }
+                  if (emailValid) {
+                    setState(() {
+                      enabled = false;
+                    });
+                    firestore
+                        .saveEmail(_controller.text)
+                        .then((value) => _submitDialog(context));
+                  } else {
+                    setState(() {
+                      emailValid = false;
+                    });
+                    _controller.clear();
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 30,
+                  ),
+                  child: Text(
+                    'Send',
+                    style: GoogleFonts.lora(
+                      fontSize: ScreenConfig.getHeightPercentage(context, 1.8),
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.black.withOpacity(0.6),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
