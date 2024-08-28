@@ -73,9 +73,7 @@ class _HeaderSectionState extends State<HeaderSection>
       case PlatformView.web:
         return Container(
           height: ScreenConfig.getHeightPercentage(context, 85),
-          decoration: BoxDecoration(
-            color: Theme.of(context).scaffoldBackgroundColor,
-          ),
+          decoration: BoxDecoration(color: Colors.black),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,7 +89,7 @@ class _HeaderSectionState extends State<HeaderSection>
                       style: GoogleFonts.lora(
                         fontSize: ScreenConfig.getHeightPercentage(context, 8),
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade700,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -108,7 +106,7 @@ class _HeaderSectionState extends State<HeaderSection>
                       'Transforming ideas into reality.',
                       style: GoogleFonts.lora(
                         fontSize: ScreenConfig.getHeightPercentage(context, 4),
-                        color: Colors.grey.shade700,
+                        color: Colors.grey.shade100,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -133,13 +131,14 @@ class _HeaderSectionState extends State<HeaderSection>
                           style: GoogleFonts.lora(
                             fontSize:
                                 ScreenConfig.getHeightPercentage(context, 1.8),
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Colors.black.withOpacity(0.6),
+                        foregroundColor: Colors.grey,
+                        backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),

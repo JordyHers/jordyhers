@@ -119,8 +119,9 @@ class AboutMiddleSection extends StatelessWidget {
                 child: Container(
                   height: switch (platformView) {
                     PlatformView.mobile =>
-                      ScreenConfig.getHeight(context) * 0.35,
-                    PlatformView.web => ScreenConfig.getHeight(context) * 0.35,
+                      ScreenConfig.getHeightPercentage(context, 85),
+                    PlatformView.web =>
+                      ScreenConfig.getHeightPercentage(context, 50),
                   },
                   width: switch (platformView) {
                     PlatformView.mobile =>
@@ -159,8 +160,9 @@ class AboutMiddleSection extends StatelessWidget {
                 child: Container(
                   height: switch (platformView) {
                     PlatformView.mobile =>
-                      ScreenConfig.getHeight(context) * 0.35,
-                    PlatformView.web => ScreenConfig.getHeight(context) * 0.55,
+                      ScreenConfig.getHeightPercentage(context, 85),
+                    PlatformView.web =>
+                      ScreenConfig.getHeightPercentage(context, 80),
                   },
                   width: switch (platformView) {
                     PlatformView.mobile =>

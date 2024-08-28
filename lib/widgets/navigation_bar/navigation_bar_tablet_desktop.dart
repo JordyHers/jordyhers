@@ -29,6 +29,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
   final Map<String, Color> colors = {
     "Home": Colors.grey,
     "About": Colors.grey,
+    "Book Session": Colors.grey,
     "Community": Colors.grey,
     "Apps & Packages": Colors.grey,
     "LinkedIn": Colors.grey,
@@ -68,7 +69,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
                   return MouseRegion(
                     onEnter: (_) {
                       setState(() {
-                        colors[label] = Theme.of(context).primaryColor;
+                        colors[label] = Colors.black;
                       });
                     },
                     onExit: (_) {

@@ -3,8 +3,8 @@ import 'package:jordyhers/utils/enums.dart';
 import 'package:jordyhers/widgets/bottom_section/bottom_bar_column.dart';
 import 'package:jordyhers/widgets/head_section/header_section.dart';
 import 'package:jordyhers/widgets/middle_section/about_middle_section.dart';
-import 'package:jordyhers/widgets/middle_section/email_us_section.dart';
-import 'package:jordyhers/widgets/middle_section/logos_sections.dart';
+import 'package:jordyhers/widgets/middle_section/community_section.dart';
+import 'package:jordyhers/widgets/middle_section/contact_us_section.dart';
 import 'package:jordyhers/widgets/middle_section/middle_section.dart';
 import 'package:jordyhers/widgets/middle_section/publication_section.dart';
 import 'package:jordyhers/widgets/video_section/video_section.dart';
@@ -66,7 +66,10 @@ class _HomeContentMobileState extends State<HomeContentMobile> {
             ),
           ),
           SliverToBoxAdapter(
-            child: VideoSection(PlatformView.mobile),
+            child: VideoSection(
+              PlatformView.mobile,
+              scrollController: itemScrollController,
+            ),
           ),
           SliverToBoxAdapter(
             child: PublicationSection(
@@ -84,10 +87,16 @@ class _HomeContentMobileState extends State<HomeContentMobile> {
             child: AboutMiddleSection(PlatformView.mobile),
           ),
           SliverToBoxAdapter(
-            child: CommunitySection(PlatformView.mobile),
+            child: CommunitySection(
+              PlatformView.mobile,
+              scrollController: itemScrollController,
+            ),
           ),
           SliverToBoxAdapter(
-            child: EmailUs(PlatformView.mobile),
+            child: ContactUsSection(
+              PlatformView.mobile,
+              scrollController: itemScrollController,
+            ),
           ),
           SliverToBoxAdapter(
             child: BottomBar(PlatformView.mobile),

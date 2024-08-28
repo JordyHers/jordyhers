@@ -3,6 +3,7 @@ import 'package:jordyhers/models.dart';
 const double kHomeOffset = 10.0;
 const double kAppsAndPackagesOffset = 1700.0;
 const double kBookSessionOffset = 2400.0;
+const double kVideoOffset = 1000.0;
 const double kAboutOffset = 3400.0;
 const double kCommunityOffset = 6600.0;
 
@@ -16,6 +17,15 @@ const githubOwanto = 'https://github.com/JordyHers/Owanto_e-commerce';
 const githubTerminal = 'https://github.com/JordyHers/terminal';
 const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
 const discordLink = 'https://discord.gg/NBFyRmJd35';
+
+// Define the URLs as constants
+const String kModePazUrl =
+    'https://play.google.com/store/apps/details?id=com.jordyhers.modepaz_prod&hl=en';
+const String kFlutterAnyLogoUrl = 'https://pub.dev/packages/flutter_any_logo';
+const String kFlutterResumeTemplateUrl =
+    'https://pub.dev/packages/flutter_resume_template';
+const String kFlutterFloatyWidgetUrl =
+    'https://pub.dev/packages/flutter_floaty';
 
 const String aboutMe =
     "I'm Jordy Hershel IGONDJO,\n\n I'm on my way to become a Flutter GDE. I've been writing code professionally for over 6 years. "
