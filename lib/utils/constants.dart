@@ -1,29 +1,14 @@
 import 'package:jordyhers/models.dart';
 
-///
-///
-///_______________________ Constants_____________________
-const flutter_address_image =
-    'https://images.unsplash.com/photo-1635310568932-47fd9c961c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80';
-const macBook_address =
-    'https://images.unsplash.com/photo-1515643395264-3f8c19a2dc77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1531&q=80';
-const macBook_address_subtitle =
-    'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80';
-const macbook_swiftUI_image =
-    'https://geektech.me/wp-content/uploads/2020/11/e2e6ab06e8b0af49b7321f436ff4a16a.jpg';
-const backgroundImage =
-    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1964&q=80';
-const tower_image_address =
-    'https://images.unsplash.com/photo-1621168322085-9318dd9a7517?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80';
-const airpods =
-    'https://images.unsplash.com/photo-1610438235354-a6ae5528385c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80';
-const videoHome = 'assets/videos/IMG_3398.MOV';
-const videoProfile = 'assets/videos/IMG_3400.mov';
+const double kHomeOffset = 10.0;
+const double kAppsAndPackagesOffset = 1700.0;
+const double kBookSessionOffset = 2400.0;
+const double kAboutOffset = 3400.0;
+const double kCommunityOffset = 6600.0;
 
-///________________ Social media_________________________
-///
-///
-///
+const videoHome = 'assets/videos/IMG_3398.MOV';
+const thumbnail = 'assets/images/thumbnail.png';
+const videoProfile = 'assets/videos/IMG_3400.mov';
 const github = 'https://github.com/JordyHers';
 const linkedIn = 'https://de.linkedin.com/company/jordyhers-org';
 const githubTimesUp = 'https://github.com/JordyHers/Times-up-flutter';
@@ -31,20 +16,6 @@ const githubOwanto = 'https://github.com/JordyHers/Owanto_e-commerce';
 const githubTerminal = 'https://github.com/JordyHers/terminal';
 const githubIos = 'https://github.com/JordyHers/iosAppTutorials';
 const discordLink = 'https://discord.gg/NBFyRmJd35';
-
-///________________ document path _______________________
-///
-///
-///
-///
-const documentPath = 'assets/documents/Portfolio_Jordy_Hershel.pdf';
-const cvPath = 'assets/documents/Resume-Jordy-Hershel-IG.pdf';
-
-///
-///
-///
-///
-/// _______________________Strings________________
 
 const String aboutMe =
     "I'm Jordy Hershel IGONDJO,\n\n I'm on my way to become a Flutter GDE. I've been writing code professionally for over 6 years. "
@@ -75,19 +46,28 @@ const String why_flutter = "1. Fast Development\n\n"
     "Logging View displays events from the Dart runtime, application frameworks and app-level logging events.";
 
 List<EducationModel> education = [
-  EducationModel("1. Master Degree - Germany", "IU Applied Science University ",
-      "2022- Postpone"),
-  EducationModel("2.University Bachelor Degree - Turkey",
-      " -- Istanbul Gelisim University -- ", "2014-2021"),
-  EducationModel("3. High-school - Gabon", " -- Lycée Privé René Descartes -- ",
-      "2011-2014"),
+  EducationModel(
+    "1. Master Degree - Germany",
+    "IU Applied Science University ",
+    "2022- Postpone",
+  ),
+  EducationModel(
+    "2.University Bachelor Degree - Turkey",
+    " -- Istanbul Gelisim University -- ",
+    "2014-2021",
+  ),
+  EducationModel(
+    "3. High-school - Gabon",
+    " -- Lycée Privé René Descartes -- ",
+    "2011-2014",
+  ),
 ];
 
 List<ExperienceModel> experienceList = [
   ExperienceModel(
       "Senior Flutter Mobile Application Developer",
       "Wurth Cloud Service · Full-time / Germany",
-      "Jul 2022 - Present",
+      "Mar 2023 - Present",
       "https://media.licdn.com/dms/image/C4E0BAQF8lBnVJ6NDyQ/company-logo_100_100/0/1656946168759?e=1680739200&v=beta&t=A5i7uQnt1fKiGr2cWX_-d_SFQbNISWe25y38i0sfuLs"),
   ExperienceModel(
       "Senior Flutter Mobile Application Developer",
@@ -119,33 +99,4 @@ List<ExperienceModel> experienceList = [
       " English Time · Part-time / Istanbul, Turkey",
       "Oct 2017 - Jan 2018 4 mos",
       "https://media.licdn.com/dms/image/C4E0BAQHDHdvgMTL8JQ/company-logo_100_100/0/1519865079469?e=1680739200&v=beta&t=tKHce3ro3GpwNw2FlsqJiAo6Chk4z7qaglRLBl08P9g"),
-];
-
-List<Map<String, dynamic>> apps = [
-  {
-    'title': "Time's Up",
-    'url': githubTimesUp,
-    'description':
-        'Times Up help parents monitor the time kids spend on screen',
-    'image': 'assets/png/pngegg-0.png'
-  },
-  {
-    'title': 'Owanto',
-    'description': ' Owanto is a ecommerce platform made  '
-        'for a customer',
-    'url': githubOwanto,
-    'image': 'assets/png/pngegg-0.png'
-  },
-  {
-    'title': 'IosAppTutorial',
-    'url': githubIos,
-    'description': 'this project helps  dev start up with SwiftUI',
-    'image': 'assets/png/pngegg-0.png'
-  },
-  {
-    'title': 'Terminal',
-    'url': githubTerminal,
-    'description': 'Terminal App is   an Open Source Project',
-    'image': 'assets/png/pngegg-0.png'
-  }
 ];

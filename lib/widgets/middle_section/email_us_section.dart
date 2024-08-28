@@ -88,19 +88,27 @@ class _EmailUsState extends State<EmailUs> {
           SizedBox(height: ScreenConfig.getHeight(context) / 25),
           SizedBox(
             width: switch (widget.platformView) {
-              PlatformView.mobile =>
-                ScreenConfig.getWidthPercentage(context, 50),
-              PlatformView.web => ScreenConfig.getWidthPercentage(context, 40),
+              PlatformView.mobile => ScreenConfig.getWidthPercentage(
+                  context,
+                  80,
+                ),
+              PlatformView.web => ScreenConfig.getWidthPercentage(
+                  context,
+                  40,
+                ),
             },
             child: SelectableText(
               'Let us know about you, send us an email if you need more information or if you have a project. '
               'We will be glad to send you feedback. As we know the flutter community '
               'is still growing up. So you can be a part of it.',
               style: GoogleFonts.lora(
-                fontWeight: FontWeight.w500,
-                fontSize: 17,
-                height: 1.5,
-                color: Colors.grey.shade500,
+                fontSize: switch (widget.platformView) {
+                  PlatformView.mobile => 14,
+                  PlatformView.web => 17,
+                },
+                fontWeight: FontWeight.w400,
+                color: Colors.grey.shade700,
+                height: 1.8,
               ),
             ),
           ),
@@ -108,8 +116,13 @@ class _EmailUsState extends State<EmailUs> {
           Column(
             children: [
               SizedBox(
-                height: ScreenConfig.getHeight(context) * 0.10,
-                width: ScreenConfig.getWidthPercentage(context, 40),
+                height: ScreenConfig.getHeightPercentage(context, 10),
+                width: switch (widget.platformView) {
+                  PlatformView.mobile =>
+                    ScreenConfig.getWidthPercentage(context, 80),
+                  PlatformView.web =>
+                    ScreenConfig.getWidthPercentage(context, 40),
+                },
                 child: TextField(
                   style: GoogleFonts.lora(color: Colors.deepPurple),
                   enabled: enabled,

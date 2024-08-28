@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarMobile extends StatelessWidget {
-  final ItemScrollController scrollController;
+  final ScrollController scrollController;
 
   const NavigationBarMobile(this.scrollController, {Key? key})
       : super(key: key);

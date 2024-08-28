@@ -72,11 +72,13 @@ class AboutMiddleSection extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding, vertical: verticalPadding),
+                  horizontal: horizontalPadding,
+                  vertical: verticalPadding,
+                ),
                 child: SizedBox(
                   width: switch (platformView) {
                     PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 60),
+                      ScreenConfig.getWidthPercentage(context, 80),
                     PlatformView.web =>
                       ScreenConfig.getWidthPercentage(context, 40),
                   },
@@ -122,9 +124,9 @@ class AboutMiddleSection extends StatelessWidget {
                   },
                   width: switch (platformView) {
                     PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 50),
+                      ScreenConfig.getWidthPercentage(context, 80),
                     PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 30),
+                      ScreenConfig.getWidthPercentage(context, 40),
                   },
                   child: ListView.builder(
                     itemCount: st.education.length,
@@ -162,9 +164,9 @@ class AboutMiddleSection extends StatelessWidget {
                   },
                   width: switch (platformView) {
                     PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 50),
+                      ScreenConfig.getWidthPercentage(context, 80),
                     PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 30),
+                      ScreenConfig.getWidthPercentage(context, 40),
                   },
                   child: ListView.builder(
                     itemCount: st.experienceList.length,
@@ -199,7 +201,12 @@ class AboutMiddleSection extends StatelessWidget {
                   bottom: 50,
                 ),
                 child: SizedBox(
-                  width: ScreenConfig.getWidthPercentage(context, 40),
+                  width: switch (platformView) {
+                    PlatformView.mobile =>
+                      ScreenConfig.getWidthPercentage(context, 80),
+                    PlatformView.web =>
+                      ScreenConfig.getWidthPercentage(context, 40),
+                  },
                   child: SelectableText(
                     st.why_flutter,
                     style: GoogleFonts.lora(

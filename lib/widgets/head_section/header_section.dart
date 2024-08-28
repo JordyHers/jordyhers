@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/utils/config.dart';
+import 'package:jordyhers/utils/constants.dart';
 import 'package:jordyhers/utils/enums.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class HeaderSection extends StatefulWidget {
   final PlatformView platformView;
-  final ItemScrollController scrollController;
+  final ScrollController scrollController;
 
   HeaderSection(
     this.platformView, {
@@ -60,8 +60,8 @@ class _HeaderSectionState extends State<HeaderSection>
   }
 
   void _scrollToNextSection() {
-    widget.scrollController.scrollTo(
-      index: 3,
+    widget.scrollController.animateTo(
+      kBookSessionOffset,
       duration: Duration(seconds: 1),
       curve: Curves.easeInOut,
     );

@@ -4,10 +4,9 @@ import 'package:jordyhers/routing/route_names.dart';
 import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/constants.dart';
 import 'package:provider/provider.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
-  final ItemScrollController scrollController;
+  final ScrollController scrollController;
   NavigationBarTabletDesktop(this.scrollController, {Key? key})
       : super(key: key);
 
@@ -19,18 +18,17 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
     with SingleTickerProviderStateMixin {
   final Map<String, dynamic> navigationItems = {
-    "Home": 0,
-    "Apps & Packages": 2,
-    "Book Session": 3,
-    "About": 4,
-    "Community": 5,
+    "Home": kHomeOffset,
+    "Apps & Packages": kAppsAndPackagesOffset,
+    "Book Session": kBookSessionOffset,
+    "About": kAboutOffset,
+    "Community": kCommunityOffset,
     "LinkedIn": LinkedInRoute,
     "Github": GithubRoute,
   };
   final Map<String, Color> colors = {
     "Home": Colors.grey,
     "About": Colors.grey,
-    "Book Session": Colors.grey,
     "Community": Colors.grey,
     "Apps & Packages": Colors.grey,
     "LinkedIn": Colors.grey,
@@ -57,15 +55,8 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
           margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.transparent,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 10,
-                spreadRadius: 1,
-              ),
-            ],
           ),
           height: 80,
           width: constraints.maxWidth,
@@ -92,8 +83,8 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
                           if (label == 'LinkedIn' || label == 'Github') {
                             repository.launchURL(navigationItems[label]!);
                           } else {
-                            widget.scrollController.scrollTo(
-                              index: navigationItems[label]! as int,
+                            widget.scrollController.animateTo(
+                              navigationItems[label]! as double,
                               duration: const Duration(seconds: 1),
                               curve: Curves.easeOut,
                             );

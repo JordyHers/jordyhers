@@ -4,11 +4,10 @@ import 'package:jordyhers/services/url_launcher.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/enums.dart';
 import 'package:provider/provider.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class PublicationSection extends StatefulWidget {
   final PlatformView platformView;
-  final ItemScrollController scrollController;
+  final ScrollController scrollController;
 
   const PublicationSection(
     this.platformView, {

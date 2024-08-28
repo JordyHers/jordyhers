@@ -3,12 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/enums.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class MiddleSection extends StatefulWidget {
   final PlatformView platformView;
-  final ItemScrollController scrollController;
+  final ScrollController scrollController;
 
   const MiddleSection(
     this.platformView, {
@@ -171,27 +170,35 @@ class _MiddleSectionState extends State<MiddleSection>
                       Padding(
                         padding: switch (widget.platformView) {
                           PlatformView.mobile =>
-                            ScreenConfig.getVerticalPadding(context, 2),
+                            ScreenConfig.getHorizontalPadding(context, 5),
                           PlatformView.web =>
                             ScreenConfig.getPadding(context, 20, 1),
                         },
-                        child: SelectableText(
-                          "Ready to take your Flutter and React Native skills to the next level? "
-                          "Book an online session with us today and gain expert guidance tailored to your specific needs. "
-                          "Whether you're just starting out or looking to optimize and scale your existing projects, "
-                          "we're here to help you navigate the complexities of mobile development. "
-                          "Unlock new possibilities, overcome challenges, and accelerate your success with personalized advice and cutting-edge insights. "
-                          "Schedule your session now and start building with confidence.",
-                          style: GoogleFonts.lora(
-                            fontSize: switch (widget.platformView) {
-                              PlatformView.mobile => 14,
-                              PlatformView.web => 17,
-                            },
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey.shade700,
-                            height: 1.8,
+                        child: SizedBox(
+                          width: switch (widget.platformView) {
+                            PlatformView.mobile =>
+                              ScreenConfig.getWidthPercentage(context, 80),
+                            PlatformView.web =>
+                              ScreenConfig.getWidthPercentage(context, 40),
+                          },
+                          child: SelectableText(
+                            "Ready to take your Flutter and React Native skills to the next level? "
+                            "Book an online session with us today and gain expert guidance tailored to your specific needs. "
+                            "Whether you're just starting out or looking to optimize and scale your existing projects, "
+                            "we're here to help you navigate the complexities of mobile development. "
+                            "Unlock new possibilities, overcome challenges, and accelerate your success with personalized advice and cutting-edge insights. "
+                            "Schedule your session now and start building with confidence.",
+                            style: GoogleFonts.lora(
+                              fontSize: switch (widget.platformView) {
+                                PlatformView.mobile => 14,
+                                PlatformView.web => 17,
+                              },
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey.shade700,
+                              height: 1.8,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                       SizedBox(

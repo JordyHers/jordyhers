@@ -32,7 +32,6 @@ dependencies:
   google_fonts: ^4.0.3
   video_player: ^2.4.10
   cloud_firestore: ^4.4.5
-  scrollable_positioned_list: ^0.3.8
   syncfusion_flutter_calendar: ^20.2.48
   firebase_core_platform_interface: ^4.5.3
   firebase_core: ^2.8.0
