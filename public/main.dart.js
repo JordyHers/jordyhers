@@ -95743,7 +95743,7 @@ m(){var s=this.d
 s===$&&A.b()
 s.m()
 this.a7Q()},
-amp(){this.a.d.jk(2400,B.bY,A.bQ(0,0,0,0,0,1))},
+amp(){this.a.d.jk(2100,B.bY,A.bQ(0,0,0,0,0,1))},
 N(a){var s,r,q,p,o,n,m,l=this,k=null,j="Discover us through our products",i="Crafting Stunning Apps with Flutter\nTransforming ideas into reality.",h="Book Online Session"
 switch(l.a.c.a){case 1:s=t.l
 r=A.X(a,k,s).w
@@ -96048,7 +96048,7 @@ q.x=q.w.C4()},
 aj5(){var s,r=this
 if(!r.at){s=B.b.gD(r.a.d.f).at
 s.toString
-s=s>=1800}else s=!1
+s=s>=1500}else s=!1
 if(s){s=r.d
 s===$&&A.b()
 s.bD(0)
@@ -96247,7 +96247,7 @@ q.a.d.M(0,q.gU7())},
 alh(){var s,r=this
 if(!r.f){s=B.b.gD(r.a.d.f).at
 s.toString
-s=s>=1100}else s=!1
+s=s>=700}else s=!1
 if(s){s=r.d
 s===$&&A.b()
 s.bD(0)
@@ -96351,7 +96351,7 @@ $0(){A.ws(this.a).a0D()},
 $S:0}
 A.r3.prototype={
 am(){var s=t.N
-return new A.YX(A.aO(["Home",10,"Apps & Packages",1700,"Book Session",2400,"About",3400,"Community",6600,"LinkedIn","https://de.linkedin.com/company/jordyhers-org","Github","https://github.com/JordyHers"],s,t.z),A.aO(["Home",B.ca,"About",B.ca,"Book Session",B.ca,"Community",B.ca,"Apps & Packages",B.ca,"LinkedIn",B.ca,"Github",B.ca],s,t.o),null,null,B.j)}}
+return new A.YX(A.aO(["Home",10,"Apps & Packages",1300,"Book Session",2100,"About",3100,"Community",6600,"LinkedIn","https://de.linkedin.com/company/jordyhers-org","Github","https://github.com/JordyHers"],s,t.z),A.aO(["Home",B.ca,"About",B.ca,"Book Session",B.ca,"Community",B.ca,"Apps & Packages",B.ca,"LinkedIn",B.ca,"Github",B.ca],s,t.o),null,null,B.j)}}
 A.YX.prototype={
 aK(){this.aY()},
 m(){this.a7Y()},

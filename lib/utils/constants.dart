@@ -1,10 +1,10 @@
 import 'package:jordyhers/models.dart';
 
 const double kHomeOffset = 10.0;
-const double kAppsAndPackagesOffset = 1700.0;
-const double kBookSessionOffset = 2400.0;
+const double kAppsAndPackagesOffset = 1300.0;
+const double kBookSessionOffset = 2100.0;
 const double kVideoOffset = 1000.0;
-const double kAboutOffset = 3400.0;
+const double kAboutOffset = 3100.0;
 const double kCommunityOffset = 6600.0;
 
 const videoHome = 'assets/videos/IMG_3398.MOV';
