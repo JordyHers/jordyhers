@@ -1,5 +1,5 @@
 
-# Jordy Hershel
+# Jordy Hershel IG.
 Senior Software developer.
 I have been developing Mobile application for several years now and I do have a solid background in Developing tools. 
 Find me on linked in or visit my website 
