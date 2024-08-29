@@ -19,7 +19,7 @@ class HomeContentDesktop extends StatefulWidget {
 
 class _HomeContentDesktopState extends State<HomeContentDesktop> {
   final ScrollController itemScrollController = ScrollController();
-  Color _appBarBackgroundColor = Colors.transparent;
+  Color _appBarBackgroundColor = Colors.black;
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _HomeContentDesktopState extends State<HomeContentDesktop> {
       if (scrollOffset > 100) {
         _appBarBackgroundColor = Colors.white;
       } else {
-        _appBarBackgroundColor = Colors.transparent;
+        _appBarBackgroundColor = Colors.black;
       }
     });
   }

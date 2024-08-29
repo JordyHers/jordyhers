@@ -102,7 +102,7 @@ class _VideoSectionState extends State<VideoSection>
             width: ScreenConfig.getWidthPercentage(context, 10),
             margin: switch (widget.platformView) {
               PlatformView.mobile => ScreenConfig.getPadding(context, 10, 10),
-              PlatformView.web => ScreenConfig.getPadding(context, 40, 10),
+              PlatformView.web => ScreenConfig.getPadding(context, 30, 10),
             },
             decoration: BoxDecoration(
               color: Colors.black,

@@ -15,7 +15,7 @@ class AboutMiddleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double verticalPadding = 16.0;
-    final double LargePadding = 150.0;
+    final double largePadding = 150.0;
     final double headerBottomPadding = 10.0;
 
     final double horizontalPadding = switch (platformView) {
@@ -28,205 +28,224 @@ class AboutMiddleSection extends StatelessWidget {
       PlatformView.web => 35,
     };
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(
-            top: LargePadding,
-            left: horizontalPadding,
-            right: horizontalPadding,
+    return Container(
+      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(
+        horizontal: horizontalPadding,
+        vertical: largePadding,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            offset: Offset(0, 4),
+            blurRadius: 10,
           ),
-          child: SelectableText(
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SelectableText(
             'About Me',
             style: GoogleFonts.lora(
               fontSize: titleFontSize,
               fontWeight: FontWeight.w700,
-              color: Colors.grey.shade700,
+              color: Colors.white,
             ),
           ),
-        ),
-        Flexible(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding, vertical: verticalPadding),
-                child: FittedBox(
-                  child: Container(
-                    height: 180,
-                    width: 180,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(252, 242, 221, 1),
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.scaleDown,
-                        image: AssetImage('assets/images/jordy_profile_2.png'),
+          Flexible(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: verticalPadding,
+                  ),
+                  child: FittedBox(
+                    child: Container(
+                      height: 180,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(252, 242, 221, 1),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.scaleDown,
+                          image:
+                              AssetImage('assets/images/jordy_profile_2.png'),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding,
-                  vertical: verticalPadding,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: verticalPadding,
+                  ),
+                  child: SizedBox(
+                    width: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getWidthPercentage(context, 80),
+                      PlatformView.web =>
+                        ScreenConfig.getWidthPercentage(context, 40),
+                    },
+                    child: SelectableText(
+                      st.aboutMe,
+                      style: GoogleFonts.lora(
+                        fontSize: switch (platformView) {
+                          PlatformView.mobile => 14,
+                          PlatformView.web => 17,
+                        },
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white70,
+                        height: 1.8,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
-                child: SizedBox(
-                  width: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 80),
-                    PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 40),
-                  },
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: horizontalPadding,
+                    right: horizontalPadding,
+                    bottom: headerBottomPadding,
+                  ),
                   child: SelectableText(
-                    st.aboutMe,
+                    'Education',
                     style: GoogleFonts.lora(
-                      fontSize: switch (platformView) {
-                        PlatformView.mobile => 14,
-                        PlatformView.web => 17,
-                      },
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey.shade700,
-                      height: 1.8,
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: verticalPadding,
+                  ),
+                  child: Container(
+                    height: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getHeightPercentage(context, 85),
+                      PlatformView.web =>
+                        ScreenConfig.getHeightPercentage(context, 40),
+                    },
+                    width: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getWidthPercentage(context, 80),
+                      PlatformView.web =>
+                        ScreenConfig.getWidthPercentage(context, 40),
+                    },
+                    child: ListView.builder(
+                      itemCount: st.education.length,
+                      itemBuilder: (builder, index) => ComponentView(
+                        platformView: platformView,
+                        title: st.education[index].title,
+                        description: st.education[index].description,
+                        period: st.education[index].period,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
                     left: horizontalPadding,
                     right: horizontalPadding,
-                    bottom: headerBottomPadding),
-                child: SelectableText(
-                  'Education',
-                  style: GoogleFonts.lora(
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.grey.shade700,
+                    bottom: headerBottomPadding,
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding,
-                  vertical: verticalPadding,
-                ),
-                child: Container(
-                  height: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getHeightPercentage(context, 85),
-                    PlatformView.web =>
-                      ScreenConfig.getHeightPercentage(context, 50),
-                  },
-                  width: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 80),
-                    PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 40),
-                  },
-                  child: ListView.builder(
-                    itemCount: st.education.length,
-                    itemBuilder: (builder, index) => ComponentView(
-                      platformView: platformView,
-                      title: st.education[index].title,
-                      description: st.education[index].description,
-                      period: st.education[index].period,
+                  child: SelectableText(
+                    'Experience',
+                    style: GoogleFonts.lora(
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: horizontalPadding,
-                    right: horizontalPadding,
-                    bottom: headerBottomPadding),
-                child: SelectableText(
-                  'Experience',
-                  style: GoogleFonts.lora(
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.grey.shade700,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: verticalPadding,
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding, vertical: verticalPadding),
-                child: Container(
-                  height: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getHeightPercentage(context, 85),
-                    PlatformView.web =>
-                      ScreenConfig.getHeightPercentage(context, 80),
-                  },
-                  width: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 80),
-                    PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 40),
-                  },
-                  child: ListView.builder(
-                    itemCount: st.experienceList.length,
-                    itemBuilder: (builder, index) => ComponentView(
-                      platformView: platformView,
-                      title: st.experienceList[index].title,
-                      description: st.experienceList[index].description,
-                      period: st.experienceList[index].period,
+                  child: Container(
+                    height: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getHeightPercentage(context, 85),
+                      PlatformView.web =>
+                        ScreenConfig.getHeightPercentage(context, 75),
+                    },
+                    width: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getWidthPercentage(context, 80),
+                      PlatformView.web =>
+                        ScreenConfig.getWidthPercentage(context, 40),
+                    },
+                    child: ListView.builder(
+                      itemCount: st.experienceList.length,
+                      itemBuilder: (builder, index) => ComponentView(
+                        platformView: platformView,
+                        title: st.experienceList[index].title,
+                        description: st.experienceList[index].description,
+                        period: st.experienceList[index].period,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
+                Padding(
+                  padding: EdgeInsets.only(
                     top: 50,
                     left: horizontalPadding,
                     right: horizontalPadding,
-                    bottom: headerBottomPadding),
-                child: SelectableText(
-                  'Why Flutter?',
-                  style: GoogleFonts.lora(
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.grey.shade700,
+                    bottom: headerBottomPadding,
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  right: horizontalPadding,
-                  left: horizontalPadding,
-                  bottom: 50,
-                ),
-                child: SizedBox(
-                  width: switch (platformView) {
-                    PlatformView.mobile =>
-                      ScreenConfig.getWidthPercentage(context, 80),
-                    PlatformView.web =>
-                      ScreenConfig.getWidthPercentage(context, 40),
-                  },
                   child: SelectableText(
-                    st.why_flutter,
+                    'Why Flutter?',
                     style: GoogleFonts.lora(
-                      fontSize: switch (platformView) {
-                        PlatformView.mobile => 14,
-                        PlatformView.web => 17,
-                      },
-                      fontWeight: FontWeight.w400,
-                      height: 1.8,
-                      color: Colors.grey.shade700,
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
                     ),
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: horizontalPadding,
+                    left: horizontalPadding,
+                    bottom: 50,
+                  ),
+                  child: SizedBox(
+                    width: switch (platformView) {
+                      PlatformView.mobile =>
+                        ScreenConfig.getWidthPercentage(context, 80),
+                      PlatformView.web =>
+                        ScreenConfig.getWidthPercentage(context, 40),
+                    },
+                    child: SelectableText(
+                      st.why_flutter,
+                      style: GoogleFonts.lora(
+                        fontSize: switch (platformView) {
+                          PlatformView.mobile => 14,
+                          PlatformView.web => 17,
+                        },
+                        fontWeight: FontWeight.w400,
+                        height: 1.8,
+                        color: Colors.white70,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -266,7 +285,7 @@ class ComponentView extends StatelessWidget {
                       PlatformView.web => 17,
                     },
                     fontWeight: FontWeight.w400,
-                    color: Colors.grey.shade700,
+                    color: Colors.white,
                     height: 1.8,
                   ),
                   textAlign: TextAlign.center,
@@ -285,7 +304,7 @@ class ComponentView extends StatelessWidget {
                       PlatformView.web => 17,
                     },
                     fontWeight: FontWeight.w400,
-                    color: Colors.grey.shade800,
+                    color: Colors.white70,
                     height: 1.8,
                   ),
                   textAlign: TextAlign.center,
@@ -304,7 +323,7 @@ class ComponentView extends StatelessWidget {
                       },
                       fontWeight: FontWeight.w300,
                       height: 1.8,
-                      color: Colors.grey.shade500)),
+                      color: Colors.white54)),
             ],
           ),
         ],

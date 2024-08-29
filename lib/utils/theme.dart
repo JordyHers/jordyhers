@@ -3,41 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Style {
   static final lightTheme = ThemeData(
-    textTheme: GoogleFonts.merriweatherTextTheme(ThemeData.light().textTheme),
+    textTheme: GoogleFonts.loraTextTheme(ThemeData.light().textTheme),
     canvasColor: Colors.black,
-    scaffoldBackgroundColor: Color(0xFFE4E4E4),
+    scaffoldBackgroundColor: Colors.white70,
     dividerColor: Colors.grey.shade400,
-    primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.black)),
+    primaryTextTheme: TextTheme(
+      bodySmall: TextStyle(color: Colors.black),
+    ),
     iconTheme: IconThemeData(color: Colors.black),
-    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
-        .copyWith(surface: Color(0xFFE4E4E4)),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey).copyWith(
+      surface: Color(0xFFE4E4E4),
+    ),
   );
-  static final darkTheme = ThemeData(
-    primarySwatch: Colors.deepPurple,
-    textTheme: GoogleFonts.loraTextTheme(ThemeData.dark().textTheme),
-    canvasColor: Colors.white,
-    dividerColor: Colors.white,
-    scaffoldBackgroundColor: Colors.black,
-    primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.white)),
-    iconTheme: IconThemeData(color: Colors.white),
-  );
-
-  static final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Colors.purpleAccent,
-      Colors.blueAccent,
-    ],
-  ).createShader(Rect.fromLTWH(200.0, 10.0, 200.0, 7.0));
-
-  static final Shader subtitle = LinearGradient(
-    colors: <Color>[
-      Colors.purpleAccent,
-      Colors.blueAccent,
-    ],
-  ).createShader(Rect.fromLTWH(400.0, 10.0, 300.0, 14.0));
-
-  static final LinearGradient gradient = LinearGradient(colors: [
-    Colors.blueAccent,
-    Colors.purpleAccent,
-  ], begin: Alignment.topLeft, end: Alignment.bottomRight);
 }

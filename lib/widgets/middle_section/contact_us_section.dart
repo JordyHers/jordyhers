@@ -112,7 +112,7 @@ class _ContactUsSectionState extends State<ContactUsSection>
     final fireStore = Provider.of<FirestoreService>(context, listen: false);
     final EdgeInsets margin = switch (widget.platformView) {
       PlatformView.mobile => ScreenConfig.getPadding(context, 5, 10),
-      PlatformView.web => ScreenConfig.getPadding(context, 30, 10),
+      PlatformView.web => ScreenConfig.getPadding(context, 20, 10),
     };
     final EdgeInsets padding = switch (widget.platformView) {
       PlatformView.mobile => ScreenConfig.getPadding(context, 5, 10),

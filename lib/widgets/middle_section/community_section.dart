@@ -76,7 +76,7 @@ class _CommunitySectionState extends State<CommunitySection>
       child: Padding(
         padding: padding,
         child: Container(
-          height: ScreenConfig.getHeightPercentage(context, 35),
+          height: ScreenConfig.getHeightPercentage(context, 40),
           width: ScreenConfig.getWidthPercentage(context, 80),
           decoration: BoxDecoration(
             color: Colors.black,

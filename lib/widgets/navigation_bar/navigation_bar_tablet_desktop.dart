@@ -69,7 +69,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
                   return MouseRegion(
                     onEnter: (_) {
                       setState(() {
-                        colors[label] = Colors.black;
+                        colors[label] = Colors.deepPurple;
                       });
                     },
                     onExit: (_) {
@@ -108,6 +108,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
                 onTap: () => repository.launchURL(discordLink),
                 child: Icon(
                   Icons.discord,
+                  color: Colors.deepPurple,
                 ),
               ),
             ],
