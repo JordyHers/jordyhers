@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jordyhers/services/firebase_service.dart';
@@ -33,6 +34,8 @@ class _MiddleSectionState extends State<MiddleSection>
   TimeOfDay? startTime;
   TimeOfDay? endTime;
   bool _animationTriggered = false;
+  bool emailValid = true;
+  final _emailController = TextEditingController();
 
   @override
   void initState() {
@@ -85,6 +88,7 @@ class _MiddleSectionState extends State<MiddleSection>
   @override
   void dispose() {
     _controller.dispose();
+    _emailController.dispose();
     widget.scrollController.removeListener(_scrollListener);
     super.dispose();
   }
@@ -285,8 +289,10 @@ class _MiddleSectionState extends State<MiddleSection>
                                       textStyle: GoogleFonts.lora()),
                                   view: CalendarView.month,
                                   monthViewSettings: MonthViewSettings(
-                                      monthCellStyle: MonthCellStyle(
-                                          textStyle: GoogleFonts.lora())),
+                                    monthCellStyle: MonthCellStyle(
+                                      textStyle: GoogleFonts.lora(),
+                                    ),
+                                  ),
                                   todayTextStyle: GoogleFonts.lora(),
                                   firstDayOfWeek: 1,
                                   initialSelectedDate: DateTime.now(),
@@ -294,16 +300,15 @@ class _MiddleSectionState extends State<MiddleSection>
                                   cellBorderColor: Colors.transparent,
                                   backgroundColor: Colors.white,
                                   onTap: (CalendarTapDetails details) {
-                                    if (details.targetElement ==
-                                        CalendarElement.calendarCell) {
+                                    if (details.date != null &&
+                                        details.date!.isAfter(DateTime.now())) {
                                       _selectTime(context, true).then((_) {
                                         if (startTime != null) {
                                           _selectTime(context, false).then((_) {
                                             if (endTime != null) {
                                               setState(() {
                                                 dateSelected = false;
-                                                selectedDate = details.date ??
-                                                    selectedDate;
+                                                selectedDate = details.date!;
                                               });
                                             }
                                           });
@@ -311,33 +316,29 @@ class _MiddleSectionState extends State<MiddleSection>
                                       });
                                     }
                                   },
-                                  selectionDecoration: BoxDecoration(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                        color: Colors.grey, width: 2),
-                                  ),
                                   monthCellBuilder: (BuildContext context,
                                       MonthCellDetails details) {
-                                    final bool isSelected =
-                                        details.date == DateTime.now();
+                                    final bool isPast =
+                                        details.date.isBefore(DateTime.now());
                                     return Container(
-                                      decoration: isSelected
+                                      decoration: details.date == selectedDate
                                           ? BoxDecoration(
                                               color: Colors.grey.shade700,
-                                              shape: BoxShape.circle)
+                                              shape: BoxShape.circle,
+                                            )
                                           : null,
                                       child: Center(
                                         child: Text(
                                           details.date.day.toString(),
                                           style: GoogleFonts.lora(
-                                            color: isSelected
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontWeight: isSelected
-                                                ? FontWeight.bold
-                                                : FontWeight.normal,
+                                            color: isPast
+                                                ? Colors.grey.shade400
+                                                : details.date == selectedDate
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                            fontWeight: isPast
+                                                ? FontWeight.normal
+                                                : FontWeight.bold,
                                           ),
                                         ),
                                       ),
@@ -367,7 +368,6 @@ class _MiddleSectionState extends State<MiddleSection>
   Widget _buildBookingForm(BuildContext context) {
     final _nameController = TextEditingController();
     final _surnameController = TextEditingController();
-    final _emailController = TextEditingController();
 
     return Container(
       width: ScreenConfig.getHeightPercentage(context, 75),
@@ -386,6 +386,17 @@ class _MiddleSectionState extends State<MiddleSection>
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                if (startTime != null && endTime != null) ...[
+                  Text(
+                    'Selected Time: ${startTime!.format(context)} - ${endTime!.format(context)}',
+                    style: GoogleFonts.lora(
+                      color: Colors.black,
+                      fontSize: ScreenConfig.getHeightPercentage(context, 2),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                ],
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
@@ -411,17 +422,24 @@ class _MiddleSectionState extends State<MiddleSection>
                     labelStyle: GoogleFonts.lora(),
                     border: OutlineInputBorder(),
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      emailValid = EmailValidator.validate(value);
+                    });
+                  },
                 ),
                 SizedBox(height: 20),
                 Center(
                   child: ElevatedButton(
-                    onPressed: () {
-                      _submitAppointment(
-                        _nameController.text,
-                        _surnameController.text,
-                        _emailController.text,
-                      );
-                    },
+                    onPressed: emailValid
+                        ? () {
+                            _submitAppointment(
+                              _nameController.text,
+                              _surnameController.text,
+                              _emailController.text,
+                            );
+                          }
+                        : null,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         vertical: 15,
@@ -444,6 +462,7 @@ class _MiddleSectionState extends State<MiddleSection>
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
+                      disabledBackgroundColor: Colors.grey,
                     ),
                   ),
                 ),
