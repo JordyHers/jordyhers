@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:jordyhers/services/firebase_service.dart';
 import 'package:jordyhers/utils/config.dart';
 import 'package:jordyhers/utils/constants.dart';
@@ -28,9 +29,11 @@ class _MiddleSectionState extends State<MiddleSection>
   late Animation<double> _fadeAnimation;
   late Animation<double> _rotationAnimation;
   final FirestoreService _fireStoreService = FirestoreService();
+  final CalendarController _calendarController = CalendarController();
   late Future<CalendarDataSource> _calendarDataSourceFuture;
   bool dateSelected = true;
   DateTime selectedDate = DateTime.now();
+  DateTime displayedMonth = DateTime.now(); // Added to track displayed month
   TimeOfDay? startTime;
   TimeOfDay? endTime;
   bool _animationTriggered = false;
@@ -89,25 +92,31 @@ class _MiddleSectionState extends State<MiddleSection>
   void dispose() {
     _controller.dispose();
     _emailController.dispose();
+    _calendarController.dispose();
     widget.scrollController.removeListener(_scrollListener);
     super.dispose();
   }
 
-  Future<void> _selectTime(BuildContext context, bool isStartTime) async {
+  Future<void> _selectTime(BuildContext context) async {
     final TimeOfDay? pickedTime = await showTimePicker(
       context: context,
-      initialTime: isStartTime
-          ? startTime ?? TimeOfDay.now()
-          : endTime ?? TimeOfDay.now(),
+      initialTime: startTime ?? TimeOfDay(hour: 9, minute: 0),
     );
     if (pickedTime != null) {
-      setState(() {
-        if (isStartTime) {
+      if (pickedTime.hour >= 9 && pickedTime.hour < 17) {
+        setState(() {
           startTime = pickedTime;
-        } else {
-          endTime = pickedTime;
-        }
-      });
+          endTime = TimeOfDay(
+            hour: (pickedTime.hour + ((pickedTime.minute + 35) ~/ 60)) % 24,
+            minute: (pickedTime.minute + 35) % 60,
+          );
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('Please select a time between 9 AM and 5 PM.')),
+        );
+      }
     }
   }
 
@@ -150,6 +159,33 @@ class _MiddleSectionState extends State<MiddleSection>
         });
       });
     }
+  }
+
+  String _formatSelectedDate() {
+    final DateFormat formatter = DateFormat('EEEE, d MMMM yyyy');
+    return formatter.format(selectedDate);
+  }
+
+  void _moveToPreviousMonth() {
+    setState(() {
+      _calendarController.backward?.call();
+      displayedMonth = DateTime(
+        displayedMonth.year,
+        displayedMonth.month - 1,
+        1,
+      );
+    });
+  }
+
+  void _moveToNextMonth() {
+    setState(() {
+      _calendarController.forward?.call();
+      displayedMonth = DateTime(
+        displayedMonth.year,
+        displayedMonth.month + 1,
+        1,
+      );
+    });
   }
 
   @override
@@ -249,6 +285,31 @@ class _MiddleSectionState extends State<MiddleSection>
                         SizedBox(
                           height: ScreenConfig.getHeightPercentage(context, 5),
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.arrow_back, color: Colors.white),
+                              onPressed: _moveToPreviousMonth,
+                            ),
+                            Text(
+                              DateFormat.yMMMM().format(displayedMonth),
+                              style: GoogleFonts.lora(
+                                fontSize: switch (widget.platformView) {
+                                  PlatformView.mobile => 18,
+                                  PlatformView.web => 22,
+                                },
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.arrow_forward,
+                                  color: Colors.white),
+                              onPressed: _moveToNextMonth,
+                            ),
+                          ],
+                        ),
                         FutureBuilder<CalendarDataSource>(
                           future: _calendarDataSourceFuture,
                           builder: (context, snapshot) {
@@ -285,13 +346,16 @@ class _MiddleSectionState extends State<MiddleSection>
                                   ],
                                 ),
                                 child: SfCalendar(
+                                  controller: _calendarController,
                                   headerStyle: CalendarHeaderStyle(
                                       textStyle: GoogleFonts.lora()),
                                   view: CalendarView.month,
+                                  initialDisplayDate: displayedMonth,
                                   monthViewSettings: MonthViewSettings(
                                     monthCellStyle: MonthCellStyle(
                                       textStyle: GoogleFonts.lora(),
                                     ),
+                                    showTrailingAndLeadingDates: false,
                                   ),
                                   todayTextStyle: GoogleFonts.lora(),
                                   firstDayOfWeek: 1,
@@ -301,16 +365,14 @@ class _MiddleSectionState extends State<MiddleSection>
                                   backgroundColor: Colors.white,
                                   onTap: (CalendarTapDetails details) {
                                     if (details.date != null &&
-                                        details.date!.isAfter(DateTime.now())) {
-                                      _selectTime(context, true).then((_) {
+                                        details.date!.isAfter(DateTime.now()) &&
+                                        details.date!.weekday != 6 &&
+                                        details.date!.weekday != 7) {
+                                      _selectTime(context).then((_) {
                                         if (startTime != null) {
-                                          _selectTime(context, false).then((_) {
-                                            if (endTime != null) {
-                                              setState(() {
-                                                dateSelected = false;
-                                                selectedDate = details.date!;
-                                              });
-                                            }
+                                          setState(() {
+                                            dateSelected = false;
+                                            selectedDate = details.date!;
                                           });
                                         }
                                       });
@@ -320,6 +382,9 @@ class _MiddleSectionState extends State<MiddleSection>
                                       MonthCellDetails details) {
                                     final bool isPast =
                                         details.date.isBefore(DateTime.now());
+                                    final bool isWeekend =
+                                        details.date.weekday == 6 ||
+                                            details.date.weekday == 7;
                                     return Container(
                                       decoration: details.date == selectedDate
                                           ? BoxDecoration(
@@ -331,7 +396,7 @@ class _MiddleSectionState extends State<MiddleSection>
                                         child: Text(
                                           details.date.day.toString(),
                                           style: GoogleFonts.lora(
-                                            color: isPast
+                                            color: isPast || isWeekend
                                                 ? Colors.grey.shade400
                                                 : details.date == selectedDate
                                                     ? Colors.white
@@ -386,9 +451,17 @@ class _MiddleSectionState extends State<MiddleSection>
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (startTime != null && endTime != null) ...[
+                if (startTime != null && selectedDate != null) ...[
                   Text(
-                    'Selected Time: ${startTime!.format(context)} - ${endTime!.format(context)}',
+                    'Your booking online session will be reserved for: ${_formatSelectedDate()}',
+                    style: GoogleFonts.lora(
+                      color: Colors.black,
+                      fontSize: ScreenConfig.getHeightPercentage(context, 2),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'Time: ${startTime!.format(context)} - ${endTime!.format(context)}',
                     style: GoogleFonts.lora(
                       color: Colors.black,
                       fontSize: ScreenConfig.getHeightPercentage(context, 2),
