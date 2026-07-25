@@ -1,16 +1,14 @@
 
 # Jordy Hershel IG.
-Senior Software developer.
-I have been developing Mobile application for several years now and I do have a solid background in Developing tools. 
-Find me on linked in or visit my website 
-I am currently working at - [Wuerth](https://www.wuerth.de/)
+Engineering Team Lead at [Wuerth](https://www.wuerth.de/)
+I am passionate about tech. Currently leading a team of software devs, inan agile environment.
+We aim to ship great products to great people.
 
-
-
-## Get to me via:
-
+## Discover me via:
 - [LinkedIn](https://www.linkedin.com/in/jordy-hershel-ig)
-- [jordyhers.com](https://jordyhers.com/#/)
+
+## Projects:
+- [Jilas](https://jilas-web.firebaseapp.com/)
 
 
 
